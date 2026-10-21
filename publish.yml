@@ -1,0 +1,51 @@
+name: Publish Applify Kodi Source
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'skin.applify-*.zip'
+      - 'build_repository.py'
+      - '.github/workflows/publish.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: applify-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Read the actual GitHub Pages URL
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build the Kodi source and repository
+        run: python3 build_repository.py --base-url "$APPLIFY_PAGES_URL"
+        env:
+          APPLIFY_PAGES_URL: ${{ steps.pages.outputs.base_url }}
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - uses: actions/upload-artifact@v7
+        with:
+          name: applify-kodi-downloads
+          path: |
+            _site/repository.applify-1.0.0.zip
+            _site/skin.applify/*.zip
+            _site/repository-config.json
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish the Kodi source
+        id: deployment
+        uses: actions/deploy-pages@v4
