@@ -50,13 +50,15 @@ For feedback, [open an issue](https://github.com/kamilfotoveci-design/applify/is
 
 Real captures supplied by the maintainer. These show the existing home interface; the new 1.0.1 dialog refresh is described in the release notes.
 
-![Watch Now — Next Episodes](screenshots/01-watch-now-silo.jpg)
+![Pyrus Skin screenshot 1](screenshots/IMG_4127.png)
 
-![Home widgets — Next Episodes](screenshots/02-next-episodes.jpg)
+![Pyrus Skin screenshot 2](screenshots/IMG_4129.png)
 
-![Latest TV Shows](screenshots/03-tv-shows.jpg)
+![Pyrus Skin screenshot 3](screenshots/IMG_4130.png)
 
-![Trending — poster widgets](screenshots/04-trending.jpg)
+![Pyrus Skin screenshot 4](screenshots/IMG_4132.png)
+
+![Pyrus Skin screenshot 5](screenshots/IMG_4135.png)
 
 ## Release notes
 
