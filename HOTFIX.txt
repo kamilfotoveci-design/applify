@@ -1,0 +1,21 @@
+Pyrus Skin 1.0.2 — spoločný opravný update
+
+OPRAVENÉ:
+- 24 prepínačov: pravá strana riadka, menší rozmer 64 x 36, medzera od textu.
+- Edit file source: pevné rozmery riadkov, oddelený zoznam / scrollbar / Browse, Add, Remove.
+- Spoločné modálne okná: nepriehľadné tmavé pozadie, aby nepresvital text spodného okna.
+- Kodi HTTP zdroj: jednoduchý index s priamym repository ZIP odkazom. Pôvodná webová galéria zostáva na gallery.html.
+- Workflow: presná HTTPS adresa zdroja.
+
+NAHRATIE NA GITHUB:
+1. Rozbaľ tento opravný balík. Vnútorné ZIP súbory nerozbaľuj.
+2. Do koreňa existujúceho GitHub repa nahraj skin.applify-1.0.2.zip a build_repository.py. Commitni.
+3. Ak treba opraviť workflow, skopíruj obsah pribaleného publish.yml do .github/workflows/publish.yml. Commitni.
+4. Po zelenom Actions nasadení znovu otvor Kodi → Install from ZIP file → zdroj.
+5. Nainštaluj repository.applify-1.0.1.zip a potom aktualizuj Pyrus Skin na 1.0.2.
+
+OKAMŽITÁ INŠTALÁCIA:
+Pribalené repository.applify-1.0.1.zip a skin.applify-1.0.2.zip možno nainštalovať priamo cez Install from ZIP file z lokálneho alebo sieťového úložiska. Skin ani widgety neodinštaluj. Potom reštartuj Kodi.
+
+OVERENIE:
+XML/Python syntax, pôvodné ID, akcie, navigácia a stavy zostali zachované. Overené absolútne súradnice prepínačov, medzery od textu, rozloženie zdrojového dialógu, ZIP integrita, metadata, MD5 a publikované artwork cesty. Nový hotfix ešte potrebuje potvrdenie priamo na dotknutom zariadení; Kodi runtime tu nebol dostupný.

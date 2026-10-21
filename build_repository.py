@@ -201,6 +201,8 @@ def build(base_url, output):
         '<p>Independent community project. Not affiliated with Apple or Team Kodi. '
         'Player Info fields depend on the device and the values Kodi provides.</p></footer>'
         '</main></body></html>\n', encoding='utf-8')
+    shutil.copyfile(output / 'index.html', output / 'gallery.html')
+    (output / 'index.html').write_text('<!doctype html>\n<html><head><meta charset="utf-8"><title>Pyrus Kodi Source</title></head><body>\n<h1>Pyrus Skin by kamilwhoo</h1>\n<a href="repository.applify-1.0.1.zip">repository.applify-1.0.1.zip</a><br>\n</body></html>\n', encoding='utf-8')
     config = {'name': 'Pyrus Skin', 'skin_id': SKIN_ID, 'skin_version': version,
               'repository_id': REPOSITORY_ID, 'repository_version': REPOSITORY_VERSION,
               'source_url': base_url + '/', 'repository_zip': base_url + '/' + installer_name,

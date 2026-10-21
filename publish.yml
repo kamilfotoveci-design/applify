@@ -26,7 +26,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Build the Kodi source and repository
-        run: python3 build_repository.py --base-url "$APPLIFY_PAGES_URL"
+        run: python3 build_repository.py --base-url "https://kamilfotoveci-design.github.io/applify/"
         env:
           APPLIFY_PAGES_URL: ${{ steps.pages.outputs.base_url }}
       - uses: actions/upload-pages-artifact@v4
