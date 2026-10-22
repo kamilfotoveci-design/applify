@@ -1,0 +1,16 @@
+Pyrus Skin 1.0.3 — oprava navigácie
+
+OPRAVENÉ
+- Ozubené koliesko na hlavnej stránke otvorí priamo nastavenia Kodi.
+- Configure Widgets na prázdnej stránke otvorí priamo plný editor Customize z referenčnej fotky.
+- Zachováva sa aktuálna stránka Watch Now / Movies / TV Shows aj existujúce widgety.
+- Všetky opravy 1.0.2 zostávajú súčasťou balíka.
+
+INŠTALÁCIA
+Nainštaluj skin.applify-1.0.3.zip cez Kodi → Add-ons → Install from ZIP file. Nič neodinštaluj. Ak sa zobrazuje stará navigácia, reštartuj Kodi.
+
+GITHUB
+Do koreňa existujúceho repa nahraj skin.applify-1.0.3.zip a commitni. Existujúci opravený builder vyberie najvyššiu verziu. V balíku je aj build_repository.py a publish.yml pre prípad, že ešte používaš staré súbory. publish.yml patrí na .github/workflows/publish.yml. Po zelenom nasadení má addons.xml uvádzať skin 1.0.3. Repository doplnok zostáva 1.0.1.
+
+OVERENIE
+Zmenili sa len Home.xml (dve click akcie) a addon.xml (verzia a release notes). Overené cieľové okná, zachovanie ostatných súborov po bajtoch, XML/Python syntax, ZIP integrita a vygenerovaný repository index/MD5. Kodi runtime tu nie je dostupný.
