@@ -11,7 +11,7 @@ from pyrus_l10n import text, LocalizedDialog
 BASE='https://kamilfotoveci-design.github.io/applify/'
 def fetch(name):
     # Use the normal verified HTTPS context. No credentials or provider URLs.
-    request=Request(BASE+name,headers={'User-Agent':'Pyrus-Diagnostics/1.1.2'})
+    request=Request(BASE+name,headers={'User-Agent':'Pyrus-Diagnostics/1.1.3'})
     with urlopen(request,timeout=5,context=ssl.create_default_context()) as response:
         data=response.read(2*1024*1024+1)
         if len(data)>2*1024*1024:raise ValueError('Repository response too large')

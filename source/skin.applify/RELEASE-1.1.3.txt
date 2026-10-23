@@ -1,0 +1,16 @@
+Pyrus Skin 1.1.3 by kamilwhoo — Home power button
+
+CHANGES
+- Added a Power icon immediately to the right of Settings on the home bar.
+- The Power icon opens Kodi Power Options. Reboot is listed when Kodi reports
+  that the device supports it; existing CoreELEC Reboot to Android remains gated.
+- The bar stays centered and uses the existing icon, focus, spacing, and
+  animation styles. Left/right and remote navigation include the new button.
+- In each home widget row, Right from See All returns focus to the first
+  card. See All remains reachable from the last card.
+- Skin language catalog remains English-only.
+
+VALIDATION
+- ZIP, XML/Python syntax, fonts, SHA-256 manifest, and source mirror checked.
+- Home navigation graph, widget wrap, and bar geometry checked statically.
+- Device testing in Kodi/CoreELEC remains necessary.

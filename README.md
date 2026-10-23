@@ -4,7 +4,13 @@
 
 Cinematic artwork, configurable widgets, clean playback controls and detailed Player Info.
 
-## What's new in 1.1.2
+## What's new in 1.1.3
+
+- Added a Power icon beside Settings. It opens Kodi Power Options, including Reboot when Kodi reports that the device supports it.
+- Press Right from a widget row's See All control to return to its first card. See All remains reachable from the last card.
+- Kept the top navigation centered with the same focus and motion styling.
+
+The 1.1.2 update also added:
 
 - Corrected ranked card numbers in custom hubs.
 - Removed older packages that still contained non-English skin catalogs.
@@ -24,7 +30,7 @@ The 1.1.1 update also added:
 - Existing Player Process Info (PPI): **Media**, **Decoder / Output**, **System**.
 
 Configure the menu in **Kodi Settings → Skin Settings → Top menu and submenus**.
-The Settings gear continues to open Kodi Settings directly. Existing widget settings are retained.
+The Settings gear continues to open Kodi Settings directly. Power opens Kodi Power Options. Existing widget settings are retained.
 
 ## Install
 
@@ -41,11 +47,11 @@ If the repository cannot connect, restart Kodi once and use **Check for updates*
 One Fire Cube 3 user reported this resolved installation. If it still fails,
 report your device, exact Kodi build and a Kodi log captured after the failure.
 A permanent root cause for all reported connection failures has not been established.
-You can install [the skin ZIP directly](https://kamilfotoveci-design.github.io/applify/skin.applify/skin.applify-1.1.2.zip).
+You can install [the skin ZIP directly](https://kamilfotoveci-design.github.io/applify/skin.applify/skin.applify-1.1.3.zip).
 
 ## Compatibility and validation
 
-The maintainer has tested earlier versions of the skin on Kodi 22. The 1.1.2 package
+The maintainer has tested earlier versions of the skin on Kodi 22. The 1.1.3 package
 passed static build checks; **device validation of this update is still required**.
 Kodi 21/22 builds and hardware can expose different Player Info fields. Missing
 HDR, Dolby Vision or decoder details are not proof that a format is unsupported.
@@ -56,7 +62,7 @@ Pyrus ships only the English skin language catalog. Kodi's own interface and
 content titles follow the language and metadata settings in your Kodi installation.
 Your custom widget titles are preserved.
 
-See [1.1.2 release notes](RELEASE-1.1.2.txt).
+See [1.1.3 release notes](RELEASE-1.1.3.txt).
 
 ## Screenshots
 
@@ -88,5 +94,5 @@ unverified device reports. Compare the same file/settings against Estuary and in
 fresh logs. This update does not force HDR/DV options. PVR requires a configured backend.
 Full arbitrary menu ordering and unlimited tabs are not provided: the current editor
 supports three extra hubs and six child links per hub. The readable XML, Python,
-translations and playlists are available in [source/skin.applify](source/skin.applify/).
+English catalog and playlists are available in [source/skin.applify](source/skin.applify/).
 Binary artwork and fonts remain in the installable ZIP.

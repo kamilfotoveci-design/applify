@@ -57,18 +57,18 @@
       <colordiffuse>CCFFFFFF</colordiffuse>
     </control>
     <control type="image">
-      <left>428</left>
+      <left>383</left>
       <top>24</top>
-      <width>1064</width>
+      <width>1154</width>
       <height>124</height>
       <texture>orchard/nav-shell-shadow-128.png</texture>
       <animation effect="fade" start="100" end="65" time="220" condition="!ControlGroup(9000).HasFocus + !Skin.HasSetting(orchard.reducedanimations)" tween="sine">Conditional</animation>
       <animation effect="fade" start="100" end="65" time="0" condition="!ControlGroup(9000).HasFocus + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
     </control>
     <control type="image">
-      <left>452</left>
+      <left>407</left>
       <top>48</top>
-      <width>1016</width>
+      <width>1106</width>
       <height>76</height>
       <texture>orchard/nav-shell-depth-128.png</texture>
       <animation effect="fade" start="100" end="65" time="220" condition="!ControlGroup(9000).HasFocus + !Skin.HasSetting(orchard.reducedanimations)" tween="sine">Conditional</animation>
@@ -76,9 +76,9 @@
     </control>
     <control type="grouplist" id="9000">
       <itemgap>12</itemgap>
-      <left>460</left>
+      <left>415</left>
       <top>54</top>
-      <width>1000</width>
+      <width>1090</width>
       <height>64</height>
       <orientation>horizontal</orientation>
       <defaultcontrol>9101</defaultcontrol>
@@ -121,7 +121,7 @@
           <pulseonselect>false</pulseonselect>
           <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,home,9101)</onfocus>
           <onclick>RunScript(special://skin/resources/home_hubs.py,open,home)</onclick>
-          <onleft>9106</onleft>
+          <onleft>9107</onleft>
           <onright>9102</onright>
           <ondown>RunScript(special://skin/resources/home_hubs.py,down,home)</ondown>
           <onup>9101</onup>
@@ -612,7 +612,7 @@
           <onclick>ActivateWindow(Settings)</onclick>
           <onup>9106</onup>
           <onleft>9105</onleft>
-          <onright>9101</onright>
+          <onright>9107</onright>
           <ondown condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">50</ondown>
           <ondown condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">8301</ondown>
           <ondown condition="Integer.IsGreater(Container(5101).NumItems,0)">5101</ondown>
@@ -648,6 +648,80 @@
         <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9106)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
         <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9106)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
         <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9106)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
+      </control>
+      <control type="group">
+        <width>78</width>
+        <control type="image">
+          <width>94</width>
+          <left>-8</left>
+          <top>-10</top>
+          <height>96</height>
+          <visible>Control.HasFocus(9107)</visible>
+          <texture border="40,20,40,20">orchard/nav-focus-shadow-128.png</texture>
+          <animation effect="fade" start="0" end="100" time="140" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <height>64</height>
+        <control type="image">
+          <width>78</width>
+          <left>0</left>
+          <top>0</top>
+          <height>64</height>
+          <texture border="32">orchard/nav-focus-depth-128.png</texture>
+          <visible>Control.HasFocus(9107)</visible>
+          <animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">VisibleChange</animation>
+          <animation effect="zoom" start="98" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Visible</animation>
+        </control>
+        <control type="button" id="9107">
+          <width>78</width>
+          <height>64</height>
+          <label>$LOCALIZE[31767]</label>
+          <font>OrchardNav</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus />
+          <texturenofocus />
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <pulseonselect>false</pulseonselect>
+          <onclick>ActivateWindow(ShutdownMenu)</onclick>
+          <onup>9107</onup>
+          <onleft>9106</onleft>
+          <onright>9101</onright>
+          <ondown condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">50</ondown>
+          <ondown condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">8301</ondown>
+          <ondown condition="Integer.IsGreater(Container(5101).NumItems,0)">5101</ondown>
+          <ondown condition="Integer.IsGreater(Container(5102).NumItems,0)">5102</ondown>
+          <ondown condition="Integer.IsGreater(Container(5103).NumItems,0)">5103</ondown>
+          <ondown condition="Integer.IsGreater(Container(5104).NumItems,0)">5104</ondown>
+          <ondown condition="Integer.IsGreater(Container(5105).NumItems,0)">5105</ondown>
+          <ondown condition="Integer.IsGreater(Container(5106).NumItems,0)">5106</ondown>
+          <ondown condition="Integer.IsGreater(Container(5107).NumItems,0)">5107</ondown>
+          <ondown condition="Integer.IsGreater(Container(5108).NumItems,0)">5108</ondown>
+          <ondown>7200</ondown>
+          <onback>RunScript(special://skin/resources/home_hubs.py,back)</onback>
+        </control>
+        <control type="image">
+          <left>24.0</left>
+          <top>17</top>
+          <width>30</width>
+          <height>30</height>
+          <texture>orchard/icon-power.png</texture>
+          <visible>!Control.HasFocus(9107)</visible>
+          <animation effect="fade" start="0" end="100" time="100" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <control type="image">
+          <left>24.0</left>
+          <top>17</top>
+          <width>30</width>
+          <height>30</height>
+          <texture>orchard/icon-power-dark.png</texture>
+          <visible>Control.HasFocus(9107)</visible>
+          <animation effect="fade" start="0" end="100" time="100" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <animation effect="slide" start="0,0" end="0,-2" time="160" condition="[Control.HasFocus(9107)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9107)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9107)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9107)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
       </control>
     </control>
     <control type="group" id="7300">
@@ -1122,7 +1196,7 @@
           <visible>Integer.IsGreater(Container(5101).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,1)</onclick>
           <onleft>5101</onleft>
-          <onright>5101</onright>
+          <onright>Control.SetFocus(5101,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,1,Home)</onfocus>
           <onup>9000</onup>
@@ -1418,7 +1492,7 @@
           <visible>Integer.IsGreater(Container(5102).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,2)</onclick>
           <onleft>5102</onleft>
-          <onright>5102</onright>
+          <onright>Control.SetFocus(5102,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,2,Home)</onfocus>
           <onup condition="Integer.IsGreater(Container(5101).NumItems,0)">5101</onup>
@@ -1714,7 +1788,7 @@
           <visible>Integer.IsGreater(Container(5103).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,3)</onclick>
           <onleft>5103</onleft>
-          <onright>5103</onright>
+          <onright>Control.SetFocus(5103,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,3,Home)</onfocus>
           <onup condition="Integer.IsGreater(Container(5102).NumItems,0)">5102</onup>
@@ -2010,7 +2084,7 @@
           <visible>Integer.IsGreater(Container(5104).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,4)</onclick>
           <onleft>5104</onleft>
-          <onright>5104</onright>
+          <onright>Control.SetFocus(5104,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,4,Home)</onfocus>
           <onup condition="Integer.IsGreater(Container(5103).NumItems,0)">5103</onup>
@@ -2306,7 +2380,7 @@
           <visible>Integer.IsGreater(Container(5105).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,5)</onclick>
           <onleft>5105</onleft>
-          <onright>5105</onright>
+          <onright>Control.SetFocus(5105,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,5,Home)</onfocus>
           <onup condition="Integer.IsGreater(Container(5104).NumItems,0)">5104</onup>
@@ -2602,7 +2676,7 @@
           <visible>Integer.IsGreater(Container(5106).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,6)</onclick>
           <onleft>5106</onleft>
-          <onright>5106</onright>
+          <onright>Control.SetFocus(5106,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,6,Home)</onfocus>
           <onup condition="Integer.IsGreater(Container(5105).NumItems,0)">5105</onup>
@@ -2898,7 +2972,7 @@
           <visible>Integer.IsGreater(Container(5107).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,7)</onclick>
           <onleft>5107</onleft>
-          <onright>5107</onright>
+          <onright>Control.SetFocus(5107,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,7,Home)</onfocus>
           <onup condition="Integer.IsGreater(Container(5106).NumItems,0)">5106</onup>
@@ -3194,7 +3268,7 @@
           <visible>Integer.IsGreater(Container(5108).NumItems,0)</visible>
           <onclick>RunScript(special://skin/resources/widget_setup.py,more,8)</onclick>
           <onleft>5108</onleft>
-          <onright>5108</onright>
+          <onright>Control.SetFocus(5108,0,true)</onright>
           <onback>9000</onback>
           <onfocus>SetProperty(orchard.hero.row,8,Home)</onfocus>
           <onup condition="Integer.IsGreater(Container(5107).NumItems,0)">5107</onup>
