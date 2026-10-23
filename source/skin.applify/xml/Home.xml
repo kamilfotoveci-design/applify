@@ -119,8 +119,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,home,9101)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,home)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,home)</onclick>
           <onleft>9107</onleft>
           <onright>9102</onright>
           <ondown>RunScript(special://skin/resources/home_hubs.py,down,home)</ondown>
@@ -168,8 +167,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,movies,9102)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,movies)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,movies)</onclick>
           <onleft>9101</onleft>
           <onright>9103</onright>
           <ondown>RunScript(special://skin/resources/home_hubs.py,down,movies)</ondown>
@@ -217,8 +215,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,tv,9103)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,tv)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,tv)</onclick>
           <onleft>9102</onleft>
           <onright>9104</onright>
           <ondown>RunScript(special://skin/resources/home_hubs.py,down,tv)</ondown>
@@ -266,8 +263,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,addons,9104)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,addons)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,addons)</onclick>
           <onleft>9103</onleft>
           <onright condition="Skin.HasSetting(pyrus.hub.custom1.enabled)">9111</onright>
           <onright condition="Skin.HasSetting(pyrus.hub.custom2.enabled)">9112</onright>
@@ -319,8 +315,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,custom1,9111)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,custom1)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,custom1)</onclick>
           <onleft>9104</onleft>
           <onright condition="Skin.HasSetting(pyrus.hub.custom2.enabled)">9112</onright>
           <onright condition="Skin.HasSetting(pyrus.hub.custom3.enabled)">9113</onright>
@@ -372,8 +367,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,custom2,9112)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,custom2)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,custom2)</onclick>
           <onleft condition="Skin.HasSetting(pyrus.hub.custom1.enabled)">9111</onleft>
           <onleft>9104</onleft>
           <onright condition="Skin.HasSetting(pyrus.hub.custom3.enabled)">9113</onright>
@@ -425,8 +419,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,custom3,9113)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,custom3)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,custom3)</onclick>
           <onleft condition="Skin.HasSetting(pyrus.hub.custom2.enabled)">9112</onleft>
           <onleft condition="Skin.HasSetting(pyrus.hub.custom1.enabled)">9111</onleft>
           <onleft>9104</onleft>
@@ -478,8 +471,7 @@
           <textcolor>FFE7E7EB</textcolor>
           <focusedcolor>FF141417</focusedcolor>
           <pulseonselect>false</pulseonselect>
-          <onfocus>RunScript(special://skin/resources/home_hubs.py,preview,livetv,9114)</onfocus>
-          <onclick>RunScript(special://skin/resources/home_hubs.py,open,livetv)</onclick>
+          <onclick>RunScript(special://skin/resources/home_hubs.py,select,livetv)</onclick>
           <onleft condition="Skin.HasSetting(pyrus.hub.custom3.enabled)">9113</onleft>
           <onleft condition="Skin.HasSetting(pyrus.hub.custom2.enabled)">9112</onleft>
           <onleft condition="Skin.HasSetting(pyrus.hub.custom1.enabled)">9111</onleft>

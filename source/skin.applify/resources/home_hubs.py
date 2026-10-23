@@ -148,9 +148,23 @@ def target():
     if len(label)>60:raise ValueError(text('Use a name of up to 60 characters.'))
     return path,label
 
+def select_hub(page):
+    """Change the active top-level tab only when OK confirms it.
+
+    Left/Right merely move focus. Confirming an already active tab is a
+    deliberate no-op: never open a video library or configured destination.
+    """
+    if page not in NAV or not hub_visible(page):return
+    active=HOME.getProperty('pyrus.hub') or widgets.current_page()
+    if active != page:
+        preview(page,NAV[page],require_focus=False)
+
 def move_down(page):
+    # Moving down without OK enters the CURRENT page, not the unconfirmed tab.
+    # Never switch hubs from directional focus movement.
     if page not in NAV:return
-    preview(page,NAV[page],require_focus=False)
+    active=HOME.getProperty('pyrus.hub') or widgets.current_page()
+    page=active if active in NAV and hub_visible(active) else 'home'
     for i in range(1,7):
         if widgets.setting('pyrus.hub.'+page+'.sub'+str(i)+'.path'):
             xbmc.executebuiltin('SetFocus(%d)'%(8400+i));return
@@ -261,7 +275,7 @@ def main():
     elif args[0]=='subopen' and len(args)==2:open_submenu(int(args[1]))
     elif args[0]=='pvr':pvr_menu()
     elif args[0]=='preview' and len(args)==3:preview(args[1],int(args[2]))
-    elif args[0]=='open' and len(args)==2:open_hub(args[1])
+    elif args[0]=='select' and len(args)==2:select_hub(args[1])
     elif args[0]=='submenu' and len(args)==2 and args[1] in NAV:submenu(args[1])
 
 if __name__=='__main__':
