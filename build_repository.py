@@ -17,7 +17,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parent
 SKIN_ID = 'skin.applify'
 REPOSITORY_ID = 'repository.applify'
-REPOSITORY_VERSION = '1.0.1'
+REPOSITORY_VERSION = '1.0.2'
 
 
 def write_xml(path, element):
@@ -29,6 +29,8 @@ def write_xml(path, element):
 def md5_file(path):
     path.with_suffix(path.suffix + '.md5').write_text(
         hashlib.md5(path.read_bytes()).hexdigest() + '\n')
+    path.with_suffix(path.suffix + '.sha256').write_text(
+        hashlib.sha256(path.read_bytes()).hexdigest() + '\n')
 
 
 def newest_skin():
@@ -71,6 +73,15 @@ def validate_skin(path):
                 raise ValueError('Missing font: ' + name)
             if archive.read(SKIN_ID + '/fonts/' + name)[:4] not in (b'OTTO', b'\x00\x01\x00\x00'):
                 raise ValueError('Invalid font: ' + name)
+        if SKIN_ID + '/resources/package-sha256.json' in names:
+            manifest = json.loads(archive.read(SKIN_ID + '/resources/package-sha256.json'))
+            declared = {SKIN_ID + '/' + name for name in manifest['files']}
+            actual = {name for name in names if not name.endswith('/') and name != SKIN_ID + '/resources/package-sha256.json'}
+            if declared != actual:
+                raise ValueError('Package integrity manifest does not cover every file')
+            for name, digest in manifest['files'].items():
+                if hashlib.sha256(archive.read(SKIN_ID + '/' + name)).hexdigest() != digest:
+                    raise ValueError('Package integrity mismatch: ' + name)
         icon = archive.read(SKIN_ID + '/resources/icon.png')
     return addon, icon
 
@@ -115,8 +126,9 @@ def build(base_url, output):
                                                 'name': 'Pyrus Repository'})
     directory = ET.SubElement(extension, 'dir')
     ET.SubElement(directory, 'info', {'compressed': 'false'}).text = base_url + '/addons.xml'
-    ET.SubElement(directory, 'checksum').text = base_url + '/addons.xml.md5'
+    ET.SubElement(directory, 'checksum', {'verify': 'sha256'}).text = base_url + '/addons.xml.sha256'
     ET.SubElement(directory, 'datadir', {'zip': 'true'}).text = base_url + '/'
+    ET.SubElement(directory, 'hashes').text = 'sha256'
     metadata = ET.SubElement(repo, 'extension', {'point': 'xbmc.addon.metadata'})
     ET.SubElement(metadata, 'summary', {'lang': 'en_GB'}).text = 'Pyrus Skin by kamilwhoo: installation and automatic updates.'
     ET.SubElement(metadata, 'description', {'lang': 'en_GB'}).text = 'The distribution repository maintained by kamilwhoo for Pyrus Skin, an Apple TV-inspired Kodi interface with configurable widgets, clean dialogs and detailed Player Info. Tested by the maintainer on Kodi 22. Previously named Applify; existing installations receive the rename through the same source.'
@@ -157,6 +169,19 @@ def build(base_url, output):
     # The bootstrap ZIP is at the source root, so Kodi users see it immediately.
     shutil.copyfile(repo_dir / installer_name, output / installer_name)
     md5_file(output / installer_name)
+    # Keep the published 1.0.1 bootstrap URL valid for existing install guides.
+    legacy = copy.deepcopy(repo)
+    legacy.set('version', '1.0.1')
+    legacy_dir = legacy.find('extension[@point="xbmc.addon.repository"]/dir')
+    legacy_checksum = legacy_dir.find('checksum')
+    legacy_checksum.attrib.clear()
+    legacy_checksum.text = base_url + '/addons.xml.md5'
+    legacy_dir.remove(legacy_dir.find('hashes'))
+    legacy_name = REPOSITORY_ID + '-1.0.1.zip'
+    with zipfile.ZipFile(output / legacy_name, 'w', zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr(REPOSITORY_ID + '/addon.xml', ET.tostring(legacy, encoding='utf-8', xml_declaration=True))
+        archive.writestr(REPOSITORY_ID + '/icon.png', icon)
+    md5_file(output / legacy_name)
     index = ET.Element('addons')
     index.extend([copy.deepcopy(skin), copy.deepcopy(repo)])
     write_xml(output / 'addons.xml', index)
@@ -202,7 +227,7 @@ def build(base_url, output):
         'Player Info fields depend on the device and the values Kodi provides.</p></footer>'
         '</main></body></html>\n', encoding='utf-8')
     shutil.copyfile(output / 'index.html', output / 'gallery.html')
-    (output / 'index.html').write_text('<!doctype html>\n<html><head><meta charset="utf-8"><title>Pyrus Kodi Source</title></head><body>\n<h1>Pyrus Skin by kamilwhoo</h1>\n<a href="repository.applify-1.0.1.zip">repository.applify-1.0.1.zip</a><br>\n</body></html>\n', encoding='utf-8')
+    (output / 'index.html').write_text('<!doctype html>\n<html><head><meta charset="utf-8"><title>Pyrus Kodi Source</title></head><body>\n<h1>Pyrus Skin by kamilwhoo</h1>\n<a href="{0}">{0}</a><br>\n</body></html>\n'.format(html.escape(installer_name, quote=True)), encoding='utf-8')
     config = {'name': 'Pyrus Skin', 'skin_id': SKIN_ID, 'skin_version': version,
               'repository_id': REPOSITORY_ID, 'repository_version': REPOSITORY_VERSION,
               'source_url': base_url + '/', 'repository_zip': base_url + '/' + installer_name,

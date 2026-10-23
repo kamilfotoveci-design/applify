@@ -1,71 +1,84 @@
-<p align="center"><img src="icon.png" alt="Pyrus Skin pear icon" width="120"></p>
-
 # Pyrus Skin
 
-**An Apple TV-inspired Kodi skin by kamilwhoo.** Cinematic artwork, configurable widgets and detailed Player Info, with a clean interface designed for the TV.
+**An Apple TV-inspired Kodi skin by kamilwhoo.**
 
-**Current version: 1.0.1 · Tested by the maintainer on Kodi 22.**
+Cinematic artwork, configurable widgets, clean playback controls and detailed Player Info.
 
-Previously named **Applify**. Existing installations receive Pyrus Skin through the same repository and keep their skin settings.
+## What's new in 1.1.1
 
-## Features
+- Move left/right while focused on the top bar to switch hubs **without pressing OK**.
+- Press OK to open the full library or a destination you configure for that hub.
+- Three optional custom hubs with eight widget rows each; up to six inline submenu links per hub.
+- Native Live TV/Radio destinations: guide, channels, recordings and timers.
+- Localizable interface labels, episode titles and ratings supplied by your content add-on.
+- Page geometry changes without a full skin reload; hidden tabs cannot capture restored focus.
+- Full menu/widget backups, Czech/Slovak label fixes and on-demand repository diagnostics.
+- Capability-gated Reboot to Android on CoreELEC.
+- Existing Player Process Info (PPI): **Media**, **Decoder / Output**, **System**.
 
-- **Your own home screen:** separate Watch Now, Movies and TV Shows widget collections, configurable sources, artwork and row order.
-- **Cinematic presentation:** artwork-led browsing, search and readable typography.
-- **Clean controls:** circular playback focus, larger switches, consistent dark settings, dialogs and information actions.
-- **Detailed Player Info:** Media, Decoder / Output and System tabs show the data available from Kodi, including video/audio codecs, dimensions, frame rate, stream/live bitrates, audio channels and sample rate, decoder information and available HDR / Dolby Vision details.
-- **Repository updates:** install once, then receive future versions through Kodi's add-on manager.
-- **Personalization:** appearance and playback options, reduced animations and widget backup/import.
+Configure the menu in **Kodi Settings → Skin Settings → Top menu and submenus**.
+The Settings gear continues to open Kodi Settings directly. Existing widget settings are retained.
 
-Player Info availability depends on the Kodi build, device, playback path and media. A source Dolby Vision profile describes the file; it does not by itself confirm the active output mode.
+## Install
 
-## Install in Kodi
+1. Enable Unknown sources in Kodi Settings → System → Add-ons.
+2. File manager → Add source: **https://kamilfotoveci-design.github.io/applify/**
+3. Name the source Pyrus.
+4. Add-ons → Install from ZIP file → Pyrus → **repository.applify-1.0.2.zip**.
+5. Install from repository → **Pyrus Repository → Look and feel → Skin → Pyrus Skin**.
 
-1. Open **Settings → File manager → Add source**.
-2. Enter this source URL:
+The repository provides updates. The technical IDs `skin.applify` and `repository.applify`
+remain unchanged to preserve existing installations.
 
-   ```text
-   https://kamilfotoveci-design.github.io/applify/
-   ```
+If the repository cannot connect, restart Kodi once and use **Check for updates**.
+One Fire Cube 3 user reported this resolved installation. If it still fails,
+report your device, exact Kodi build and a Kodi log captured after the failure.
+A permanent root cause for all reported connection failures has not been established.
+You can install [the skin ZIP directly](https://kamilfotoveci-design.github.io/applify/skin.applify/skin.applify-1.1.1.zip).
 
-3. Name the source **Pyrus**.
-4. Open **Add-ons → Install from ZIP file → Pyrus**. Enable **Unknown sources** if Kodi prompts you.
-5. Select **repository.applify-1.0.1.zip**.
-6. Open **Install from repository → Pyrus Repository → Look and feel → Skin → Pyrus Skin**.
-7. Install and confirm the skin switch.
+## Compatibility and validation
 
-The source URL and ZIP identifiers retain the old Applify name so existing installations can update. The displayed skin name is **Pyrus Skin**, by **kamilwhoo**.
+The maintainer has tested the skin on Kodi 22. The 1.1.1 changes passed offline
+regression checks; **device validation of this update is still required**.
+Kodi 21/22 builds and hardware can expose different Player Info fields. Missing
+HDR, Dolby Vision or decoder details are not proof that a format is unsupported.
+PVR requires your own enabled PVR client and backend. The skin does not supply channels.
+Ratings depend on the values returned by the selected item's add-on; no API key is bundled.
 
-## Already using Applify?
+Pyrus interface catalogs include Czech and Slovak translations. German, French,
+Spanish, Italian and Polish include partial translations. Existing language catalogs are retained;
+new untranslated text falls back to English. Your custom widget titles are preserved.
 
-Keep your existing source and repository. Check for add-on updates, install the available repository / skin update and restart Kodi if the old interface remains cached. Keep automatic updates enabled if you want future versions automatically.
-
-## Compatibility and feedback
-
-The maintainer has tested the skin on **Kodi 22**. This is a community project; other versions and hardware combinations are not covered by that test.
-
-For feedback, [open an issue](https://github.com/kamilfotoveci-design/applify/issues) with your Kodi version/build, device, a screenshot and reproduction steps. For Player Info issues, include the affected format and whether you use passthrough.
+See [1.1.1 release notes and device checklist](RELEASE-1.1.1.txt).
 
 ## Screenshots
 
-Real captures supplied by the maintainer. These show the existing home interface; the new 1.0.1 dialog refresh is described in the release notes.
+![Home](screenshots/IMG_4127.png)
+![Widgets](screenshots/IMG_4129.png)
+![TV Shows](screenshots/IMG_4130.png)
+![Collections](screenshots/IMG_4132.png)
+![Preview](screenshots/IMG_4135.png)
 
-![Pyrus Skin screenshot 1](screenshots/IMG_4127.png)
+## Credits and integrity
 
-![Pyrus Skin screenshot 2](screenshots/IMG_4129.png)
+Pyrus Skin is maintained by **kamilwhoo** and builds on work by the **Estuary contributors**.
+Original notices, component licenses and font terms remain inside the package.
+This repository does not override those terms. SHA-256 checks detect unexpected
+changes against a trusted reference; they are not a digital signature or copy protection.
 
-![Pyrus Skin screenshot 3](screenshots/IMG_4130.png)
+Independent community project. Not affiliated with Apple or Team Kodi.
 
-![Pyrus Skin screenshot 4](screenshots/IMG_4132.png)
+## Diagnostics and device reports
 
-![Pyrus Skin screenshot 5](screenshots/IMG_4135.png)
+Skin Settings → Backup / Refresh / Reset → Repository and playback diagnostics.
+The report is saved in `userdata/addon_data/skin.applify/diagnostics.json`.
+It checks the index and its hashes over normal verified HTTPS and records selected
+Kodi output labels. It does not collect account credentials or media URLs.
+Use Check for repository updates to request Kodi's native refresh.
 
-## Release notes
-
-See [1.0.1 release notes](RELEASE-v1.0.1.md).
-
-## Credits and licenses
-
-Pyrus Skin is maintained by **kamilwhoo** and builds on work by the Estuary contributors. Original notices and licenses are retained inside the skin package. Font files have their own licenses; see `fonts/` in the package, including the SF Pro license. This repository does not change those terms.
-
-Independent project. Not affiliated with Apple or Team Kodi.
+TV-led Dolby Vision/zero-L5 black video and complete p3i T4c compatibility remain
+unverified device reports. Compare the same file/settings against Estuary and include
+fresh logs. This update does not force HDR/DV options. PVR requires a configured backend.
+Full arbitrary menu ordering and unlimited tabs are not provided: the current editor
+supports three extra hubs and six child links per hub. No separate unpacked source
+folder is published; the installable Kodi ZIP necessarily contains readable code.

@@ -1,0 +1,71 @@
+Pyrus Skin 1.1.1 by kamilwhoo — feedback and navigation fixes
+
+CHANGES (includes the unreleased 1.1.0 feedback work)
+- Left/right while focused on the top bar previews that hub without pressing OK.
+- Switching landscape/poster/ranked pages resizes the existing eight row containers
+  using Kodi's control API, without reloading the whole skin or duplicating providers.
+- Focus events from tabs crossed quickly are ignored after a short debounce.
+- Hidden custom hubs cannot steal startup/restored focus. Hiding the active custom
+  hub returns its saved page to Watch Now. Setting a custom destination enables it.
+- Settings gear opens Kodi Settings directly. Configure Widgets opens the editor.
+- OK on Movies/TV Shows opens the full library; a configured destination overrides it.
+- Three optional custom hubs, eight independent widget rows each, six submenu links
+  per hub. Use an installed add-on, a video collection or a native PVR destination.
+- Continue Watching can be moved first, preserving the order of the other rows.
+- Episode captions include episode titles. Provider TMDb/IMDb/RT ratings remain;
+  native Kodi item rating is now a fallback when named ratings are absent.
+- Backup format v2 includes widget rows AND top-menu names, destinations, submenu
+  links, enabled custom hubs and supported appearance/playback preferences.
+  Validate the complete backup before applying; legacy v1 widget imports still work.
+- Czech and Slovak Pyrus catalog entries are filled, including PPI fallback text,
+  composite settings labels and page counters. Existing other locales are retained;
+  their untranslated entries fall back to English. User/provider names stay intact.
+- Power menu: Reboot to Android, visible only with CoreELEC settings, its native
+  rebootfromnand helper and a recognized boot-environment/device path.
+- Skin Settings > Backup / Refresh / Reset adds repository update checking and
+  on-demand repository/playback diagnostics. Report: userdata/addon_data/skin.applify/
+  diagnostics.json. Checks verified HTTPS, index syntax and MD5/SHA256 equality.
+  No credentials, media URLs or file names are collected. No background polling.
+- PPI remains available through Player Info: Media / Decoder-Output / System.
+- Existing settings switches are bounded on the right; source-path list and action
+  buttons occupy separate regions. Existing icon, screenshots and authorship retained.
+- SHA256 integrity manifest and checksums, not copy protection or a digital signature.
+
+VERIFICATION
+30 offline regression tests passed: focus navigation, stale events, mixed geometry,
+restoring visible/hidden tabs, submenu gaps, native destinations, full v2 backup
+round-trip, legacy v1 imports, validation before mutation, rejected injected keys,
+diagnostic failures/hash mismatches, PPI/settings actions, XML/Python/language IDs.
+Build validation covers runtime files, font signatures, artwork paths, index hashes,
+all ZIP CRCs and the nested ZIPs after closing the outer archive.
+No Kodi GUI/device playback test was available here. The maintainer's prior Kodi 22
+experience does not constitute runtime validation of this update.
+
+REMAINING DEVICE-DEPENDENT REPORTS (not marked fixed)
+- Repository connection: live 1.0.3 index and MD5 matched at audit time. Multiple users
+  reported restart resolved it; that does not establish a universal root cause.
+  The new diagnostics distinguish HTTP/index/hash failures without disabling TLS.
+- TV-led Dolby Vision + zero L5 black video/audio-only: no DV pipeline settings were
+  changed. Reproduce the same file/build/settings in Estuary, then in Pyrus. Save a
+  fresh Kodi debug log and Pyrus diagnostics for each. Record CoreELEC/p3i build,
+  device, TV/AVR, TV-led/player-led, L5 setting, source DV profile and output mode.
+  If Estuary also fails, investigate the build/driver pipeline. If only Pyrus fails,
+  compare with OSD closed/open and reduced animations enabled. Do not assume a fix.
+- p3i T4c: native PPI fields work only when Kodi supplies them. Full extended p3i
+  parity, DV/FEL/L5 correctness and hardware compatibility require device testing.
+- Native PVR windows are included and reachable. EPG, playback, timers and recording
+  actions need a configured PVR client/backend and actual Kodi testing.
+
+DEVICE CHECKLIST
+1. Export settings first, install this skin ZIP directly on a test Kodi device.
+2. Move left/right on the top bar through portrait/landscape pages; stay on that tab.
+3. Rapidly cross tabs; then Down, open a card, Back; verify the correct hub and focus.
+4. Set a custom hub, submenu slot 3 and Kids rows; hide/re-enable it; restart Kodi.
+5. Export v2, change menu/widget preferences, import; compare restored settings.
+6. Check long labels in Czech/Slovak and your language at the GUI's native resolution.
+7. Open Kodi Settings, add-on settings, file-source dialog, keyboard and playback OSD.
+   Check switches are right-aligned and text/path areas do not touch action buttons.
+8. Check Player Info while playing; verify absent fields say Not reported.
+9. Check PVR and Android reboot entry on supported CoreELEC hardware.
+10. Use repository diagnostics after deployment; both hashes should be ok. A missing
+    SHA256 endpoint is expected on the currently deployed OLD repository build.
