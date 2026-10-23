@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol always="true">22</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <controls>
+    <control type="group">
+      <top>150</top>
+      <centerleft>50%</centerleft>
+      <width>1700</width>
+      <include content="DialogBackgroundCommons">
+        <param name="width" value="1700" />
+        <param name="height" value="790" />
+        <param name="header_label" value="" />
+        <param name="header_id" value="2" />
+      </include>
+      <control type="grouplist" id="500">
+        <itemgap>8</itemgap>
+        <orientation>vertical</orientation>
+        <left>10</left>
+        <top>95</top>
+        <onright>10</onright>
+        <onleft>9001</onleft>
+        <control type="button" id="22">
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <description>Set Playlist type</description>
+          <width>700</width>
+          <include>SettingsItemCommon</include>
+          <label>$LOCALIZE[467]</label>
+        </control>
+        <control type="button" id="12">
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <description>Name Button</description>
+          <label>$LOCALIZE[21433]</label>
+          <width>700</width>
+          <include>SettingsItemCommon</include>
+        </control>
+        <control type="label" id="1101">
+          <height>32</height>
+          <description>Name Label</description>
+          <width>700</width>
+          <label>$LOCALIZE[31042]</label>
+          <include>SettingsLabelCommon</include>
+        </control>
+        <control type="button" id="16">
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <width>700</width>
+          <label>$LOCALIZE[21424]</label>
+          <include>SettingsItemCommon</include>
+        </control>
+        <control type="button" id="17">
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <width>700</width>
+          <label>$LOCALIZE[21427]</label>
+          <include>SettingsItemCommon</include>
+        </control>
+        <control type="button" id="18">
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <label>$LOCALIZE[21429]</label>
+          <width>700</width>
+          <include>SettingsItemCommon</include>
+        </control>
+        <control type="button" id="19">
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <width>700</width>
+          <include>SettingsItemCommon</include>
+          <label>$LOCALIZE[31032]</label>
+        </control>
+        <control type="button" id="23">
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <width>700</width>
+          <label>$LOCALIZE[21458]</label>
+          <include>SettingsItemCommon</include>
+        </control>
+        <control type="radiobutton" id="24">
+          <radioposy>18</radioposy>
+          <radioheight>36</radioheight>
+          <radioposx>612</radioposx>
+          <radiowidth>64</radiowidth>
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <height>72.0</height>
+          <width>700</width>
+          <include>SettingsItemCommon</include>
+          <label>$LOCALIZE[467]: $LOCALIZE[21459]</label>
+          <textureradioonfocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on-focus.png</textureradioonfocus>
+          <textureradioonnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on.png</textureradioonnofocus>
+          <textureradioofffocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off-focus.png</textureradioofffocus>
+          <textureradiooffnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off.png</textureradiooffnofocus>
+          <textureradioondisabled colordiffuse="66FFFFFF">orchard/controls143/switch-on.png</textureradioondisabled>
+          <textureradiooffdisabled colordiffuse="66FFFFFF">orchard/controls143/switch-off.png</textureradiooffdisabled>
+          <textwidth>564</textwidth>
+        </control>
+      </control>
+      <control type="image">
+        <left>720</left>
+        <top>95</top>
+        <width>640</width>
+        <height>530</height>
+        <texture border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texture>
+      </control>
+      <control type="list" id="10">
+        <description>Rules List Control</description>
+        <left>740</left>
+        <top>115</top>
+        <width>600</width>
+        <height>480</height>
+        <onleft>500</onleft>
+        <onright>9001</onright>
+        <orientation>vertical</orientation>
+        <include content="DefaultSimpleListLayout">
+          <param name="width" value="600" />
+          <param name="list_id" value="10" />
+        </include>
+      </control>
+      <control type="textbox">
+        <left>740</left>
+        <top>620</top>
+        <width>610</width>
+        <height>348</height>
+        <aligny>top</aligny>
+        <label>$LOCALIZE[31043]</label>
+        <textcolor>grey</textcolor>
+        <font>font12</font>
+      </control>
+      <control type="grouplist" id="9001">
+        <itemgap>8</itemgap>
+        <orientation>vertical</orientation>
+        <left>1380</left>
+        <width>1300</width>
+        <top>100</top>
+        <onleft>10</onleft>
+        <onright>500</onright>
+        <include content="DefaultDialogButton">
+          <param name="id" value="20" />
+          <param name="label" value="$LOCALIZE[186]" />
+          <param name="height" value="72.0" />
+        </include>
+        <include content="DefaultDialogButton">
+          <param name="id" value="21" />
+          <param name="label" value="$LOCALIZE[222]" />
+          <param name="height" value="72.0" />
+        </include>
+      </control>
+    </control>
+  </controls>
+</window>

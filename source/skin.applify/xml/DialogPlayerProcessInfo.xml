@@ -1,0 +1,797 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol always="true">5552</defaultcontrol>
+  <onload>SetProperty(orchard.playerinfo.tab,media,Home)</onload>
+  <onunload>ClearProperty(orchard.playerinfo.tab,Home)</onunload>
+  <controls>
+    <control type="image">
+      <left>60</left>
+      <top>390</top>
+      <width>1800</width>
+      <height>650</height>
+      <texture border="24" colordiffuse="FFFFFFFF">applify/clean101/panel.png</texture>
+    </control>
+    <control type="button" id="5552">
+      <left>84</left>
+      <top>413</top>
+      <width>330</width>
+      <height>62</height>
+      <label>$LOCALIZE[31610]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>center</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <onclick>SetProperty(orchard.playerinfo.tab,media,Home)</onclick>
+      <onfocus>SetProperty(orchard.playerinfo.tab,media,Home)</onfocus>
+      <onleft>5555</onleft>
+      <onright>5553</onright>
+      <onup>Dialog.Close(playerprocessinfo)</onup>
+      <ondown>Dialog.Close(playerprocessinfo)</ondown>
+      <onback>Dialog.Close(playerprocessinfo)</onback>
+    </control>
+    <control type="button" id="5553">
+      <left>430</left>
+      <top>413</top>
+      <width>330</width>
+      <height>62</height>
+      <label>$LOCALIZE[31672]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>center</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <onclick>SetProperty(orchard.playerinfo.tab,output,Home)</onclick>
+      <onfocus>SetProperty(orchard.playerinfo.tab,output,Home)</onfocus>
+      <onleft>5552</onleft>
+      <onright>5554</onright>
+      <onup>Dialog.Close(playerprocessinfo)</onup>
+      <ondown>Dialog.Close(playerprocessinfo)</ondown>
+      <onback>Dialog.Close(playerprocessinfo)</onback>
+    </control>
+    <control type="button" id="5554">
+      <left>776</left>
+      <top>413</top>
+      <width>330</width>
+      <height>62</height>
+      <label>$LOCALIZE[31611]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>center</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <onclick>SetProperty(orchard.playerinfo.tab,system,Home)</onclick>
+      <onfocus>SetProperty(orchard.playerinfo.tab,system,Home)</onfocus>
+      <onleft>5553</onleft>
+      <onright>5556</onright>
+      <onup>Dialog.Close(playerprocessinfo)</onup>
+      <ondown>Dialog.Close(playerprocessinfo)</ondown>
+      <onback>Dialog.Close(playerprocessinfo)</onback>
+    </control>
+    <control type="button" id="5556">
+      <left>1122</left>
+      <top>413</top>
+      <width>330</width>
+      <height>62</height>
+      <label>$LOCALIZE[31671]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>center</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <onclick>Action(PlayerDebug)</onclick>
+      <onleft>5554</onleft>
+      <onright>5555</onright>
+      <onup>Dialog.Close(playerprocessinfo)</onup>
+      <ondown>Dialog.Close(playerprocessinfo)</ondown>
+      <onback>Dialog.Close(playerprocessinfo)</onback>
+    </control>
+    <control type="button" id="5555">
+      <left>1468</left>
+      <top>413</top>
+      <width>330</width>
+      <height>62</height>
+      <label>$LOCALIZE[31655]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>center</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <onclick>Dialog.Close(playerprocessinfo)</onclick>
+      <onleft>5556</onleft>
+      <onright>5552</onright>
+      <onup>Dialog.Close(playerprocessinfo)</onup>
+      <ondown>Dialog.Close(playerprocessinfo)</ondown>
+      <onback>Dialog.Close(playerprocessinfo)</onback>
+    </control>
+    <control type="group">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <visible>String.IsEqual(Window(Home).Property(orchard.playerinfo.tab),media)</visible>
+      <control type="label">
+        <left>90</left>
+        <top>497</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31600]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>525</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIVideoCodec]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>565</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31829]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>593</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIHDR]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>633</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31827]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>661</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIDVProfile]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>701</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31865]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>729</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIDimensions]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>769</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31866]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>797</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIFPS]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>837</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31869]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>865</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIVideoBitrate]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>905</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31867]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>933</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIVideoLive]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>497</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31633]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>525</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioCodec]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>565</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31605]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>593</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioChannels]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>633</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31638]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>661</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioBitrate]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>701</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31635]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>729</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioLive]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>769</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31808]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>797</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioRate]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>837</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31634]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>865</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioLanguage]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>905</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31636]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>933</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPITransport]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+    </control>
+    <control type="group">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <visible>String.IsEqual(Window(Home).Property(orchard.playerinfo.tab),output)</visible>
+      <control type="label">
+        <left>90</left>
+        <top>497</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31617]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>525</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIDisplayMode]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>565</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31616]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>593</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIEOTF]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>633</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31751]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>661</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIOutputPixel]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>701</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31677]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>729</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIScreen]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>769</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31139]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>797</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIVideoDecoder]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>837</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31673]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>865</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIHardware]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>905</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31707]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>933</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIPixelFormat]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>497</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31599]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>525</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioDecoder]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>565</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31637]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>593</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPISinkChannels]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>633</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31808]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>661</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioRate]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>701</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31632]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>729</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioBits]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>769</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31674]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>797</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIDeinterlace]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>837</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31676]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>865</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIDisplayHDR]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>905</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31636]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>933</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPITransport]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+    </control>
+    <control type="group">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <visible>String.IsEqual(Window(Home).Property(orchard.playerinfo.tab),system)</visible>
+      <control type="label">
+        <left>90</left>
+        <top>497</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31765]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>525</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPICache]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>565</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31706]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>593</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPISystemFPS]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>633</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31609]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>661</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPICPU]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>701</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31837]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>90</left>
+        <top>729</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIMemory]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>497</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31867]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>525</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIVideoLive]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>565</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31635]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>593</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioLive]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>633</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31139]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>661</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIVideoDecoder]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>701</top>
+        <width>835</width>
+        <height>28</height>
+        <label>$LOCALIZE[31599]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFAAAAAA</textcolor>
+      </control>
+      <control type="label">
+        <left>970</left>
+        <top>729</top>
+        <width>835</width>
+        <height>37</height>
+        <label>$VAR[OrchardPPIAudioDecoder]</label>
+        <font>OrchardSmall</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+    </control>
+    <control type="label">
+      <left>90</left>
+      <top>994</top>
+      <width>1700</width>
+      <height>32</height>
+      <label>$LOCALIZE[31828]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFAAAAAA</textcolor>
+    </control>
+  </controls>
+  <include>OrchardMotionDialog</include>
+</window>

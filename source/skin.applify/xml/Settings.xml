@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol always="true">101</defaultcontrol>
+  <backgroundcolor>FF111215</backgroundcolor>
+  <controls>
+    <control type="image">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>applify/clean101/background.png</texture>
+    </control>
+    <control type="image">
+      <left>72</left>
+      <top>180</top>
+      <width>1776</width>
+      <height>850</height>
+      <texture border="24" colordiffuse="B0FFFFFF">applify/clean101/panel.png</texture>
+    </control>
+    <control type="label">
+      <left>100</left>
+      <top>60</top>
+      <width>1700</width>
+      <height>100</height>
+      <label>$LOCALIZE[31817]</label>
+      <font>ApplifyTitle</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control type="textbox" id="7900">
+      <left>860</left>
+      <top>270</top>
+      <width>900</width>
+      <height>160</height>
+      <label>$VAR[OrchardSettingsSection]</label>
+      <font>ApplifyTitle</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control type="grouplist" id="500">
+      <left>104</left>
+      <top>210</top>
+      <width>620</width>
+      <height>800</height>
+      <orientation>vertical</orientation>
+      <itemgap>4</itemgap>
+      <usecontrolcoords>false</usecontrolcoords>
+      <scrolltime>160</scrolltime>
+      <onup>112</onup>
+      <ondown>101</ondown>
+      <onback>ActivateWindow(Home)</onback>
+      <control type="button" id="101">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31824]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(SkinSettings)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>101</onleft>
+        <onright>101</onright>
+        <onup>112</onup>
+        <ondown>102</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="102">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31138]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(PlayerSettings)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>102</onleft>
+        <onright>102</onright>
+        <onup>101</onup>
+        <ondown>103</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="103">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31705]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(InterfaceSettings)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>103</onleft>
+        <onright>103</onright>
+        <onup>102</onup>
+        <ondown>104</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="104">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31729]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(MediaSettings)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>104</onleft>
+        <onright>104</onright>
+        <onup>103</onup>
+        <ondown>105</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="105">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31611]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(SystemSettings)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>105</onleft>
+        <onright>105</onright>
+        <onup>104</onup>
+        <ondown>106</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="106">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31815]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(ServiceSettings)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>106</onleft>
+        <onright>106</onright>
+        <onup>105</onup>
+        <ondown>107</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="107">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31622]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(AddonBrowser)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>107</onleft>
+        <onright>107</onright>
+        <onup>106</onup>
+        <ondown>108</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="108">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31684]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(FileManager)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>108</onleft>
+        <onright>108</onright>
+        <onup>107</onup>
+        <ondown>109</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="109">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31836]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(SystemInfo)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>109</onleft>
+        <onright>109</onright>
+        <onup>108</onup>
+        <ondown>110</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="110">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31769]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(Profiles)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>110</onleft>
+        <onright>110</onright>
+        <onup>109</onup>
+        <ondown>111</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="111">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31767]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(ShutdownMenu)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>111</onleft>
+        <onright>111</onright>
+        <onup>110</onup>
+        <ondown condition="System.AddonIsEnabled(service.coreelec.settings)">130</ondown>
+        <ondown>112</ondown>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="130">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31664]</label>
+        <onclick>RunAddon(service.coreelec.settings)</onclick>
+        <textoffsetx>52</textoffsetx>
+        <visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
+        <onleft>130</onleft>
+        <onright>130</onright>
+        <onup>111</onup>
+        <ondown>112</ondown>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+      <control type="button" id="112">
+        <left>0</left>
+        <top>0</top>
+        <width>620</width>
+        <height>56</height>
+        <label>$LOCALIZE[31871]</label>
+        <font>ApplifyBody</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+        <texturenofocus border="24" />
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF111111</focusedcolor>
+        <onclick>ActivateWindow(Home)</onclick>
+        <textoffsetx>24</textoffsetx>
+        <onleft>112</onleft>
+        <onright>112</onright>
+        <ondown>101</ondown>
+        <onup condition="System.AddonIsEnabled(service.coreelec.settings)">130</onup>
+        <onup>111</onup>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+    </control>
+  </controls>
+  <include>OrchardMotionPage</include>
+</window>

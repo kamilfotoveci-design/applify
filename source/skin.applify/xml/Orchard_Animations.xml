@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+  <include name="OrchardMotionPage">
+    <animation effect="fade" start="0" end="100" time="240" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="110" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">WindowClose</animation>
+  </include>
+  <include name="OrchardMotionContent">
+    <animation effect="slide" start="0,16" end="0,0" time="240" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">WindowOpen</animation>
+  </include>
+  <include name="OrchardMotionView">
+    <animation effect="fade" start="0" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">Visible</animation>
+    <animation effect="slide" start="0,12" end="0,0" time="200" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Visible</animation>
+  </include>
+  <include name="OrchardMotionDialog">
+    <animation effect="fade" start="0" end="100" time="200" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">WindowOpen</animation>
+    <animation effect="slide" start="0,20" end="0,0" time="220" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="110" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">WindowClose</animation>
+    <animation effect="slide" start="0,0" end="0,12" time="110" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine" easing="in">WindowClose</animation>
+  </include>
+  <include name="OrchardMotionFocus">
+    <animation effect="zoom" start="100" end="102" time="150" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" start="102" end="100" time="100" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="sine">Unfocus</animation>
+  </include>
+</includes>

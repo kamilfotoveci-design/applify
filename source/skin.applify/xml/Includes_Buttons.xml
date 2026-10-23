@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+  <include name="OSDButton">
+    <textureradioonfocus colordiffuse="FF25282E">$PARAM[texture]</textureradioonfocus>
+    <textureradioonnofocus>$PARAM[texture]</textureradioonnofocus>
+    <textureradioofffocus colordiffuse="FF25282E">$PARAM[texture]</textureradioofffocus>
+    <textureradiooffnofocus>$PARAM[texture]</textureradiooffnofocus>
+    <textureradioondisabled colordiffuse="disabled">$PARAM[texture]</textureradioondisabled>
+    <textureradiooffdisabled colordiffuse="disabled">$PARAM[texture]</textureradiooffdisabled>
+    <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+    <width>76</width>
+    <animation center="38,38" effect="zoom" end="102" reversible="true" start="100" time="160" tween="cubic" condition="!Skin.HasSetting(orchard.reducedanimations)">Focus</animation>
+    <height>76</height>
+    <radiowidth>74</radiowidth>
+    <radioheight>74</radioheight>
+    <font />
+    <texturenofocus />
+    <radioposx>1</radioposx>
+    <radioposy>0</radioposy>
+  </include>
+  <include name="InfoDialogMetadata">
+    <param name="onclick_condition">false</param>
+    <param name="onclick">noop</param>
+    <param name="altclick_condition">false</param>
+    <param name="altclick">noop</param>
+    <definition>
+      <control type="togglebutton" id="$PARAM[control_id]">
+        <width>472</width>
+        <height>49</height>
+        <textoffsetx>16</textoffsetx>
+        <aligny>center</aligny>
+        <font>font12</font>
+        <texturefocus colordiffuse="FFFFFFFF" border="16">applify/clean101/row-focus.png</texturefocus>
+        <alttexturefocus colordiffuse="button_focus">lists/focus.png</alttexturefocus>
+        <texturenofocus />
+        <alttexturenofocus />
+        <onclick>noop</onclick>
+        <onclick condition="$PARAM[onclick_condition]">$PARAM[onclick]</onclick>
+        <altclick>noop</altclick>
+        <altclick condition="$PARAM[altclick_condition]">$PARAM[altclick]</altclick>
+        <label>$PARAM[label]</label>
+        <altlabel>$PARAM[altlabel]</altlabel>
+        <usealttexture>Control.HasFocus($PARAM[control_id])</usealttexture>
+        <visible>$PARAM[visible]</visible>
+      </control>
+    </definition>
+  </include>
+  <include name="DefaultSettingButton">
+    <param name="height">64</param>
+    <param name="textoffsetx">24</param>
+    <definition>
+      <textoffsetx>$PARAM[textoffsetx]</textoffsetx>
+      <top>0</top>
+      <height>$PARAM[height]</height>
+      <aligny>center</aligny>
+      <invalidcolor>invalid</invalidcolor>
+      <selectedcolor>selected</selectedcolor>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FFFFFFFF</focusedcolor>
+      <shadowcolor>00000000</shadowcolor>
+    </definition>
+  </include>
+  <include name="DialogSettingButton">
+    <param name="height">64</param>
+    <param name="textoffsetx">24</param>
+    <definition>
+      <textoffsetx>$PARAM[textoffsetx]</textoffsetx>
+      <top>0</top>
+      <height>$PARAM[height]</height>
+      <aligny>center</aligny>
+      <invalidcolor>invalid</invalidcolor>
+      <selectedcolor>selected</selectedcolor>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FFFFFFFF</focusedcolor>
+      <shadowcolor>00000000</shadowcolor>
+    </definition>
+  </include>
+  <include name="DefaultSettingLabel">
+    <left>0</left>
+    <top>0</top>
+    <height>75</height>
+    <label />
+    <align>center</align>
+    <aligny>center</aligny>
+    <font>font25_title</font>
+    <textcolor>grey</textcolor>
+  </include>
+  <include name="SettingsItemCommon">
+    <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+    <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row-focus.png</texturefocus>
+    <height>100</height>
+    <aligny>center</aligny>
+    <textoffsetx>40</textoffsetx>
+    <alttexturefocus border="16">applify/clean101/row-focus.png</alttexturefocus>
+    <alttexturenofocus border="16">applify/clean101/row-focus.png</alttexturenofocus>
+  </include>
+  <include name="SettingsLabelCommon">
+    <height>50</height>
+    <font>ApplifyCaption</font>
+    <textoffsetx>30</textoffsetx>
+    <textoffsety>10</textoffsety>
+    <textcolor>FFB4B6BF</textcolor>
+  </include>
+  <include name="DefaultDialogButton">
+    <param name="width">300</param>
+    <param name="height">64</param>
+    <param name="wrapmultiline">false</param>
+    <param name="font">ApplifyBody</param>
+    <param name="onclick" />
+    <param name="visible">true</param>
+    <param name="enable">true</param>
+    <definition>
+      <control type="button" id="$PARAM[id]">
+        <width>$PARAM[width]</width>
+        <height>$PARAM[height]</height>
+        <label>$PARAM[label]</label>
+        <font>$PARAM[font]</font>
+        <textoffsetx>20</textoffsetx>
+        <onclick>$PARAM[onclick]</onclick>
+        <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
+        <align>center</align>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row-focus.png</texturefocus>
+        <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+        <visible>$PARAM[visible]</visible>
+        <enable>$PARAM[enable]</enable>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <shadowcolor>00000000</shadowcolor>
+        <aligny>center</aligny>
+      </control>
+    </definition>
+  </include>
+  <include name="DialogToggleButton">
+    <param name="width">300</param>
+    <param name="height">64</param>
+    <param name="wrapmultiline">false</param>
+    <param name="font">ApplifyBody</param>
+    <param name="onclick" />
+    <param name="visible">true</param>
+    <param name="enable">true</param>
+    <param name="usealttexture">false</param>
+    <definition>
+      <control type="togglebutton" id="$PARAM[id]">
+        <width>$PARAM[width]</width>
+        <height>$PARAM[height]</height>
+        <label>$PARAM[label]</label>
+        <font>$PARAM[font]</font>
+        <textoffsetx>20</textoffsetx>
+        <onclick>noop</onclick>
+        <wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row-focus.png</texturefocus>
+        <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+        <alttexturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row-focus.png</alttexturefocus>
+        <alttexturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</alttexturenofocus>
+        <usealttexture>$PARAM[usealttexture]</usealttexture>
+        <visible>$PARAM[visible]</visible>
+        <enable>$PARAM[enable]</enable>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+    </definition>
+  </include>
+  <include name="KeyboardButton">
+    <width>120</width>
+    <height>120</height>
+    <textoffsety>27</textoffsety>
+    <texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+    <texturenofocus />
+    <align>center</align>
+    <aligny>top</aligny>
+    <font>font45</font>
+  </include>
+  <include name="PlaylistWindowButton">
+    <param name="width">100%</param>
+    <definition>
+      <control type="button" id="$PARAM[control_id]">
+        <width>$PARAM[width]</width>
+        <height>110</height>
+        <align>left</align>
+        <aligny>top</aligny>
+        <texturefocus colordiffuse="FFFFFFFF" border="16">applify/clean101/row-focus.png</texturefocus>
+        <texturenofocus />
+        <textoffsetx>40</textoffsetx>
+        <textoffsety>35</textoffsety>
+        <label>$PARAM[label]</label>
+        <onclick>$PARAM[onclick]</onclick>
+        <selectedcolor>white</selectedcolor>
+      </control>
+    </definition>
+  </include>
+  <include name="IconButton">
+    <param name="height">120</param>
+    <param name="visible">true</param>
+    <definition>
+      <control type="radiobutton" id="$PARAM[control_id]">
+        <width>$PARAM[width]</width>
+        <height>$PARAM[height]</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <onclick>$PARAM[onclick]</onclick>
+        <onclick>$PARAM[onclick_2]</onclick>
+        <font />
+        <label>$PARAM[label]</label>
+        <texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+        <texturenofocus />
+        <radioposx>40</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>40</radiowidth>
+        <radioheight>40</radioheight>
+        <textureradioonfocus>$PARAM[icon]</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="grey">$PARAM[icon]</textureradioonnofocus>
+        <textureradioofffocus>$PARAM[icon]</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="grey">$PARAM[icon]</textureradiooffnofocus>
+        <visible>$PARAM[visible]</visible>
+      </control>
+    </definition>
+    <param name="width">120</param>
+  </include>
+  <include name="BottomMainMenuToggleItem">
+    <param name="height">120</param>
+    <definition>
+      <control type="radiobutton" id="$PARAM[control_id]">
+        <width>$PARAM[width]</width>
+        <height>$PARAM[height]</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <onclick>$PARAM[onclick]</onclick>
+        <font />
+        <label>$PARAM[label]</label>
+        <texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+        <texturenofocus />
+        <radioposx>40</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>40</radiowidth>
+        <radioheight>40</radioheight>
+        <textureradioonfocus>$PARAM[icon_on]</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="grey">$PARAM[icon_on]</textureradioonnofocus>
+        <textureradioofffocus>$PARAM[icon_off]</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="grey">$PARAM[icon_off]</textureradiooffnofocus>
+        <selected>$PARAM[selected]</selected>
+      </control>
+    </definition>
+    <param name="width">120</param>
+  </include>
+  <include name="VideoInfoButtonsCommon">
+    <param name="width">264</param>
+    <definition>
+      <width>$PARAM[width]</width>
+      <height>142</height>
+      <align>center</align>
+      <aligny>top</aligny>
+      <texturefocus>$PARAM[focus_texture]</texturefocus>
+      <texturenofocus />
+      <textoffsetx>0</textoffsetx>
+      <textoffsety>104</textoffsety>
+      <radioposx>$PARAM[icon_x]</radioposx>
+      <radioposy>24</radioposy>
+      <radiowidth>48</radiowidth>
+      <font>ApplifyCaption</font>
+      <textureradioonfocus colordiffuse="FF25272C">$PARAM[icon]</textureradioonfocus>
+      <textureradioonnofocus colordiffuse="FFF1F2F4">$PARAM[icon]</textureradioonnofocus>
+      <textureradioofffocus colordiffuse="FF25272C">$PARAM[icon]</textureradioofffocus>
+      <textureradiooffnofocus colordiffuse="FFF1F2F4">$PARAM[icon]</textureradiooffnofocus>
+      <textureradiooffdisabled colordiffuse="disabled">$PARAM[icon]</textureradiooffdisabled>
+      <textureradioondisabled colordiffuse="disabled">$PARAM[icon]</textureradioondisabled>
+      <radioheight>48</radioheight>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FFFFFFFF</focusedcolor>
+      <shadowcolor>00000000</shadowcolor>
+    </definition>
+    <param name="icon_x">108.0</param>
+    <param name="focus_texture">applify/clean101/action-focus-264.png</param>
+  </include>
+  <include name="InfoDialogButton">
+    <param name="width">264</param>
+    <param name="onclick_1_condition">true</param>
+    <param name="onclick_2_condition">true</param>
+    <param name="onclick_3_condition">true</param>
+    <definition>
+      <control type="radiobutton" id="$PARAM[id]">
+        <width>$PARAM[width]</width>
+        <height>142</height>
+        <align>center</align>
+        <aligny>top</aligny>
+        <texturefocus>$PARAM[focus_texture]</texturefocus>
+        <texturenofocus />
+        <textoffsetx>0</textoffsetx>
+        <textoffsety>104</textoffsety>
+        <radioposx>$PARAM[icon_x]</radioposx>
+        <radioposy>24</radioposy>
+        <radiowidth>48</radiowidth>
+        <font>ApplifyCaption</font>
+        <textureradioonfocus colordiffuse="FF25272C">$PARAM[icon]</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="FFF1F2F4">$PARAM[icon]</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="FF25272C">$PARAM[icon]</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="FFF1F2F4">$PARAM[icon]</textureradiooffnofocus>
+        <textureradiooffdisabled colordiffuse="disabled">$PARAM[icon]</textureradiooffdisabled>
+        <textureradioondisabled colordiffuse="disabled">$PARAM[icon]</textureradioondisabled>
+        <label>$PARAM[label]</label>
+        <onclick condition="$PARAM[onclick_1_condition]">$PARAM[onclick_1]</onclick>
+        <onclick condition="$PARAM[onclick_2_condition]">$PARAM[onclick_2]</onclick>
+        <onclick condition="$PARAM[onclick_3_condition]">$PARAM[onclick_3]</onclick>
+        <visible>$PARAM[visible]</visible>
+        <animation effect="fade" start="100" end="0" time="300" delay="300" condition="!Skin.HasSetting(orchard.reducedanimations)">Hidden</animation>
+        <radioheight>48</radioheight>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+    </definition>
+    <param name="icon_x">108.0</param>
+    <param name="focus_texture">applify/clean101/action-focus-264.png</param>
+    <param name="visible">true</param>
+    <param name="onclick_1">noop</param>
+    <param name="onclick_2">noop</param>
+    <param name="onclick_3">noop</param>
+  </include>
+  <include name="InfoDialogToggleButton">
+    <param name="width">262</param>
+    <definition>
+      <control type="radiobutton" id="$PARAM[id]">
+        <width>$PARAM[width]</width>
+        <height>142</height>
+        <align>center</align>
+        <aligny>top</aligny>
+        <texturefocus>$PARAM[focus_texture]</texturefocus>
+        <texturenofocus />
+        <textoffsetx>0</textoffsetx>
+        <textoffsety>104</textoffsety>
+        <radioposx>$PARAM[icon_x]</radioposx>
+        <radioposy>24</radioposy>
+        <radiowidth>48</radiowidth>
+        <font>ApplifyCaption</font>
+        <textureradioonfocus colordiffuse="FF25272C">$PARAM[icon_on]</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="FFF1F2F4">$PARAM[icon_on]</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="FF25272C">$PARAM[icon_off]</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="FFF1F2F4">$PARAM[icon_off]</textureradiooffnofocus>
+        <textureradiooffdisabled colordiffuse="disabled">$PARAM[icon_off]</textureradiooffdisabled>
+        <textureradioondisabled colordiffuse="disabled">$PARAM[icon_on]</textureradioondisabled>
+        <selected>$PARAM[selected]</selected>
+        <label>$PARAM[label]</label>
+        <onclick>$PARAM[onclick_1]</onclick>
+        <onclick>$PARAM[onclick_2]</onclick>
+        <visible>$PARAM[visible]</visible>
+        <radioheight>48</radioheight>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <shadowcolor>00000000</shadowcolor>
+      </control>
+    </definition>
+    <param name="icon_x">107.0</param>
+    <param name="focus_texture">applify/clean101/action-focus-262.png</param>
+    <param name="visible">true</param>
+    <param name="onclick_1">noop</param>
+    <param name="onclick_2">noop</param>
+  </include>
+  <include name="ButtonMenuList">
+    <left>0</left>
+    <top>80</top>
+    <width>600</width>
+    <height>700</height>
+    <onleft>9000</onleft>
+    <onright>9000</onright>
+    <onup>9000</onup>
+    <ondown>9000</ondown>
+    <orientation>vertical</orientation>
+    <itemlayout height="70" width="600">
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <width>600</width>
+        <height>70</height>
+        <texture colordiffuse="dialog_tint">colors/white.png</texture>
+      </control>
+      <control type="label">
+        <left>0</left>
+        <textoffsetx>20</textoffsetx>
+        <top>0</top>
+        <width>600</width>
+        <height>70</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <textcolor>grey</textcolor>
+        <label>$INFO[ListItem.Label]</label>
+      </control>
+    </itemlayout>
+    <focusedlayout height="70" width="600">
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <width>600</width>
+        <height>70</height>
+        <texture colordiffuse="dialog_tint">colors/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <width>600</width>
+        <height>70</height>
+        <texture colordiffuse="FFFFFFFF" border="16">applify/clean101/row-focus.png</texture>
+      </control>
+      <control type="label">
+        <left>0</left>
+        <textoffsetx>20</textoffsetx>
+        <top>0</top>
+        <width>600</width>
+        <height>70</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <label>$INFO[ListItem.Label]</label>
+      </control>
+    </focusedlayout>
+  </include>
+</includes>

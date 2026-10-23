@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol>150</defaultcontrol>
+  <controls>
+    <control type="group">
+      <description>ORCHARD_DIALOGFIX141: render only the foremost modal</description>
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <visible>Window.IsModalDialogTopmost(DialogSubtitles.xml)</visible>
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <width>1920</width>
+        <height>1080</height>
+        <texture colordiffuse="B3000000">applify/clean101/solid.png</texture>
+      </control>
+      <control type="group">
+        <description>Single opaque dialog surface; no nested panel backgrounds</description>
+        <left>120</left>
+        <top>156</top>
+        <width>1680</width>
+        <height>768</height>
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <width>1680</width>
+          <height>768</height>
+          <texture border="24">applify/clean101/panel.png</texture>
+        </control>
+        <control type="label" id="100">
+          <left>44</left>
+          <top>24</top>
+          <width>1500</width>
+          <height>56</height>
+          <label>$LOCALIZE[24012]</label>
+          <font>font32_title</font>
+          <textcolor>FFF4F5F7</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="button" id="161">
+          <left>1584</left>
+          <top>26</top>
+          <width>52</width>
+          <height>52</height>
+          <label />
+          <font>font25_title</font>
+          <textcolor>FFF4F5F7</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <align>center</align>
+          <aligny>center</aligny>
+          <textoffsetx>16</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="12" />
+          <onclick>Dialog.Close(subtitlesearch)</onclick>
+          <onleft>160</onleft>
+          <onright>150</onright>
+          <onup>160</onup>
+          <ondown>160</ondown>
+        </control>
+        <control type="image">
+          <left>1586</left>
+          <top>28</top>
+          <width>48</width>
+          <height>48</height>
+          <texture>orchard/dialogfix141/close.png</texture>
+        </control>
+        <control type="label">
+          <left>44</left>
+          <top>92</top>
+          <width>1592</width>
+          <height>36</height>
+          <label>$INFO[Player.Filename]</label>
+          <font>font12</font>
+          <textcolor>FFABB1BC</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="image">
+          <left>44</left>
+          <top>148</top>
+          <width>1592</width>
+          <height>1</height>
+          <texture colordiffuse="FF363A43">applify/clean101/solid.png</texture>
+        </control>
+        <control type="label">
+          <left>44</left>
+          <top>168</top>
+          <width>280</width>
+          <height>40</height>
+          <label>$LOCALIZE[24018]</label>
+          <font>font25_title</font>
+          <textcolor>FFABB1BC</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="label">
+          <left>388</left>
+          <top>168</top>
+          <width>840</width>
+          <height>40</height>
+          <label>$LOCALIZE[31833]</label>
+          <font>font25_title</font>
+          <textcolor>FFABB1BC</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="label">
+          <left>1300</left>
+          <top>168</top>
+          <width>336</width>
+          <height>40</height>
+          <label>$LOCALIZE[31810]</label>
+          <font>font25_title</font>
+          <textcolor>FFABB1BC</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="image">
+          <left>354</left>
+          <top>178</top>
+          <width>1</width>
+          <height>480</height>
+          <texture colordiffuse="FF30343C">applify/clean101/solid.png</texture>
+        </control>
+        <control type="image">
+          <left>1264</left>
+          <top>178</top>
+          <width>1</width>
+          <height>480</height>
+          <texture colordiffuse="FF30343C">applify/clean101/solid.png</texture>
+        </control>
+        <control type="list" id="150">
+          <left>44</left>
+          <top>224</top>
+          <width>280</width>
+          <height>432</height>
+          <onleft>161</onleft>
+          <onright>120</onright>
+          <onup>161</onup>
+          <ondown>161</ondown>
+          <scrolltime>160</scrolltime>
+          <itemlayout width="280" height="72">
+            <control type="image">
+              <left>0</left>
+              <top>0</top>
+              <width>280</width>
+              <height>60</height>
+              <texture border="16">applify/clean101/row.png</texture>
+            </control>
+            <control type="label">
+              <left>18</left>
+              <top>0</top>
+              <width>244</width>
+              <height>60</height>
+              <label>$INFO[ListItem.Label]</label>
+              <font>font25_title</font>
+              <textcolor>FFF4F5F7</textcolor>
+              <aligny>center</aligny>
+              <scroll>false</scroll>
+              <shadowcolor>00000000</shadowcolor>
+              <align>left</align>
+            </control>
+          </itemlayout>
+          <focusedlayout width="280" height="72">
+            <control type="image">
+              <left>0</left>
+              <top>0</top>
+              <width>280</width>
+              <height>60</height>
+              <texture border="16">applify/clean101/row-focus.png</texture>
+            </control>
+            <control type="label">
+              <left>18</left>
+              <top>0</top>
+              <width>244</width>
+              <height>60</height>
+              <label>$INFO[ListItem.Label]</label>
+              <font>font25_title</font>
+              <textcolor>FFF4F5F7</textcolor>
+              <aligny>center</aligny>
+              <scroll>false</scroll>
+              <shadowcolor>00000000</shadowcolor>
+              <align>left</align>
+            </control>
+          </focusedlayout>
+        </control>
+        <control type="image" id="110">
+          <left>60</left>
+          <top>692</top>
+          <width>248</width>
+          <height>28</height>
+          <texture />
+          <aspectratio>keep</aspectratio>
+        </control>
+        <control type="list" id="120">
+          <left>388</left>
+          <top>224</top>
+          <width>840</width>
+          <height>432</height>
+          <onleft>150</onleft>
+          <onright>160</onright>
+          <onup>161</onup>
+          <ondown>161</ondown>
+          <pagecontrol>73</pagecontrol>
+          <scrolltime>160</scrolltime>
+          <itemlayout width="840" height="108">
+            <control type="image">
+              <left>0</left>
+              <top>0</top>
+              <width>840</width>
+              <height>96</height>
+              <texture border="16">applify/clean101/row.png</texture>
+            </control>
+            <control type="image">
+              <left>16</left>
+              <top>12</top>
+              <width>32</width>
+              <height>24</height>
+              <texture>$INFO[ListItem.Thumb,windows/subtitles/flags/,.png]</texture>
+              <aspectratio>keep</aspectratio>
+            </control>
+            <control type="label">
+              <left>60</left>
+              <top>6</top>
+              <width>560</width>
+              <height>36</height>
+              <label>$INFO[ListItem.Label]</label>
+              <font>font25_title</font>
+              <textcolor>FFF4F5F7</textcolor>
+              <aligny>center</aligny>
+              <scroll>false</scroll>
+              <shadowcolor>00000000</shadowcolor>
+            </control>
+            <control type="textbox">
+              <left>16</left>
+              <top>40</top>
+              <width>620</width>
+              <height>52</height>
+              <label>$INFO[ListItem.Label2]</label>
+              <font>font12</font>
+              <textcolor>FFF4F5F7</textcolor>
+              <align>left</align>
+              <scrolltime>160</scrolltime>
+            </control>
+            <control type="image">
+              <left>666</left>
+              <top>12</top>
+              <width>156</width>
+              <height>30</height>
+              <texture fallback="flags/starrating/rating0.png">$INFO[ListItem.ActualIcon,flags/starrating/rating,.png]</texture>
+              <aspectratio>keep</aspectratio>
+            </control>
+            <control type="image">
+              <left>712</left>
+              <top>60</top>
+              <width>32</width>
+              <height>22</height>
+              <texture>windows/subtitles/icon_close_caption.png</texture>
+              <visible>ListItem.Property(hearing_imp)</visible>
+              <aspectratio>keep</aspectratio>
+            </control>
+            <control type="image">
+              <left>764</left>
+              <top>60</top>
+              <width>56</width>
+              <height>22</height>
+              <texture>windows/subtitles/icon_sync.png</texture>
+              <visible>ListItem.Property(sync)</visible>
+              <aspectratio>keep</aspectratio>
+            </control>
+          </itemlayout>
+          <focusedlayout width="840" height="108">
+            <control type="image">
+              <left>0</left>
+              <top>0</top>
+              <width>840</width>
+              <height>96</height>
+              <texture border="16">applify/clean101/row-focus.png</texture>
+            </control>
+            <control type="image">
+              <left>16</left>
+              <top>12</top>
+              <width>32</width>
+              <height>24</height>
+              <texture>$INFO[ListItem.Thumb,windows/subtitles/flags/,.png]</texture>
+              <aspectratio>keep</aspectratio>
+            </control>
+            <control type="label">
+              <left>60</left>
+              <top>6</top>
+              <width>560</width>
+              <height>36</height>
+              <label>$INFO[ListItem.Label]</label>
+              <font>font25_title</font>
+              <textcolor>FFF4F5F7</textcolor>
+              <aligny>center</aligny>
+              <scroll>false</scroll>
+              <shadowcolor>00000000</shadowcolor>
+            </control>
+            <control type="textbox">
+              <left>16</left>
+              <top>40</top>
+              <width>620</width>
+              <height>52</height>
+              <label>$INFO[ListItem.Label2]</label>
+              <font>font12</font>
+              <textcolor>FFF4F5F7</textcolor>
+              <align>left</align>
+              <scrolltime>160</scrolltime>
+            </control>
+            <control type="image">
+              <left>666</left>
+              <top>12</top>
+              <width>156</width>
+              <height>30</height>
+              <texture fallback="flags/starrating/rating0.png">$INFO[ListItem.ActualIcon,flags/starrating/rating,.png]</texture>
+              <aspectratio>keep</aspectratio>
+            </control>
+            <control type="image">
+              <left>712</left>
+              <top>60</top>
+              <width>32</width>
+              <height>22</height>
+              <texture>windows/subtitles/icon_close_caption.png</texture>
+              <visible>ListItem.Property(hearing_imp)</visible>
+              <aspectratio>keep</aspectratio>
+            </control>
+            <control type="image">
+              <left>764</left>
+              <top>60</top>
+              <width>56</width>
+              <height>22</height>
+              <texture>windows/subtitles/icon_sync.png</texture>
+              <visible>ListItem.Property(sync)</visible>
+              <aspectratio>keep</aspectratio>
+            </control>
+          </focusedlayout>
+        </control>
+        <control type="scrollbar" id="73">
+          <left>1238</left>
+          <top>224</top>
+          <width>8</width>
+          <height>432</height>
+          <onleft>120</onleft>
+          <onright>160</onright>
+          <onup>73</onup>
+          <ondown>73</ondown>
+          <orientation>vertical</orientation>
+          <showonepage>false</showonepage>
+        </control>
+        <control type="button" id="160">
+          <left>1300</left>
+          <top>224</top>
+          <width>336</width>
+          <height>68</height>
+          <label>$LOCALIZE[24120]</label>
+          <font>font25_title</font>
+          <textcolor>FFF4F5F7</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <align>center</align>
+          <aligny>center</aligny>
+          <textoffsetx>16</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16">applify/clean101/row.png</texturenofocus>
+          <onclick>noop</onclick>
+          <onleft>120</onleft>
+          <onright>150</onright>
+          <onup>161</onup>
+          <ondown>161</ondown>
+        </control>
+        <control type="label" id="140">
+          <left>1300</left>
+          <top>316</top>
+          <width>336</width>
+          <height>124</height>
+          <label />
+          <font>font12</font>
+          <textcolor>FFABB1BC</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+          <wrapmultiline>true</wrapmultiline>
+          <align>left</align>
+        </control>
+        <control type="group" id="130">
+          <description>Native local-subtitles notification</description>
+          <left>1300</left>
+          <top>496</top>
+          <width>336</width>
+          <height>144</height>
+          <control type="label">
+            <left>0</left>
+            <top>0</top>
+            <width>336</width>
+            <height>70</height>
+            <label>$LOCALIZE[31096]</label>
+            <font>font12</font>
+            <textcolor>FFABB1BC</textcolor>
+            <aligny>center</aligny>
+            <scroll>false</scroll>
+            <shadowcolor>00000000</shadowcolor>
+          </control>
+        </control>
+        <control type="image">
+          <left>44</left>
+          <top>680</top>
+          <width>1592</width>
+          <height>1</height>
+          <texture colordiffuse="FF30343C">applify/clean101/solid.png</texture>
+        </control>
+        <control type="label">
+          <left>388</left>
+          <top>696</top>
+          <width>840</width>
+          <height>32</height>
+          <label>$INFO[Container(120).NumItems]</label>
+          <font>font12</font>
+          <textcolor>FFABB1BC</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

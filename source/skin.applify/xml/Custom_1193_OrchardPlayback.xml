@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window type="dialog" id="1193">
+  <backgroundcolor>0</backgroundcolor>
+  <zorder>2</zorder>
+  <defaultcontrol always="true">11</defaultcontrol>
+  <onload condition="!Player.HasVideo">Dialog.Close(1193)</onload>
+  <controls>
+    <control type="group">
+      <description>ORCHARD_DIALOGFIX141: hide lower playback layer</description>
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <control type="group">
+        <left>1400</left>
+        <top>312</top>
+        <width>440</width>
+        <height>470</height>
+        <animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(orchard.reducedanimations)">
+          <effect type="fade" start="0" end="100" time="220" />
+          <effect type="slide" start="0,14" end="0,0" time="220" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false" condition="!Skin.HasSetting(orchard.reducedanimations)">
+          <effect type="fade" start="100" end="0" time="140" />
+          <effect type="slide" start="0,0" end="0,8" time="140" tween="cubic" easing="out" />
+        </animation>
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <width>440</width>
+          <height>470</height>
+          <texture border="24" colordiffuse="FFFFFFFF">applify/clean101/panel.png</texture>
+        </control>
+        <control type="label">
+          <left>32</left>
+          <top>18</top>
+          <width>376</width>
+          <height>48</height>
+          <label>$LOCALIZE[31762]</label>
+          <font>OrchardPlayerTab</font>
+          <textcolor>FFE0E0E0</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+        </control>
+        <control type="button" id="11">
+          <left>16</left>
+          <top>86</top>
+          <width>408</width>
+          <height>64</height>
+          <label>$LOCALIZE[31631]</label>
+          <font>OrchardPlayerMeta</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>24</textoffsetx>
+          <textcolor>FFE5E5E5</textcolor>
+          <focusedcolor>FF171717</focusedcolor>
+          <texturefocus colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-row-focus-130.png</texturefocus>
+          <texturenofocus border="0" />
+          <onleft>11</onleft>
+          <onright>11</onright>
+          <onup>11</onup>
+          <ondown>12</ondown>
+          <onback>Dialog.Close(1193)</onback>
+          <onclick>Dialog.Close(1193)</onclick>
+          <onclick>ActivateWindow(osdaudiosettings)</onclick>
+        </control>
+        <control type="button" id="12">
+          <left>16</left>
+          <top>158</top>
+          <width>408</width>
+          <height>64</height>
+          <label>$LOCALIZE[31833]</label>
+          <font>OrchardPlayerMeta</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>24</textoffsetx>
+          <textcolor>FFE5E5E5</textcolor>
+          <focusedcolor>FF171717</focusedcolor>
+          <texturefocus colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-row-focus-130.png</texturefocus>
+          <texturenofocus border="0" />
+          <onleft>12</onleft>
+          <onright>12</onright>
+          <onup>11</onup>
+          <ondown>13</ondown>
+          <onback>Dialog.Close(1193)</onback>
+          <onclick>Dialog.Close(1193)</onclick>
+          <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
+        </control>
+        <control type="button" id="13">
+          <left>16</left>
+          <top>230</top>
+          <width>408</width>
+          <height>64</height>
+          <label>$LOCALIZE[31868]</label>
+          <font>OrchardPlayerMeta</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>24</textoffsetx>
+          <textcolor>FFE5E5E5</textcolor>
+          <focusedcolor>FF171717</focusedcolor>
+          <texturefocus colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-row-focus-130.png</texturefocus>
+          <texturenofocus border="0" />
+          <onleft>13</onleft>
+          <onright>13</onright>
+          <onup>12</onup>
+          <ondown>14</ondown>
+          <onback>Dialog.Close(1193)</onback>
+          <onclick>Dialog.Close(1193)</onclick>
+          <onclick>ActivateWindow(osdvideosettings)</onclick>
+        </control>
+        <control type="button" id="14">
+          <left>16</left>
+          <top>302</top>
+          <width>408</width>
+          <height>64</height>
+          <label>$LOCALIZE[31764]</label>
+          <font>OrchardPlayerMeta</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>24</textoffsetx>
+          <textcolor>FFE5E5E5</textcolor>
+          <focusedcolor>FF171717</focusedcolor>
+          <texturefocus colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-row-focus-130.png</texturefocus>
+          <texturenofocus border="0" />
+          <onleft>14</onleft>
+          <onright>14</onright>
+          <onup>13</onup>
+          <ondown>15</ondown>
+          <onback>Dialog.Close(1193)</onback>
+          <onclick>Dialog.Close(1193)</onclick>
+          <onclick>Action(PlayerProcessInfo)</onclick>
+        </control>
+        <control type="button" id="15">
+          <left>16</left>
+          <top>374</top>
+          <width>408</width>
+          <height>64</height>
+          <label>$LOCALIZE[31831]</label>
+          <font>OrchardPlayerMeta</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>24</textoffsetx>
+          <textcolor>FFE5E5E5</textcolor>
+          <focusedcolor>FF171717</focusedcolor>
+          <texturefocus colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-row-focus-130.png</texturefocus>
+          <texturenofocus border="0" />
+          <onleft>15</onleft>
+          <onright>15</onright>
+          <onup>14</onup>
+          <ondown>15</ondown>
+          <onback>Dialog.Close(1193)</onback>
+          <onclick>Dialog.Close(1193)</onclick>
+          <onclick>PlayerControl(Stop)</onclick>
+        </control>
+      </control>
+      <visible>!Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogAddonSettings.xml)</visible>
+    </control>
+  </controls>
+</window>

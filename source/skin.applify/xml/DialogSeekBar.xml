@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <visible>Window.IsActive(fullscreenvideo) + !Window.IsVisible(videoosd) + !Window.IsVisible(fullscreeninfo) + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(osdaudiosettings) + !Window.IsVisible(osdsubtitlesettings) + !Window.IsVisible(osdvideosettings) + [Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Skin.HasSetting(orchard.hidepausedosd)] | Player.Forwarding | Player.Rewinding | Player.ShowTime] + !Window.IsVisible(1193) + !Window.IsVisible(1193) + !Window.IsVisible(1193) + !Window.IsVisible(1193)</visible>
+  <controls>
+    <control type="group">
+      <description>ORCHARD_DIALOGFIX141: hide lower playback layer</description>
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <control type="group">
+        <left>0</left>
+        <top>0</top>
+        <width>1920</width>
+        <height>1080</height>
+        <control type="image">
+          <left>0</left>
+          <top>580</top>
+          <width>1920</width>
+          <height>500</height>
+          <texture>orchard/matte135/fade-bottom-bn-500.png</texture>
+        </control>
+        <control type="label">
+          <left>84</left>
+          <top>756</top>
+          <width>1050</width>
+          <height>38</height>
+          <label>$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, · S]$INFO[VideoPlayer.Episode,E]</label>
+          <font>OrchardPlayerMeta</font>
+          <textcolor>FFD5D5D5</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+          <left>82</left>
+          <top>802</top>
+          <width>1220</width>
+          <height>78</height>
+          <label>$INFO[VideoPlayer.Title]</label>
+          <font>OrchardPlayerTitle</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+        </control>
+        <control type="image">
+          <left>84</left>
+          <top>916</top>
+          <width>1752</width>
+          <height>8</height>
+          <texture>orchard/matte135/player-track-130.png</texture>
+        </control>
+        <control type="progress">
+          <left>84</left>
+          <top>916</top>
+          <width>1752</width>
+          <height>8</height>
+          <info>Player.ProgressCache</info>
+          <texturebg colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-slider-clear-130.png</texturebg>
+          <midtexture colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-cache-130.png</midtexture>
+          <lefttexture />
+          <righttexture />
+          <overlaytexture />
+        </control>
+        <control type="progress">
+          <left>84</left>
+          <top>916</top>
+          <width>1752</width>
+          <height>8</height>
+          <info>Player.Progress</info>
+          <texturebg colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-slider-clear-130.png</texturebg>
+          <midtexture colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-progress-130.png</midtexture>
+          <lefttexture />
+          <righttexture />
+          <overlaytexture />
+        </control>
+        <control type="label">
+          <left>84</left>
+          <top>940</top>
+          <width>150</width>
+          <height>34</height>
+          <label>$INFO[Player.Time]</label>
+          <font>OrchardPlayerMeta</font>
+          <textcolor>FFDEDEDE</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+        </control>
+        <control type="label">
+          <left>1436</left>
+          <top>940</top>
+          <width>400</width>
+          <height>34</height>
+          <label>-$INFO[Player.TimeRemaining]</label>
+          <font>OrchardPlayerMeta</font>
+          <textcolor>FFDEDEDE</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <align>right</align>
+        </control>
+        <control type="label">
+          <left>1540</left>
+          <top>822</top>
+          <width>296</width>
+          <height>42</height>
+          <label>$LOCALIZE[31758]</label>
+          <font>OrchardPlayerMeta</font>
+          <textcolor>FFD5D5D5</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <visible>Player.Paused</visible>
+          <align>right</align>
+        </control>
+        <control type="ranges">
+          <left>84</left>
+          <top>914</top>
+          <width>1752</width>
+          <height>12</height>
+          <info>Player.Chapters</info>
+          <visible>Integer.IsGreater(Player.ChapterCount,0)</visible>
+          <texturebg colordiffuse="FFFFFFFF" border="0">orchard/matte135/chapter-clear-132.png</texturebg>
+          <lefttexture colordiffuse="FFFFFFFF" border="0" />
+          <midtexture colordiffuse="FFFFFFFF" border="0" />
+          <overlaytexture colordiffuse="FFFFFFFF" border="0" />
+          <righttexture colordiffuse="FFFFFFFF" border="0">orchard/matte135/chapter-marker-132.png</righttexture>
+        </control>
+      </control>
+      <visible>!Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogAddonSettings.xml)</visible>
+    </control>
+  </controls>
+</window>

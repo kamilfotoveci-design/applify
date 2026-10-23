@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addon id="skin.applify" version="1.1.2" name="Pyrus Skin" provider-name="kamilwhoo">
+  <requires>
+    <import addon="xbmc.gui" version="5.17.0" />
+    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="plugin.program.autocompletion" version="2.1.2" optional="true" />
+  </requires>
+  <extension point="xbmc.gui.skin" debugging="false">
+    <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0, SIL Open Font License 1.1; Apple SF Pro: proprietary, user-supplied test assets (see fonts/SF-Pro-License.rtf)</license>
+    <summary lang="en_GB">Apple TV-inspired skin with widgets and Player Info.</summary>
+    <description lang="en_GB">Pyrus Skin by kamilwhoo brings an Apple TV-inspired interface to Kodi: configurable widgets, three custom hubs, inline submenus, focus-driven navigation, search and playback controls. Includes native Live TV/Radio entry points, episode titles, provider/native ratings and Player Info with Media, Decoder / Output and System tabs. Full widget/menu backups and on-demand diagnostics are available. The maintainer has tested the skin on Kodi 22; this update requires device validation. Full p3i build compatibility is not certified. Independent community project; not affiliated with Apple or Team Kodi.</description>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <screenshot>resources/screenshots/01-watch-now-silo.jpg</screenshot>
+      <screenshot>resources/screenshots/02-next-episodes.jpg</screenshot>
+      <screenshot>resources/screenshots/03-tv-shows.jpg</screenshot>
+      <screenshot>resources/screenshots/04-trending.jpg</screenshot>
+      <fanart>resources/screenshots/01-watch-now-silo.jpg</fanart>
+    </assets>
+    <website>https://kamilfotoveci-design.github.io/applify/</website>
+    <source>https://github.com/kamilfotoveci-design/applify</source>
+    <news>1.1.2: Corrected ranked card numbers in custom hubs. English-only skin catalog and browsable source. Top bar hub switching, custom widgets, Live TV/Radio destinations, Player Info and diagnostics from 1.1.1 remain available. Pyrus Skin by kamilwhoo.</news>
+  </extension>
+</addon>

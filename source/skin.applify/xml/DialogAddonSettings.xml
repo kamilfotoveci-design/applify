@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol>5</defaultcontrol>
+  <controls>
+    <control type="group">
+      <description>ORCHARD_DIALOGFIX141: render only the foremost modal</description>
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <visible>Window.IsModalDialogTopmost(DialogAddonSettings.xml)</visible>
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <width>1920</width>
+        <height>1080</height>
+        <texture colordiffuse="B3000000">applify/clean101/solid.png</texture>
+      </control>
+      <control type="group">
+        <description>Single opaque dialog surface; no nested panel backgrounds</description>
+        <left>112</left>
+        <top>108</top>
+        <width>1696</width>
+        <height>864</height>
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <width>1696</width>
+          <height>864</height>
+          <texture border="24">applify/clean101/panel.png</texture>
+        </control>
+        <control type="label" id="2">
+          <left>40</left>
+          <top>24</top>
+          <width>1616</width>
+          <height>56</height>
+          <label />
+          <font>font32_title</font>
+          <textcolor>FFF4F5F7</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="image">
+          <left>40</left>
+          <top>102</top>
+          <width>1616</width>
+          <height>1</height>
+          <texture colordiffuse="FF363A43">applify/clean101/solid.png</texture>
+        </control>
+        <control type="grouplist" id="3">
+          <left>40</left>
+          <top>124</top>
+          <width>288</width>
+          <height>462</height>
+          <orientation>vertical</orientation>
+          <itemgap>8</itemgap>
+          <onleft>9000</onleft>
+          <onright>5</onright>
+          <onup>20</onup>
+          <ondown>20</ondown>
+        </control>
+        <control type="button" id="10">
+          <left>0</left>
+          <top>0</top>
+          <width>288</width>
+          <height>64</height>
+          <label />
+          <font>ApplifyBody</font>
+          <textcolor>FFF4F5F7</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>20</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16">applify/clean101/row.png</texturenofocus>
+          <onclick>noop</onclick>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="image">
+          <left>354</left>
+          <top>124</top>
+          <width>1</width>
+          <height>524</height>
+          <texture colordiffuse="FF30343C">applify/clean101/solid.png</texture>
+        </control>
+        <control type="grouplist" id="5">
+          <left>384</left>
+          <top>124</top>
+          <width>1248</width>
+          <height>524</height>
+          <orientation>vertical</orientation>
+          <itemgap>6</itemgap>
+          <pagecontrol>60</pagecontrol>
+          <onleft>3</onleft>
+          <onright>60</onright>
+          <onup>5</onup>
+          <ondown>5</ondown>
+        </control>
+        <control type="button" id="7">
+          <description>Native settings control template</description>
+          <left>0</left>
+          <top>0</top>
+          <width>1248</width>
+          <height>64</height>
+          <font>ApplifyBody</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <textoffsetx>24</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="radiobutton" id="8">
+          <description>Native settings control template</description>
+          <left>0</left>
+          <top>0</top>
+          <width>1248</width>
+          <height>64</height>
+          <font>ApplifyBody</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <textoffsetx>24</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+          <radiowidth>64</radiowidth>
+          <radioheight>36</radioheight>
+          <textwidth>1112</textwidth>
+          <radioposy>14</radioposy>
+          <textureradioonfocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on-focus.png</textureradioonfocus>
+          <textureradioonnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on.png</textureradioonnofocus>
+          <textureradioofffocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off-focus.png</textureradioofffocus>
+          <textureradiooffnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off.png</textureradiooffnofocus>
+          <textureradioondisabled colordiffuse="66FFFFFF">orchard/controls143/switch-on.png</textureradioondisabled>
+          <textureradiooffdisabled colordiffuse="66FFFFFF">orchard/controls143/switch-off.png</textureradiooffdisabled>
+          <radioposx>1160</radioposx>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="spincontrolex" id="9">
+          <description>Native settings control template</description>
+          <left>0</left>
+          <top>0</top>
+          <width>1248</width>
+          <height>64</height>
+          <font>ApplifyBody</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <textoffsetx>24</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+          <spinwidth>28</spinwidth>
+          <spinheight>34</spinheight>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="edit" id="12">
+          <description>Native settings control template</description>
+          <left>0</left>
+          <top>0</top>
+          <width>1248</width>
+          <height>64</height>
+          <font>ApplifyBody</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <textoffsetx>24</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="sliderex" id="13">
+          <description>Native settings control template</description>
+          <left>0</left>
+          <top>0</top>
+          <width>1248</width>
+          <height>64</height>
+          <font>ApplifyBody</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <textoffsetx>24</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+          <sliderwidth>220</sliderwidth>
+          <sliderheight>36</sliderheight>
+          <textwidth>944</textwidth>
+          <texturesliderbar colordiffuse="FFFFFFFF">orchard/controls144/slider-track.png</texturesliderbar>
+          <texturesliderbardisabled colordiffuse="FFFFFFFF">orchard/controls144/slider-track-disabled.png</texturesliderbardisabled>
+          <textureslidernib colordiffuse="FFFFFFFF">orchard/controls144/slider-thumb.png</textureslidernib>
+          <textureslidernibfocus colordiffuse="FFFFFFFF">orchard/controls144/slider-thumb-focus.png</textureslidernibfocus>
+          <textureslidernibdisabled colordiffuse="FFFFFFFF">orchard/controls144/slider-thumb-disabled.png</textureslidernibdisabled>
+          <orientation>horizontal</orientation>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="colorbutton" id="15">
+          <description>Native settings control template</description>
+          <left>0</left>
+          <top>0</top>
+          <width>1248</width>
+          <height>64</height>
+          <font>ApplifyBody</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <textoffsetx>24</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <aligny>center</aligny>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+          <colorwidth>110</colorwidth>
+          <colorheight>32</colorheight>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="image" id="11">
+          <left>0</left>
+          <top>0</top>
+          <width>1248</width>
+          <height>12</height>
+          <texture>orchard/controls143/separator-12.png</texture>
+          <description>Orchard: one-pixel low-contrast separator, opacity in PNG</description>
+        </control>
+        <control type="label" id="14">
+          <left>20</left>
+          <top>0</top>
+          <width>1208</width>
+          <height>44</height>
+          <label />
+          <font>font25_title</font>
+          <textcolor>FFABB1BC</textcolor>
+          <aligny>center</aligny>
+          <scroll>false</scroll>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="scrollbar" id="60">
+          <left>1646</left>
+          <top>124</top>
+          <width>8</width>
+          <height>524</height>
+          <onleft>5</onleft>
+          <onright>9000</onright>
+          <onup>60</onup>
+          <ondown>60</ondown>
+          <orientation>vertical</orientation>
+        </control>
+        <control type="button" id="20">
+          <left>40</left>
+          <top>604</top>
+          <width>288</width>
+          <height>56</height>
+          <label />
+          <font>ApplifyBody</font>
+          <textcolor>FFF4F5F7</textcolor>
+          <focusedcolor>FFFFFFFF</focusedcolor>
+          <disabledcolor>FF737B88</disabledcolor>
+          <align>center</align>
+          <aligny>center</aligny>
+          <textoffsetx>16</textoffsetx>
+          <textoffsety>0</textoffsety>
+          <pulseonselect>false</pulseonselect>
+          <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+          <texturenofocus border="16">applify/clean101/row.png</texturenofocus>
+          <onclick>SettingsLevelChange</onclick>
+          <onleft>9000</onleft>
+          <onright>5</onright>
+          <onup>3</onup>
+          <ondown>3</ondown>
+          <shadowcolor>00000000</shadowcolor>
+        </control>
+        <control type="image">
+          <left>40</left>
+          <top>672</top>
+          <width>1616</width>
+          <height>1</height>
+          <texture colordiffuse="FF363A43">applify/clean101/solid.png</texture>
+        </control>
+        <control type="textbox" id="6">
+          <left>40</left>
+          <top>694</top>
+          <width>1616</width>
+          <height>58</height>
+          <font>font12</font>
+          <textcolor>FFABB1BC</textcolor>
+          <align>left</align>
+          <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+        </control>
+        <control type="grouplist" id="9000">
+          <description>Native actions, fixed widths, 16px gaps</description>
+          <left>784</left>
+          <top>780</top>
+          <width>872</width>
+          <height>60</height>
+          <orientation>horizontal</orientation>
+          <itemgap>16</itemgap>
+          <align>right</align>
+          <onleft>3</onleft>
+          <onright>3</onright>
+          <onup>5</onup>
+          <ondown>5</ondown>
+          <control type="button" id="28">
+            <width>280</width>
+            <height>60</height>
+            <label />
+            <font>ApplifyBody</font>
+            <textcolor>FFF4F5F7</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <disabledcolor>FF737B88</disabledcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textoffsetx>16</textoffsetx>
+            <textoffsety>0</textoffsety>
+            <pulseonselect>false</pulseonselect>
+            <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+            <texturenofocus border="16">applify/clean101/row.png</texturenofocus>
+            <onclick>noop</onclick>
+            <onup>5</onup>
+            <ondown>5</ondown>
+            <shadowcolor>00000000</shadowcolor>
+          </control>
+          <control type="button" id="29">
+            <width>280</width>
+            <height>60</height>
+            <label />
+            <font>ApplifyBody</font>
+            <textcolor>FFF4F5F7</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <disabledcolor>FF737B88</disabledcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textoffsetx>16</textoffsetx>
+            <textoffsety>0</textoffsety>
+            <pulseonselect>false</pulseonselect>
+            <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+            <texturenofocus border="16">applify/clean101/row.png</texturenofocus>
+            <onclick>noop</onclick>
+            <onup>5</onup>
+            <ondown>5</ondown>
+            <shadowcolor>00000000</shadowcolor>
+          </control>
+          <control type="button" id="30">
+            <width>280</width>
+            <height>60</height>
+            <label />
+            <font>ApplifyBody</font>
+            <textcolor>FFF4F5F7</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <disabledcolor>FF737B88</disabledcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textoffsetx>16</textoffsetx>
+            <textoffsety>0</textoffsety>
+            <pulseonselect>false</pulseonselect>
+            <texturefocus border="16">applify/clean101/row-focus.png</texturefocus>
+            <texturenofocus border="16">applify/clean101/row.png</texturenofocus>
+            <onclick>noop</onclick>
+            <onup>5</onup>
+            <ondown>5</ondown>
+            <shadowcolor>00000000</shadowcolor>
+          </control>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

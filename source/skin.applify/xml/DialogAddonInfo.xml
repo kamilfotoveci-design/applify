@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol always="true">9000</defaultcontrol>
+  <onload condition="!ListItem.Property(addon.isinstalled) + Window.IsActive(addonbrowser)">SetFocus(6)</onload>
+  <onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
+  <onunload>ClearProperty(infobackground,home)</onunload>
+  <backgroundcolor>FF111215</backgroundcolor>
+  <controls>
+    <control type="image">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <texture border="0">applify/clean101/background.png</texture>
+    </control>
+    <control type="label">
+      <left>100</left>
+      <top>56</top>
+      <width>1720</width>
+      <height>64</height>
+      <label>$INFO[ListItem.AddonName]</label>
+      <font>ApplifyTitle</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <aligny>center</aligny>
+    </control>
+    <control type="label">
+      <left>100</left>
+      <top>126</top>
+      <width>1720</width>
+      <height>40</height>
+      <label>$INFO[ListItem.AddonVersion]$INFO[ListItem.AddonCreator,  ·  $LOCALIZE[31071] ]</label>
+      <font>ApplifyCaption</font>
+      <textcolor>FFB4B6BF</textcolor>
+      <aligny>center</aligny>
+    </control>
+    <control type="image">
+      <left>100</left>
+      <top>216</top>
+      <width>304</width>
+      <height>304</height>
+      <texture border="24">applify/clean101/panel.png</texture>
+    </control>
+    <control type="image">
+      <left>124</left>
+      <top>240</top>
+      <width>256</width>
+      <height>256</height>
+      <texture border="24" fallback="DefaultAddon.png" background="true">$VAR[ApplifyAddonIcon]</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+    <control type="group">
+      <visible>String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</visible>
+      <control type="image">
+        <left>16</left>
+        <top>16</top>
+        <width>272</width>
+        <height>272</height>
+        <texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+      </control>
+      <control type="textbox">
+        <left>16</left>
+        <top>16</top>
+        <width>272</width>
+        <height>272</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <label>$VAR[AddonLifecycleType]</label>
+        <font>font32_title</font>
+      </control>
+      <left>100</left>
+      <top>216</top>
+      <width>304</width>
+      <height>304</height>
+    </control>
+    <control type="image">
+      <left>448</left>
+      <top>216</top>
+      <width>1372</width>
+      <height>464</height>
+      <texture border="24">applify/clean101/panel.png</texture>
+    </control>
+    <control type="label">
+      <left>488</left>
+      <top>240</top>
+      <width>880</width>
+      <height>46</height>
+      <label>$INFO[ListItem.AddonSummary]</label>
+      <font>ApplifyHeading</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <aligny>center</aligny>
+    </control>
+    <control type="textbox">
+      <left>488</left>
+      <top>304</top>
+      <width>900</width>
+      <height>264</height>
+      <label>$INFO[ListItem.AddonDescription]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <aligny>center</aligny>
+      <autoscroll delay="8000" repeat="10000" time="6000">true</autoscroll>
+    </control>
+    <control type="button" id="5000">
+      <left>488</left>
+      <top>592</top>
+      <width>240</width>
+      <height>56</height>
+      <label>$LOCALIZE[31141]</label>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <ondown>9000</ondown>
+      <onclick>SetProperty(TextViewer_Header,$LOCALIZE[31141] $INFO[ListItem.AddonVersion],home)</onclick>
+      <onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
+      <onclick>ActivateWindow(1102)</onclick>
+      <enable>!String.IsEmpty(ListItem.AddonNews)</enable>
+      <font>ApplifyCaption</font>
+      <align>center</align>
+      <aligny>center</aligny>
+      <textoffsetx>0</textoffsetx>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row-focus.png</texturefocus>
+      <onup condition="Integer.IsGreater(Container(50).NumItems,0)">50</onup>
+      <onup condition="!Integer.IsGreater(Container(50).NumItems,0)">9000</onup>
+    </control>
+    <control type="image">
+      <left>1432</left>
+      <top>248</top>
+      <width>1</width>
+      <height>400</height>
+      <texture border="0" colordiffuse="FF3C3E46">applify/clean101/solid.png</texture>
+    </control>
+    <control type="list">
+      <left>1464</left>
+      <top>240</top>
+      <width>316</width>
+      <height>420</height>
+      <pagecontrol />
+      <itemlayout height="84">
+        <control type="label">
+          <left>0</left>
+          <top>0</top>
+          <width>292</width>
+          <height>32</height>
+          <font>ApplifyCaption</font>
+          <label>$INFO[ListItem.Label]</label>
+          <textcolor>FFB4B6BF</textcolor>
+        </control>
+        <control type="label">
+          <left>0</left>
+          <top>34</top>
+          <width>292</width>
+          <height>32</height>
+          <font>ApplifyCaption</font>
+          <label>$INFO[ListItem.Label2]</label>
+        </control>
+        <control type="image">
+          <right>0</right>
+          <top>36</top>
+          <width>24</width>
+          <height>24</height>
+          <texture>$INFO[ListItem.Icon]</texture>
+        </control>
+      </itemlayout>
+      <focusedlayout height="84">
+        <control type="label">
+          <left>0</left>
+          <top>0</top>
+          <width>292</width>
+          <height>32</height>
+          <font>ApplifyCaption</font>
+          <label>$INFO[ListItem.Label]</label>
+          <scroll>false</scroll>
+          <textcolor>FFB4B6BF</textcolor>
+        </control>
+        <control type="label">
+          <left>0</left>
+          <top>34</top>
+          <width>292</width>
+          <height>32</height>
+          <font>ApplifyCaption</font>
+          <label>$INFO[ListItem.Label2]</label>
+          <scroll>false</scroll>
+        </control>
+        <control type="image">
+          <right>0</right>
+          <top>36</top>
+          <width>24</width>
+          <height>24</height>
+          <texture>$INFO[ListItem.Icon]</texture>
+        </control>
+      </focusedlayout>
+      <content>
+        <item>
+          <label>$LOCALIZE[21866]:</label>
+          <label2>$INFO[ListItem.AddonType]</label2>
+          <visible>!String.IsEmpty(ListItem.AddonType)</visible>
+        </item>
+        <item>
+          <label>$LOCALIZE[31150]:</label>
+          <label2>$INFO[ListItem.AddonOrigin]</label2>
+          <icon>$VAR[AddonsOriginVar]</icon>
+          <visible>!String.IsEmpty(ListItem.AddonOrigin)</visible>
+        </item>
+        <item>
+          <label>$LOCALIZE[22031]:</label>
+          <label2>$INFO[ListItem.AddonSize]</label2>
+          <visible>!String.IsEmpty(ListItem.AddonSize)</visible>
+        </item>
+        <item>
+          <label>$LOCALIZE[467]:</label>
+          <label2>$LOCALIZE[31135]</label2>
+          <visible>ListItem.Property(Addon.IsBinary)</visible>
+        </item>
+        <item>
+          <label>$LOCALIZE[126]:</label>
+          <label2>$INFO[ListItem.Property(Addon.Status)]$INFO[ListItem.Property(Addon.ValidUpdateVersion),[CR]($LOCALIZE[19114]: ,)]</label2>
+          <visible>!String.IsEmpty(ListItem.Property(Addon.Status))</visible>
+        </item>
+      </content>
+    </control>
+    <control type="panel" id="50">
+      <left>448</left>
+      <top>708</top>
+      <width>1372</width>
+      <height>132</height>
+      <ondown>9000</ondown>
+      <orientation>horizontal</orientation>
+      <itemlayout height="132" width="236">
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <width>224</width>
+          <height>126</height>
+          <aspectratio>keep</aspectratio>
+          <texture background="true">$INFO[ListItem.Icon]</texture>
+        </control>
+      </itemlayout>
+      <focusedlayout height="132" width="236">
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <width>224</width>
+          <height>126</height>
+          <aspectratio>keep</aspectratio>
+          <texture background="true">$INFO[ListItem.Icon]</texture>
+        </control>
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <width>224</width>
+          <height>126</height>
+          <texture border="8" colordiffuse="FFFFFFFF">buttons/thumbnail_focused.png</texture>
+        </control>
+      </focusedlayout>
+      <visible>Integer.IsGreater(Container(50).NumItems,0)</visible>
+      <onup condition="Control.IsEnabled(5000)">5000</onup>
+      <onup condition="!Control.IsEnabled(5000)">9000</onup>
+    </control>
+    <control type="grouplist" id="9000">
+      <itemgap>16</itemgap>
+      <left>100</left>
+      <top>864</top>
+      <width>1720</width>
+      <height>142</height>
+      <onleft>9000</onleft>
+      <onright>9000</onright>
+      <ondown>9000</ondown>
+      <align>center</align>
+      <orientation>horizontal</orientation>
+      <include content="InfoDialogButton">
+        <param name="id" value="12" />
+        <param name="icon" value="icons/infodialogs/launch.png" />
+        <param name="label" value="$LOCALIZE[518]" />
+        <param name="width" value="192" />
+        <param name="icon_x" value="72.0" />
+        <param name="focus_texture" value="applify/clean101/action-focus-192.png" />
+      </include>
+      <include content="InfoDialogButton">
+        <param name="id" value="9" />
+        <param name="icon" value="icons/infodialogs/configure.png" />
+        <param name="label" value="$LOCALIZE[24020]" />
+        <param name="width" value="192" />
+        <param name="icon_x" value="72.0" />
+        <param name="focus_texture" value="applify/clean101/action-focus-192.png" />
+      </include>
+      <control type="radiobutton" id="13">
+        <radioposy>30</radioposy>
+        <radioheight>36</radioheight>
+        <radioposx>64</radioposx>
+        <radiowidth>64</radiowidth>
+        <width>192</width>
+        <height>142</height>
+        <align>center</align>
+        <aligny>top</aligny>
+        <textoffsetx>0</textoffsetx>
+        <textoffsety>104</textoffsety>
+        <font>ApplifyCaption</font>
+        <visible>Control.IsEnabled(13)</visible>
+        <textureradioonfocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on-focus.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off-focus.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off.png</textureradiooffnofocus>
+        <textureradioondisabled colordiffuse="66FFFFFF">orchard/controls143/switch-on.png</textureradioondisabled>
+        <textureradiooffdisabled colordiffuse="66FFFFFF">orchard/controls143/switch-off.png</textureradiooffdisabled>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <textcolor>FFFFFFFF</textcolor>
+        <shadowcolor>00000000</shadowcolor>
+        <texturefocus border="0">applify/clean101/action-focus-192.png</texturefocus>
+        <texturenofocus />
+      </control>
+      <include content="InfoDialogButton">
+        <param name="id" value="10" />
+        <param name="icon" value="icons/infodialogs/info.png" />
+        <param name="label" value="$LOCALIZE[39024]" />
+        <param name="width" value="192" />
+        <param name="icon_x" value="72.0" />
+        <param name="focus_texture" value="applify/clean101/action-focus-192.png" />
+      </include>
+      <include content="InfoDialogToggleButton">
+        <param name="id" value="7" />
+        <param name="icon_on" value="icons/infodialogs/disable.png" />
+        <param name="icon_off" value="icons/infodialogs/enabled.png" />
+        <param name="selected" value="!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)" />
+        <param name="label" value="" />
+        <param name="width" value="192" />
+        <param name="icon_x" value="72.0" />
+        <param name="focus_texture" value="applify/clean101/action-focus-192.png" />
+      </include>
+      <include content="InfoDialogButton">
+        <param name="id" value="8" />
+        <param name="icon" value="icons/infodialogs/install.png" />
+        <param name="label" value="$LOCALIZE[24138]" />
+        <param name="width" value="192" />
+        <param name="icon_x" value="72.0" />
+        <param name="focus_texture" value="applify/clean101/action-focus-192.png" />
+      </include>
+      <include content="InfoDialogButton">
+        <param name="id" value="14" />
+        <param name="icon" value="icons/infodialogs/update.png" />
+        <param name="label" value="$LOCALIZE[24069]" />
+        <param name="width" value="192" />
+        <param name="icon_x" value="72.0" />
+        <param name="focus_texture" value="applify/clean101/action-focus-192.png" />
+      </include>
+      <include content="InfoDialogToggleButton">
+        <param name="id" value="6" />
+        <param name="icon_on" value="icons/infodialogs/uninstall.png" />
+        <param name="icon_off" value="icons/infodialogs/install.png" />
+        <param name="selected" value="ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)" />
+        <param name="label" value="" />
+        <param name="width" value="192" />
+        <param name="icon_x" value="72.0" />
+        <param name="focus_texture" value="applify/clean101/action-focus-192.png" />
+      </include>
+      <onup condition="Control.IsEnabled(5000)">5000</onup>
+      <onup condition="!Control.IsEnabled(5000)">9000</onup>
+    </control>
+    <control type="textbox">
+      <left>100</left>
+      <top>1020</top>
+      <width>1720</width>
+      <height>42</height>
+      <label>$INFO[ListItem.AddonDisclaimer]</label>
+      <font>ApplifyCaption</font>
+      <textcolor>FFB4B6BF</textcolor>
+      <aligny>center</aligny>
+    </control>
+    <include condition="Skin.HasSetting(touchmode)">TouchBackButton</include>
+  </controls>
+</window>

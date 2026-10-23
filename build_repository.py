@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent
 SKIN_ID = 'skin.applify'
 REPOSITORY_ID = 'repository.applify'
 REPOSITORY_VERSION = '1.0.2'
+SOURCE_SUFFIXES = {'.xml', '.py', '.po', '.json', '.xsp', '.md', '.txt', '.rtf'}
 
 
 def write_xml(path, element):
@@ -33,7 +34,7 @@ def md5_file(path):
         hashlib.sha256(path.read_bytes()).hexdigest() + '\n')
 
 
-def newest_skin():
+def skin_packages():
     candidates = []
     for path in ROOT.glob('skin.applify-*.zip'):
         match = re.fullmatch(r'skin\.applify-(\d+)\.(\d+)\.(\d+)\.zip', path.name)
@@ -41,10 +42,49 @@ def newest_skin():
             candidates.append((tuple(map(int, match.groups())), path))
     if not candidates:
         raise ValueError('Upload skin.applify-X.Y.Z.zip beside build_repository.py')
-    return max(candidates)[1]
+    return sorted(candidates)
+
+
+def newest_skin():
+    return skin_packages()[-1][1]
+
+
+def validate_english_only(path):
+    """Reject language catalogs other than the canonical English catalog."""
+    with zipfile.ZipFile(path) as archive:
+        catalogs = {
+            parts[2]
+            for name in archive.namelist()
+            for parts in [PurePosixPath(name).parts]
+            if len(parts) >= 4 and parts[0] == SKIN_ID and parts[1] == 'language'
+        }
+    if catalogs != {'resource.language.en_gb'}:
+        raise ValueError(f'{path.name} must contain only the en_gb skin catalog: {sorted(catalogs)}')
+
+
+def validate_source_mirror(archive):
+    """Keep GitHub's browsable text sources identical to the release ZIP."""
+    source = ROOT / 'source' / SKIN_ID
+    if not source.is_dir():
+        raise ValueError('Missing browsable skin source at source/skin.applify')
+    expected = {
+        PurePosixPath(name).relative_to(SKIN_ID).as_posix()
+        for name in archive.namelist()
+        if not name.endswith('/') and
+        (PurePosixPath(name).suffix.lower() in SOURCE_SUFFIXES or
+         PurePosixPath(name).name == 'LICENSE')
+    }
+    actual = {path.relative_to(source).as_posix()
+              for path in source.rglob('*') if path.is_file()}
+    if actual != expected:
+        raise ValueError('Browsable source files do not match the skin ZIP')
+    for name in sorted(expected):
+        if (source / name).read_bytes() != archive.read(SKIN_ID + '/' + name):
+            raise ValueError('Browsable source differs from the skin ZIP: ' + name)
 
 
 def validate_skin(path):
+    validate_english_only(path)
     with zipfile.ZipFile(path) as archive:
         if archive.testzip() is not None:
             raise ValueError('Corrupt skin ZIP')
@@ -61,6 +101,7 @@ def validate_skin(path):
                 ET.fromstring(archive.read(entry))
             elif entry.filename.endswith('.py'):
                 ast.parse(archive.read(entry).decode('utf-8'), filename=entry.filename)
+        validate_source_mirror(archive)
         addon = ET.fromstring(archive.read(SKIN_ID + '/addon.xml'))
         version = addon.get('version')
         if (addon.get('id') != SKIN_ID or addon.get('name') != 'Pyrus Skin'
@@ -101,8 +142,11 @@ def build(base_url, output):
     output.mkdir(parents=True, exist_ok=True)
     skin_dir = output / SKIN_ID
     skin_dir.mkdir(exist_ok=True)
-    shutil.copyfile(skin_zip, skin_dir / skin_zip.name)
-    md5_file(skin_dir / skin_zip.name)
+    # Publish every English-only skin ZIP currently retained in this repository.
+    for _, package in skin_packages():
+        validate_english_only(package)
+        shutil.copyfile(package, skin_dir / package.name)
+        md5_file(skin_dir / package.name)
     write_xml(skin_dir / 'addon.xml', copy.deepcopy(skin))
     # Publish each artwork file at the exact relative path declared in addon.xml.
     # Kodi resolves resources/icon.png against the add-on directory, not its root.

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol>996</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <coordinates>
+    <left>0</left>
+    <top>0</top>
+    <origin x="570" y="160">true</origin>
+  </coordinates>
+  <controls>
+    <control type="image">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <animation effect="fade" start="0" end="100" time="300" condition="!Skin.HasSetting(orchard.reducedanimations)">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(orchard.reducedanimations)">WindowClose</animation>
+      <texture colordiffuse="B0FFFFFF">colors/black.png</texture>
+    </control>
+    <control type="button">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <texturefocus />
+      <texturenofocus />
+      <onclick>Action(close)</onclick>
+    </control>
+    <control type="group">
+      <control type="image" id="999">
+        <description>background image</description>
+        <left>0</left>
+        <top>0</top>
+        <width>780</width>
+        <height>760</height>
+        <texture border="24" colordiffuse="FFFFFFFF">applify/clean101/panel.png</texture>
+      </control>
+      <control type="grouplist" id="996">
+        <description>grouplist for context buttons</description>
+        <left>24</left>
+        <top>24</top>
+        <width>732</width>
+        <height min="72" max="712">auto</height>
+        <usecontrolcoords>false</usecontrolcoords>
+        <scrolltime>180</scrolltime>
+        <itemgap>4</itemgap>
+      </control>
+    </control>
+    <control type="button" id="1000">
+      <description>button template</description>
+      <left>0</left>
+      <top>0</top>
+      <width>732</width>
+      <height>72</height>
+      <align>left</align>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus />
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <font>OrchardBody</font>
+      <aligny>center</aligny>
+      <textoffsetx>24</textoffsetx>
+      <scroll>true</scroll>
+    </control>
+  </controls>
+</window>

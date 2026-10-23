@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol>10</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <controls>
+    <control type="group">
+      <centertop>50%</centertop>
+      <height>750</height>
+      <centerleft>50%</centerleft>
+      <width>1200</width>
+      <include content="DialogBackgroundCommons">
+        <param name="width" value="1200" />
+        <param name="height" value="750" />
+        <param name="header_label" value="$LOCALIZE[13406]" />
+        <param name="header_id" value="2" />
+      </include>
+      <control type="label">
+        <description>path label</description>
+        <left>30</left>
+        <top>90</top>
+        <width>1140</width>
+        <height>30</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font12</font>
+        <label>$LOCALIZE[1021]</label>
+      </control>
+      <control type="image">
+        <left>32</left>
+        <top>140</top>
+        <width>824</width>
+        <height>284</height>
+        <texture border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texture>
+      </control>
+      <control type="list" id="10">
+        <left>48</left>
+        <top>156</top>
+        <width>792</width>
+        <height>252</height>
+        <onup>9001</onup>
+        <onleft>9000</onleft>
+        <onright>60</onright>
+        <ondown>12</ondown>
+        <pagecontrol>60</pagecontrol>
+        <scrolltime>200</scrolltime>
+        <itemlayout height="84" width="792">
+          <control type="label">
+            <left>10</left>
+            <top>0</top>
+            <aligny>center</aligny>
+            <textcolor>grey</textcolor>
+            <label>$INFO[ListItem.Label]</label>
+            <height>84</height>
+            <width>768</width>
+            <font>ApplifyBody</font>
+            <scroll>true</scroll>
+          </control>
+        </itemlayout>
+        <focusedlayout height="84" width="792">
+          <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <texture colordiffuse="FFFFFFFF" border="16">applify/clean101/row-focus.png</texture>
+            <animation effect="fade" start="100" end="50" time="0" condition="!Skin.HasSetting(orchard.reducedanimations)">UnFocus</animation>
+            <height>84</height>
+            <width>792</width>
+          </control>
+          <control type="label">
+            <left>10</left>
+            <top>0</top>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Label]</label>
+            <height>84</height>
+            <width>768</width>
+            <font>ApplifyBody</font>
+            <scroll>true</scroll>
+          </control>
+        </focusedlayout>
+      </control>
+      <control type="scrollbar" id="60">
+        <left>864</left>
+        <top>156</top>
+        <width>8</width>
+        <height>252</height>
+        <onleft>10</onleft>
+        <onright>9000</onright>
+        <orientation>vertical</orientation>
+      </control>
+      <control type="grouplist" id="9000">
+        <itemgap>12</itemgap>
+        <left>904</left>
+        <top>156</top>
+        <orientation>vertical</orientation>
+        <onleft>10</onleft>
+        <onright>10</onright>
+        <ondown>12</ondown>
+        <include content="DefaultDialogButton">
+          <param name="id" value="11" />
+          <param name="label" value="$LOCALIZE[1024]" />
+          <param name="height" value="76" />
+          <param name="width" value="256" />
+        </include>
+        <include content="DefaultDialogButton">
+          <param name="id" value="13" />
+          <param name="label" value="$LOCALIZE[15019]" />
+          <param name="height" value="76" />
+          <param name="width" value="256" />
+        </include>
+        <include content="DefaultDialogButton">
+          <param name="id" value="14" />
+          <param name="label" value="$LOCALIZE[1210]" />
+          <param name="height" value="76" />
+          <param name="width" value="256" />
+        </include>
+        <width>256</width>
+        <height>252</height>
+      </control>
+      <control type="label">
+        <description>Name label</description>
+        <left>30</left>
+        <top>460</top>
+        <width>1140</width>
+        <height>30</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font12</font>
+        <label>$LOCALIZE[1022]</label>
+      </control>
+      <control type="edit" id="12">
+        <description>Name Button</description>
+        <left>40</left>
+        <top>500</top>
+        <width>1120</width>
+        <height>64</height>
+        <align>left</align>
+        <aligny>center</aligny>
+        <label />
+        <onup>10</onup>
+        <ondown>9001</ondown>
+        <font>ApplifyBody</font>
+        <textoffsetx>24</textoffsetx>
+      </control>
+      <control type="grouplist" id="9001">
+        <itemgap>16</itemgap>
+        <left>0</left>
+        <height>64</height>
+        <width>1200</width>
+        <align>center</align>
+        <orientation>horizontal</orientation>
+        <onup>12</onup>
+        <include content="DefaultDialogButton">
+          <param name="id" value="18" />
+          <param name="label" value="$LOCALIZE[186]" />
+          <param name="width" value="280" />
+          <param name="height" value="64" />
+        </include>
+        <include content="DefaultDialogButton">
+          <param name="id" value="19" />
+          <param name="label" value="$LOCALIZE[222]" />
+          <param name="width" value="280" />
+          <param name="height" value="64" />
+        </include>
+        <top>628</top>
+      </control>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<colors>
+  <color name="primary_background">FF262626</color>
+  <color name="secondary_background">33575757</color>
+  <color name="dialog_tint">FF212121</color>
+  <color name="dialog_header_tint">FF282828</color>
+  <color name="button_focus">FF2C2C2C</color>
+  <color name="button_alt_focus">802C2C2C</color>
+  <color name="selected">FFA4A4A4</color>
+</colors>

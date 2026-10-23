@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol always="true">602</defaultcontrol>
+  <onload condition="!Player.PauseEnabled">SetFocus(603)</onload>
+  <controls>
+    <control type="group" id="8000">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <visible>[!Window.IsVisible(fullscreeninfo) + !Window.IsVisible(playerprocessinfo)] + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogAddonSettings.xml)</visible>
+      <animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(orchard.reducedanimations)">
+        <effect type="fade" start="0" end="100" time="220" />
+        <effect type="slide" start="0,14" end="0,0" time="220" tween="cubic" easing="out" />
+      </animation>
+      <animation type="WindowClose" reversible="false" condition="!Skin.HasSetting(orchard.reducedanimations)">
+        <effect type="fade" start="100" end="0" time="140" />
+        <effect type="slide" start="0,0" end="0,8" time="140" tween="cubic" easing="out" />
+      </animation>
+      <control type="image">
+        <left>0</left>
+        <top>580</top>
+        <width>1920</width>
+        <height>500</height>
+        <texture>orchard/matte135/fade-bottom-bn-500.png</texture>
+      </control>
+      <control type="label">
+        <left>84</left>
+        <top>756</top>
+        <width>1050</width>
+        <height>38</height>
+        <label>$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Season, · S]$INFO[VideoPlayer.Episode,E]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFD5D5D5</textcolor>
+        <aligny>center</aligny>
+        <visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
+        <scroll>false</scroll>
+      </control>
+      <control type="label">
+        <left>82</left>
+        <top>802</top>
+        <width>1220</width>
+        <height>78</height>
+        <label>$INFO[VideoPlayer.Title]</label>
+        <font>OrchardPlayerTitle</font>
+        <textcolor>FFFFFFFF</textcolor>
+        <aligny>center</aligny>
+        <scroll>false</scroll>
+      </control>
+      <control type="image">
+        <left>84</left>
+        <top>916</top>
+        <width>1752</width>
+        <height>8</height>
+        <texture>orchard/matte135/player-track-130.png</texture>
+      </control>
+      <control type="progress">
+        <left>84</left>
+        <top>916</top>
+        <width>1752</width>
+        <height>8</height>
+        <info>Player.ProgressCache</info>
+        <texturebg colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-slider-clear-130.png</texturebg>
+        <midtexture colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-cache-130.png</midtexture>
+        <lefttexture />
+        <righttexture />
+        <overlaytexture />
+      </control>
+      <control type="progress">
+        <left>84</left>
+        <top>916</top>
+        <width>1752</width>
+        <height>8</height>
+        <info>Player.Progress</info>
+        <texturebg colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-slider-clear-130.png</texturebg>
+        <midtexture colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-progress-130.png</midtexture>
+        <lefttexture />
+        <righttexture />
+        <overlaytexture />
+      </control>
+      <control type="ranges">
+        <left>84</left>
+        <top>914</top>
+        <width>1752</width>
+        <height>12</height>
+        <info>Player.Chapters</info>
+        <visible>Integer.IsGreater(Player.ChapterCount,0)</visible>
+        <texturebg colordiffuse="FFFFFFFF" border="0">orchard/matte135/chapter-clear-132.png</texturebg>
+        <lefttexture colordiffuse="FFFFFFFF" border="0" />
+        <midtexture colordiffuse="FFFFFFFF" border="0" />
+        <overlaytexture colordiffuse="FFFFFFFF" border="0" />
+        <righttexture colordiffuse="FFFFFFFF" border="0">orchard/matte135/chapter-marker-132.png</righttexture>
+      </control>
+      <control type="slider" id="87">
+        <left>84</left>
+        <top>902</top>
+        <width>1752</width>
+        <height>36</height>
+        <info>Player.Progress</info>
+        <action>seek</action>
+        <texturesliderbar colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-slider-clear-130.png</texturesliderbar>
+        <textureslidernib colordiffuse="FFFFFFFF" border="0">orchard/matte135/seek-nib-padded-132.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="FFFFFFFF" border="0">orchard/matte135/seek-nib-focus-padded-132.png</textureslidernibfocus>
+        <onup>70045</onup>
+        <onleft>StepBack</onleft>
+        <onright>StepForward</onright>
+        <onback>Dialog.Close(VideoOSD)</onback>
+        <enable>Player.SeekEnabled</enable>
+        <texturesliderbardisabled colordiffuse="FFFFFFFF" border="0">orchard/matte135/player-slider-clear-130.png</texturesliderbardisabled>
+        <textureslidernibdisabled colordiffuse="66FFFFFF" border="0">orchard/matte135/seek-nib-padded-132.png</textureslidernibdisabled>
+        <ondown condition="Player.PauseEnabled">602</ondown>
+        <ondown>603</ondown>
+      </control>
+      <control type="label">
+        <left>84</left>
+        <top>940</top>
+        <width>150</width>
+        <height>34</height>
+        <label>$INFO[Player.Time]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFDEDEDE</textcolor>
+        <aligny>center</aligny>
+        <scroll>false</scroll>
+      </control>
+      <control type="label">
+        <left>1436</left>
+        <top>940</top>
+        <width>400</width>
+        <height>34</height>
+        <label>-$INFO[Player.TimeRemaining]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFDEDEDE</textcolor>
+        <aligny>center</aligny>
+        <align>right</align>
+        <scroll>false</scroll>
+      </control>
+      <control type="label" id="7701">
+        <left>84</left>
+        <top>84</top>
+        <width>1250</width>
+        <height>42</height>
+        <label>$INFO[Player.Chapter,Chapter ]$INFO[Player.ChapterCount, / ]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFFFFFFF</textcolor>
+        <aligny>center</aligny>
+        <visible>Skin.HasSetting(orchard.osdchapters) + Integer.IsGreater(Player.ChapterCount,0)</visible>
+        <scroll>false</scroll>
+      </control>
+      <control type="label" id="7702">
+        <left>1536</left>
+        <top>84</top>
+        <width>300</width>
+        <height>42</height>
+        <label>$INFO[System.Time]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFFFFFFF</textcolor>
+        <aligny>center</aligny>
+        <visible>Skin.HasSetting(orchard.osdclock)</visible>
+        <align>right</align>
+        <scroll>false</scroll>
+      </control>
+      <control type="group">
+        <left>212</left>
+        <animation type="Conditional" condition="Control.HasFocus(70048) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="70048">
+          <left>0</left>
+          <top>0</top>
+          <label>$LOCALIZE[31764]</label>
+          <font>OrchardPlayerTab</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus border="16" colordiffuse="FFFFFFFF">orchard/matte135/player-row-focus-130.png</texturefocus>
+          <texturenofocus border="16" colordiffuse="FFFFFFFF" />
+          <onclick>Action(PlayerProcessInfo)</onclick>
+          <onup>87</onup>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <disabledcolor>00FFFFFF</disabledcolor>
+          <textoffsetx>0</textoffsetx>
+          <height>72</height>
+          <width>220</width>
+          <onleft>70048</onleft>
+          <onright condition="Player.SeekEnabled">604</onright>
+          <onright condition="Player.PauseEnabled">602</onright>
+          <onright>603</onright>
+        </control>
+        <top>980</top>
+        <height>72</height>
+        <width>220</width>
+        <control type="grouplist">
+          <description>Centered 70048 focused</description>
+          <left>0</left>
+          <top>0</top>
+          <width>220</width>
+          <height>72</height>
+          <orientation>horizontal</orientation>
+          <align>center</align>
+          <itemgap>12</itemgap>
+          <usecontrolcoords>true</usecontrolcoords>
+          <scrolltime>0</scrolltime>
+          <visible>Control.IsEnabled(70048) + Control.HasFocus(70048)</visible>
+          <control type="image">
+            <left>0</left>
+            <top>24.0</top>
+            <width>24</width>
+            <height>24</height>
+            <visible>true</visible>
+            <texture colordiffuse="FF151515">orchard/matte135/icon-process-135.png</texture>
+          </control>
+          <control type="label">
+            <left>0</left>
+            <top>-1</top>
+            <height>72</height>
+            <font>OrchardTransport</font>
+            <label>$LOCALIZE[31764]</label>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textoffsetx>0</textoffsetx>
+            <wrapmultiline>false</wrapmultiline>
+            <scroll>false</scroll>
+            <textcolor>FF151515</textcolor>
+            <width min="1" max="160">auto</width>
+          </control>
+        </control>
+        <control type="grouplist">
+          <description>Centered 70048 idle</description>
+          <left>0</left>
+          <top>0</top>
+          <width>220</width>
+          <height>72</height>
+          <orientation>horizontal</orientation>
+          <align>center</align>
+          <itemgap>12</itemgap>
+          <usecontrolcoords>true</usecontrolcoords>
+          <scrolltime>0</scrolltime>
+          <visible>Control.IsEnabled(70048) + !Control.HasFocus(70048)</visible>
+          <control type="image">
+            <left>0</left>
+            <top>24.0</top>
+            <width>24</width>
+            <height>24</height>
+            <visible>true</visible>
+            <texture colordiffuse="FFFFFFFF">orchard/matte135/icon-process-135.png</texture>
+          </control>
+          <control type="label">
+            <left>0</left>
+            <top>-1</top>
+            <height>72</height>
+            <font>OrchardTransport</font>
+            <label>$LOCALIZE[31764]</label>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textoffsetx>0</textoffsetx>
+            <wrapmultiline>false</wrapmultiline>
+            <scroll>false</scroll>
+            <textcolor>FFFFFFFF</textcolor>
+            <width min="1" max="160">auto</width>
+          </control>
+        </control>
+        <control type="grouplist">
+          <description>Centered 70048 disabled</description>
+          <left>0</left>
+          <top>0</top>
+          <width>220</width>
+          <height>72</height>
+          <orientation>horizontal</orientation>
+          <align>center</align>
+          <itemgap>12</itemgap>
+          <usecontrolcoords>true</usecontrolcoords>
+          <scrolltime>0</scrolltime>
+          <visible>!Control.IsEnabled(70048)</visible>
+          <control type="image">
+            <left>0</left>
+            <top>24.0</top>
+            <width>24</width>
+            <height>24</height>
+            <visible>true</visible>
+            <texture colordiffuse="77FFFFFF">orchard/matte135/icon-process-135.png</texture>
+          </control>
+          <control type="label">
+            <left>0</left>
+            <top>-1</top>
+            <height>72</height>
+            <font>OrchardTransport</font>
+            <label>$LOCALIZE[31764]</label>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textoffsetx>0</textoffsetx>
+            <wrapmultiline>false</wrapmultiline>
+            <scroll>false</scroll>
+            <textcolor>77FFFFFF</textcolor>
+            <width min="1" max="160">auto</width>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <animation type="Conditional" condition="Control.HasFocus(602) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="602">
+          <font>OrchardPlayerTab</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <onup>87</onup>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <textoffsetx>0</textoffsetx>
+          <left>0</left>
+          <top>0</top>
+          <width>88</width>
+          <height>88</height>
+          <label>$LOCALIZE[31761]</label>
+          <onclick>PlayerControl(Play)</onclick>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <disabledcolor>00FFFFFF</disabledcolor>
+          <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+          <texturenofocus border="0" />
+          <onleft>604</onleft>
+          <onright>603</onright>
+          <enable>Player.PauseEnabled</enable>
+        </control>
+        <left>863</left>
+        <top>970</top>
+        <width>88</width>
+        <height>88</height>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/transport138/play.png</texture>
+          <visible>[Player.Paused] + !Control.HasFocus(602)</visible>
+        </control>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/transport138/pause.png</texture>
+          <visible>[!Player.Paused] + !Control.HasFocus(602)</visible>
+        </control>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/controls143/focus-602-play.png</texture>
+          <visible>[Player.Paused] + Control.HasFocus(602)</visible>
+        </control>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/controls143/focus-602-pause.png</texture>
+          <visible>[!Player.Paused] + Control.HasFocus(602)</visible>
+        </control>
+      </control>
+      <control type="group">
+        <left>1760</left>
+        <animation type="Conditional" condition="Control.HasFocus(70047) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="70047">
+          <left>0</left>
+          <top>0</top>
+          <label>$LOCALIZE[31868]</label>
+          <font>OrchardPlayerTab</font>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+          <texturenofocus border="0" />
+          <onclick>ActivateWindow(osdvideosettings)</onclick>
+          <onleft>70045</onleft>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <textoffsetx>0</textoffsetx>
+          <width>88</width>
+          <height>88</height>
+          <onright>70046</onright>
+          <onup>70048</onup>
+        </control>
+        <control type="image">
+          <texture>orchard/matte135/icon-settings.png</texture>
+          <visible>[Control.IsVisible(70047) + true] + !Control.HasFocus(70047)</visible>
+          <left>24</left>
+          <top>24</top>
+          <width>40</width>
+          <height>40</height>
+        </control>
+        <top>804</top>
+        <width>88</width>
+        <height>88</height>
+        <control type="image">
+          <texture>orchard/controls143/focus-70047-icon-settings.png</texture>
+          <visible>[Control.IsVisible(70047) + true] + Control.HasFocus(70047)</visible>
+          <left>24</left>
+          <top>24</top>
+          <width>40</width>
+          <height>40</height>
+        </control>
+      </control>
+      <control type="group">
+        <left>1560</left>
+        <animation type="Conditional" condition="Control.HasFocus(70046) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="70046">
+          <left>0</left>
+          <top>0</top>
+          <label>$LOCALIZE[31833]</label>
+          <font>OrchardPlayerTab</font>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+          <texturenofocus border="0" />
+          <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
+          <onright>70045</onright>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <textoffsetx>0</textoffsetx>
+          <width>88</width>
+          <height>88</height>
+          <onleft>70047</onleft>
+          <onup>70048</onup>
+        </control>
+        <control type="image">
+          <texture>orchard/matte135/icon-subtitles.png</texture>
+          <visible>[Control.IsVisible(70046) + true] + !Control.HasFocus(70046)</visible>
+          <left>24</left>
+          <top>24</top>
+          <width>40</width>
+          <height>40</height>
+        </control>
+        <top>804</top>
+        <width>88</width>
+        <height>88</height>
+        <control type="image">
+          <texture>orchard/controls143/focus-70046-icon-subtitles.png</texture>
+          <visible>[Control.IsVisible(70046) + true] + Control.HasFocus(70046)</visible>
+          <left>24</left>
+          <top>24</top>
+          <width>40</width>
+          <height>40</height>
+        </control>
+      </control>
+      <control type="group">
+        <left>1660</left>
+        <animation type="Conditional" condition="Control.HasFocus(70045) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="70045">
+          <left>0</left>
+          <top>0</top>
+          <label>$LOCALIZE[31631]</label>
+          <font>OrchardPlayerTab</font>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+          <texturenofocus border="0" />
+          <onclick>ActivateWindow(osdaudiosettings)</onclick>
+          <onleft>70046</onleft>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <textoffsetx>0</textoffsetx>
+          <width>88</width>
+          <height>88</height>
+          <onup>70048</onup>
+          <onright>70047</onright>
+        </control>
+        <control type="image">
+          <texture>orchard/matte135/icon-audio.png</texture>
+          <visible>[Control.IsVisible(70045) + true] + !Control.HasFocus(70045)</visible>
+          <left>24</left>
+          <top>24</top>
+          <width>40</width>
+          <height>40</height>
+        </control>
+        <top>804</top>
+        <width>88</width>
+        <height>88</height>
+        <control type="image">
+          <texture>orchard/controls143/focus-70045-icon-audio.png</texture>
+          <visible>[Control.IsVisible(70045) + true] + Control.HasFocus(70045)</visible>
+          <left>24</left>
+          <top>24</top>
+          <width>40</width>
+          <height>40</height>
+        </control>
+      </control>
+      <control type="label">
+        <left>1400</left>
+        <top>756</top>
+        <width>436</width>
+        <height>36</height>
+        <label>$LOCALIZE[31868]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFDEDEDE</textcolor>
+        <aligny>center</aligny>
+        <visible>Control.HasFocus(70047) + !Window.IsVisible(1193)</visible>
+        <align>right</align>
+        <scroll>false</scroll>
+      </control>
+      <control type="label">
+        <left>1400</left>
+        <top>756</top>
+        <width>436</width>
+        <height>36</height>
+        <label>$LOCALIZE[31833]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFDEDEDE</textcolor>
+        <aligny>center</aligny>
+        <visible>Control.HasFocus(70046) + !Window.IsVisible(1193)</visible>
+        <align>right</align>
+        <scroll>false</scroll>
+      </control>
+      <control type="label">
+        <left>1400</left>
+        <top>756</top>
+        <width>436</width>
+        <height>36</height>
+        <label>$LOCALIZE[31631]</label>
+        <font>OrchardPlayerMeta</font>
+        <textcolor>FFDEDEDE</textcolor>
+        <aligny>center</aligny>
+        <visible>Control.HasFocus(70045) + !Window.IsVisible(1193)</visible>
+        <align>right</align>
+        <scroll>false</scroll>
+      </control>
+      <control type="group">
+        <animation type="Conditional" condition="Control.HasFocus(603) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="603">
+          <font>OrchardPlayerTab</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <onup>87</onup>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <enable>true</enable>
+          <textoffsetx>0</textoffsetx>
+          <left>0</left>
+          <top>0</top>
+          <width>88</width>
+          <height>88</height>
+          <label>$LOCALIZE[31830]</label>
+          <onclick>PlayerControl(Stop)</onclick>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <disabledcolor>00FFFFFF</disabledcolor>
+          <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+          <texturenofocus border="0" />
+          <onright>605</onright>
+          <onleft condition="Player.PauseEnabled">602</onleft>
+          <onleft>604</onleft>
+        </control>
+        <left>969</left>
+        <top>970</top>
+        <width>88</width>
+        <height>88</height>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/transport138/stop.png</texture>
+          <visible>[true] + !Control.HasFocus(603)</visible>
+        </control>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/controls143/focus-603-stop.png</texture>
+          <visible>[true] + Control.HasFocus(603)</visible>
+        </control>
+      </control>
+      <control type="group">
+        <animation type="Conditional" condition="Control.HasFocus(604) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="604">
+          <font>OrchardPlayerTab</font>
+          <enable>Player.SeekEnabled</enable>
+          <onup>87</onup>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <left>0</left>
+          <top>0</top>
+          <width>88</width>
+          <height>88</height>
+          <label>$LOCALIZE[31825]</label>
+          <onclick>Seek(-15)</onclick>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <disabledcolor>00FFFFFF</disabledcolor>
+          <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+          <texturenofocus border="0" />
+          <onleft>70048</onleft>
+          <onright condition="Player.PauseEnabled">602</onright>
+          <onright>603</onright>
+        </control>
+        <left>757</left>
+        <top>970</top>
+        <width>88</width>
+        <height>88</height>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/seek141/back15.png</texture>
+          <visible>[true] + !Control.HasFocus(604)</visible>
+        </control>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/controls143/focus-604-back15.png</texture>
+          <visible>[true] + Control.HasFocus(604)</visible>
+        </control>
+      </control>
+      <control type="group">
+        <animation type="Conditional" condition="Control.HasFocus(605) + !Skin.HasSetting(orchard.reducedanimations)" reversible="true">
+          <effect type="zoom" start="100" end="102" center="auto" time="160" tween="cubic" easing="out" />
+        </animation>
+        <control type="button" id="605">
+          <font>OrchardPlayerTab</font>
+          <enable>Player.SeekEnabled</enable>
+          <onup>87</onup>
+          <ondown>87</ondown>
+          <onback>Dialog.Close(VideoOSD)</onback>
+          <left>0</left>
+          <top>0</top>
+          <width>88</width>
+          <height>88</height>
+          <label>$LOCALIZE[31826]</label>
+          <onclick>Seek(15)</onclick>
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <disabledcolor>00FFFFFF</disabledcolor>
+          <texturefocus border="0" colordiffuse="FFFFFFFF">orchard/controls143/circle-focus.png</texturefocus>
+          <texturenofocus border="0" />
+          <onright>70046</onright>
+          <onleft>603</onleft>
+        </control>
+        <left>1075</left>
+        <top>970</top>
+        <width>88</width>
+        <height>88</height>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/seek141/forward15.png</texture>
+          <visible>[true] + !Control.HasFocus(605)</visible>
+        </control>
+        <control type="image">
+          <left>11</left>
+          <top>11</top>
+          <width>66</width>
+          <height>66</height>
+          <texture>orchard/controls143/focus-605-forward15.png</texture>
+          <visible>[true] + Control.HasFocus(605)</visible>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,630 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window id="1192">
+  <defaultcontrol always="true">9004</defaultcontrol>
+  <menucontrol>9004</menucontrol>
+  <backgroundcolor>FF080808</backgroundcolor>
+  <controls>
+    <control type="image">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>orchard/matte135/ambient-bn.png</texture>
+    </control>
+    <control type="image">
+      <left>428</left>
+      <top>24</top>
+      <width>1064</width>
+      <height>124</height>
+      <texture>orchard/matte135/nav-shell-shadow-128.png</texture>
+      <animation effect="fade" start="100" end="65" time="220" condition="!ControlGroup(9000).HasFocus + !Skin.HasSetting(orchard.reducedanimations)" tween="sine">Conditional</animation>
+      <animation effect="fade" start="100" end="65" time="0" condition="!ControlGroup(9000).HasFocus + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+    </control>
+    <control type="image">
+      <left>452</left>
+      <top>48</top>
+      <width>1016</width>
+      <height>76</height>
+      <texture>orchard/matte135/nav-shell-depth-128.png</texture>
+      <animation effect="fade" start="100" end="65" time="220" condition="!ControlGroup(9000).HasFocus + !Skin.HasSetting(orchard.reducedanimations)" tween="sine">Conditional</animation>
+      <animation effect="fade" start="100" end="65" time="0" condition="!ControlGroup(9000).HasFocus + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+    </control>
+    <control type="grouplist" id="9000">
+      <itemgap>12</itemgap>
+      <left>460</left>
+      <top>54</top>
+      <width>1000</width>
+      <height>64</height>
+      <orientation>horizontal</orientation>
+      <defaultcontrol>9001</defaultcontrol>
+      <scrolltime>180</scrolltime>
+      <control type="group">
+        <width>222</width>
+        <control type="image">
+          <width>238</width>
+          <left>-8</left>
+          <top>-10</top>
+          <height>96</height>
+          <visible>Control.HasFocus(9001)</visible>
+          <texture border="40,20,40,20">orchard/matte135/nav-focus-shadow-128.png</texture>
+          <animation effect="fade" start="0" end="100" time="140" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <height>64</height>
+        <control type="image">
+          <width>222</width>
+          <left>0</left>
+          <top>0</top>
+          <height>64</height>
+          <texture border="32">orchard/matte135/nav-focus-depth-128.png</texture>
+          <visible>Control.HasFocus(9001)</visible>
+          <animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">VisibleChange</animation>
+          <animation effect="zoom" start="98" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Visible</animation>
+        </control>
+        <control type="button" id="9001">
+          <width>222</width>
+          <height>64</height>
+          <label>$LOCALIZE[31871]</label>
+          <font>OrchardNav</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus />
+          <texturenofocus />
+          <textcolor>FFE7E7E7</textcolor>
+          <focusedcolor>FF141414</focusedcolor>
+          <onup>9001</onup>
+          <onleft>9006</onleft>
+          <onright>9002</onright>
+          <pulseonselect>false</pulseonselect>
+          <onclick>RunScript(special://skin/resources/widget_setup.py,page,home)</onclick>
+          <onback>ActivateWindow(Home)</onback>
+          <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)">50</ondown>
+          <ondown>8201</ondown>
+        </control>
+        <animation effect="slide" start="0,0" end="0,-2" time="160" condition="[Control.HasFocus(9001)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9001)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9001)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9001)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
+      </control>
+      <control type="group">
+        <width>166</width>
+        <control type="image">
+          <width>182</width>
+          <left>-8</left>
+          <top>-10</top>
+          <height>96</height>
+          <visible>Control.HasFocus(9002)</visible>
+          <texture border="40,20,40,20">orchard/matte135/nav-focus-shadow-128.png</texture>
+          <animation effect="fade" start="0" end="100" time="140" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <height>64</height>
+        <control type="image">
+          <width>166</width>
+          <left>0</left>
+          <top>0</top>
+          <height>64</height>
+          <texture border="32">orchard/matte135/nav-focus-depth-128.png</texture>
+          <visible>Control.HasFocus(9002)</visible>
+          <animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">VisibleChange</animation>
+          <animation effect="zoom" start="98" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Visible</animation>
+        </control>
+        <control type="button" id="9002">
+          <width>166</width>
+          <height>64</height>
+          <label>$LOCALIZE[31735]</label>
+          <font>OrchardNav</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus />
+          <texturenofocus />
+          <textcolor>FFE7E7E7</textcolor>
+          <focusedcolor>FF141414</focusedcolor>
+          <onup>9002</onup>
+          <onleft>9001</onleft>
+          <onright>9003</onright>
+          <pulseonselect>false</pulseonselect>
+          <onclick>RunScript(special://skin/resources/widget_setup.py,page,movies)</onclick>
+          <onback>ActivateWindow(Home)</onback>
+          <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)">50</ondown>
+          <ondown>8201</ondown>
+        </control>
+        <animation effect="slide" start="0,0" end="0,-2" time="160" condition="[Control.HasFocus(9002)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9002)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9002)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9002)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
+      </control>
+      <control type="group">
+        <width>206</width>
+        <control type="image">
+          <width>222</width>
+          <left>-8</left>
+          <top>-10</top>
+          <height>96</height>
+          <visible>Control.HasFocus(9003)</visible>
+          <texture border="40,20,40,20">orchard/matte135/nav-focus-shadow-128.png</texture>
+          <animation effect="fade" start="0" end="100" time="140" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <height>64</height>
+        <control type="image">
+          <width>206</width>
+          <left>0</left>
+          <top>0</top>
+          <height>64</height>
+          <texture border="32">orchard/matte135/nav-focus-depth-128.png</texture>
+          <visible>Control.HasFocus(9003)</visible>
+          <animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">VisibleChange</animation>
+          <animation effect="zoom" start="98" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Visible</animation>
+        </control>
+        <control type="button" id="9003">
+          <width>206</width>
+          <height>64</height>
+          <label>$LOCALIZE[31840]</label>
+          <font>OrchardNav</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus />
+          <texturenofocus />
+          <textcolor>FFE7E7E7</textcolor>
+          <focusedcolor>FF141414</focusedcolor>
+          <onup>9003</onup>
+          <onleft>9002</onleft>
+          <onright>9004</onright>
+          <pulseonselect>false</pulseonselect>
+          <onclick>RunScript(special://skin/resources/widget_setup.py,page,tv)</onclick>
+          <onback>ActivateWindow(Home)</onback>
+          <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)">50</ondown>
+          <ondown>8201</ondown>
+        </control>
+        <animation effect="slide" start="0,0" end="0,-2" time="160" condition="[Control.HasFocus(9003)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9003)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9003)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9003)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
+      </control>
+      <control type="group">
+        <width>190</width>
+        <control type="image">
+          <width>206</width>
+          <left>-8</left>
+          <top>-10</top>
+          <height>96</height>
+          <visible>Control.HasFocus(9004)</visible>
+          <texture border="40,20,40,20">orchard/matte135/nav-focus-shadow-128.png</texture>
+          <animation effect="fade" start="0" end="100" time="140" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <height>64</height>
+        <control type="image">
+          <width>190</width>
+          <left>0</left>
+          <top>0</top>
+          <height>64</height>
+          <texture border="32">orchard/matte135/nav-focus-depth-128.png</texture>
+          <visible>Control.HasFocus(9004)</visible>
+          <animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">VisibleChange</animation>
+          <animation effect="zoom" start="98" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Visible</animation>
+        </control>
+        <control type="button" id="9004">
+          <width>190</width>
+          <height>64</height>
+          <label>$LOCALIZE[31622]</label>
+          <font>OrchardNav</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus />
+          <texturenofocus />
+          <textcolor>FFE7E7E7</textcolor>
+          <focusedcolor>FF141414</focusedcolor>
+          <onup>9004</onup>
+          <onleft>9003</onleft>
+          <onright>9005</onright>
+          <pulseonselect>false</pulseonselect>
+          <onclick>RunScript(special://skin/resources/widget_setup.py,addons)</onclick>
+          <onback>ActivateWindow(Home)</onback>
+          <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)">50</ondown>
+          <ondown>8201</ondown>
+        </control>
+        <animation effect="slide" start="0,0" end="0,-2" time="160" condition="[Control.HasFocus(9004)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9004)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9004)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9004)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
+      </control>
+      <control type="group">
+        <width>78</width>
+        <control type="image">
+          <width>94</width>
+          <left>-8</left>
+          <top>-10</top>
+          <height>96</height>
+          <visible>Control.HasFocus(9005)</visible>
+          <texture border="40,20,40,20">orchard/matte135/nav-focus-shadow-128.png</texture>
+          <animation effect="fade" start="0" end="100" time="140" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <height>64</height>
+        <control type="image">
+          <width>78</width>
+          <left>0</left>
+          <top>0</top>
+          <height>64</height>
+          <texture border="32">orchard/matte135/nav-focus-depth-128.png</texture>
+          <visible>Control.HasFocus(9005)</visible>
+          <animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">VisibleChange</animation>
+          <animation effect="zoom" start="98" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Visible</animation>
+        </control>
+        <control type="button" id="9005">
+          <width>78</width>
+          <height>64</height>
+          <label>$LOCALIZE[31810]</label>
+          <font>OrchardNav</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus />
+          <texturenofocus />
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <onup>9005</onup>
+          <onleft>9004</onleft>
+          <onright>9006</onright>
+          <pulseonselect>false</pulseonselect>
+          <onclick>RunScript(special://skin/resources/widget_setup.py,search)</onclick>
+          <onback>ActivateWindow(Home)</onback>
+          <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)">50</ondown>
+          <ondown>8201</ondown>
+        </control>
+        <control type="image">
+          <left>24.0</left>
+          <top>17</top>
+          <width>30</width>
+          <height>30</height>
+          <texture>orchard/matte135/nav-search-125.png</texture>
+          <visible>!Control.HasFocus(9005)</visible>
+          <animation effect="fade" start="0" end="100" time="100" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <control type="image">
+          <left>24.0</left>
+          <top>17</top>
+          <width>30</width>
+          <height>30</height>
+          <texture>orchard/matte135/nav-search-dark-125.png</texture>
+          <visible>Control.HasFocus(9005)</visible>
+          <animation effect="fade" start="0" end="100" time="100" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <animation effect="slide" start="0,0" end="0,-2" time="160" condition="[Control.HasFocus(9005)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9005)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9005)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9005)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
+      </control>
+      <control type="group">
+        <width>78</width>
+        <control type="image">
+          <width>94</width>
+          <left>-8</left>
+          <top>-10</top>
+          <height>96</height>
+          <visible>Control.HasFocus(9006)</visible>
+          <texture border="40,20,40,20">orchard/matte135/nav-focus-shadow-128.png</texture>
+          <animation effect="fade" start="0" end="100" time="140" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <height>64</height>
+        <control type="image">
+          <width>78</width>
+          <left>0</left>
+          <top>0</top>
+          <height>64</height>
+          <texture border="32">orchard/matte135/nav-focus-depth-128.png</texture>
+          <visible>Control.HasFocus(9006)</visible>
+          <animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(orchard.reducedanimations)" tween="sine">VisibleChange</animation>
+          <animation effect="zoom" start="98" end="100" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)" center="auto" tween="cubic" easing="out">Visible</animation>
+        </control>
+        <control type="button" id="9006">
+          <width>78</width>
+          <height>64</height>
+          <label>$LOCALIZE[31817]</label>
+          <font>OrchardNav</font>
+          <align>center</align>
+          <aligny>center</aligny>
+          <texturefocus />
+          <texturenofocus />
+          <textcolor>00FFFFFF</textcolor>
+          <focusedcolor>00FFFFFF</focusedcolor>
+          <onup>9006</onup>
+          <onleft>9005</onleft>
+          <onright>9001</onright>
+          <pulseonselect>false</pulseonselect>
+          <onclick>ActivateWindow(Settings)</onclick>
+          <onback>ActivateWindow(Home)</onback>
+          <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)">50</ondown>
+          <ondown>8201</ondown>
+        </control>
+        <control type="image">
+          <left>24.0</left>
+          <top>17</top>
+          <width>30</width>
+          <height>30</height>
+          <texture>orchard/matte135/icon-nav-settings.png</texture>
+          <visible>!Control.HasFocus(9006)</visible>
+          <animation effect="fade" start="0" end="100" time="100" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <control type="image">
+          <left>24.0</left>
+          <top>17</top>
+          <width>30</width>
+          <height>30</height>
+          <texture>orchard/matte135/icon-nav-settings-dark.png</texture>
+          <visible>Control.HasFocus(9006)</visible>
+          <animation effect="fade" start="0" end="100" time="100" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        </control>
+        <animation effect="slide" start="0,0" end="0,-2" time="160" condition="[Control.HasFocus(9006)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-2" time="0" condition="[Control.HasFocus(9006)] + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="180" condition="[Control.HasFocus(9006)] + !Skin.HasSetting(orchard.reducedanimations)" tween="cubic" easing="out" center="auto">Conditional</animation>
+        <animation effect="zoom" start="100" end="102" time="0" condition="[Control.HasFocus(9006)] + Skin.HasSetting(orchard.reducedanimations)" center="auto">Conditional</animation>
+      </control>
+      <animation effect="fade" start="100" end="65" time="220" condition="!ControlGroup(9000).HasFocus + !Skin.HasSetting(orchard.reducedanimations)" tween="sine">Conditional</animation>
+      <animation effect="fade" start="100" end="65" time="0" condition="!ControlGroup(9000).HasFocus + Skin.HasSetting(orchard.reducedanimations)">Conditional</animation>
+    </control>
+    <control type="label">
+      <left>84</left>
+      <top>165</top>
+      <width>1400</width>
+      <height>88</height>
+      <label>$LOCALIZE[31622]</label>
+      <font>OrchardFeatureTitle</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <scroll>false</scroll>
+    </control>
+    <control type="label">
+      <left>84</left>
+      <top>996</top>
+      <width>1000</width>
+      <height>36</height>
+      <label>$LOCALIZE[31814]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FF9B9B9B</textcolor>
+    </control>
+    <control type="panel" id="50">
+      <left>84</left>
+      <top>330</top>
+      <width>1716</width>
+      <height>560</height>
+      <onup>9004</onup>
+      <onback>9004</onback>
+      <scrolltime>180</scrolltime>
+      <preloaditems>1</preloaditems>
+      <itemlayout width="286" height="256">
+        <control type="image">
+          <left>14</left>
+          <top>8</top>
+          <width>252</width>
+          <height>180</height>
+          <texture border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texture>
+        </control>
+        <control type="image">
+          <left>68</left>
+          <top>26</top>
+          <width>144</width>
+          <height>144</height>
+          <aspectratio>keep</aspectratio>
+          <texture fallback="DefaultAddon.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+        </control>
+        <control type="label">
+          <left>10</left>
+          <top>204</top>
+          <width>260</width>
+          <height>32</height>
+          <label>$INFO[ListItem.Label]</label>
+          <font>OrchardSmall</font>
+          <textcolor>FFD2D2D2</textcolor>
+          <align>center</align>
+          <scroll>false</scroll>
+        </control>
+      </itemlayout>
+      <focusedlayout width="286" height="256">
+        <control type="image">
+          <left>14</left>
+          <top>8</top>
+          <width>252</width>
+          <height>180</height>
+          <texture border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texture>
+        </control>
+        <control type="image">
+          <left>68</left>
+          <top>26</top>
+          <width>144</width>
+          <height>144</height>
+          <aspectratio>keep</aspectratio>
+          <texture fallback="DefaultAddon.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+        </control>
+        <control type="image">
+          <left>10</left>
+          <top>4</top>
+          <width>260</width>
+          <height>188</height>
+          <visible>Control.HasFocus(50)</visible>
+          <texture border="16">orchard/matte135/focus.png</texture>
+        </control>
+        <control type="label">
+          <left>10</left>
+          <top>204</top>
+          <width>260</width>
+          <height>32</height>
+          <label>$INFO[ListItem.Label]</label>
+          <font>OrchardSmall</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <align>center</align>
+          <scroll>false</scroll>
+        </control>
+      </focusedlayout>
+      <content>
+        <item id="1">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot1.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot1.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot1.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot1.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot1.id)])</onclick>
+        </item>
+        <item id="2">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot2.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot2.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot2.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot2.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot2.id)])</onclick>
+        </item>
+        <item id="3">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot3.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot3.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot3.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot3.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot3.id)])</onclick>
+        </item>
+        <item id="4">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot4.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot4.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot4.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot4.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot4.id)])</onclick>
+        </item>
+        <item id="5">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot5.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot5.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot5.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot5.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot5.id)])</onclick>
+        </item>
+        <item id="6">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot6.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot6.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot6.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot6.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot6.id)])</onclick>
+        </item>
+        <item id="7">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot7.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot7.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot7.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot7.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot7.id)])</onclick>
+        </item>
+        <item id="8">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot8.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot8.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot8.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot8.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot8.id)])</onclick>
+        </item>
+        <item id="9">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot9.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot9.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot9.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot9.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot9.id)])</onclick>
+        </item>
+        <item id="10">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot10.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot10.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot10.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot10.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot10.id)])</onclick>
+        </item>
+        <item id="11">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot11.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot11.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot11.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot11.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot11.id)])</onclick>
+        </item>
+        <item id="12">
+          <visible>!String.IsEmpty(Window(Home).Property(orchard.addons.slot12.id))</visible>
+          <label>$INFO[Window(Home).Property(orchard.addons.slot12.name)]</label>
+          <thumb>$INFO[Window(Home).Property(orchard.addons.slot12.icon)]</thumb>
+          <icon>$INFO[Window(Home).Property(orchard.addons.slot12.icon)]</icon>
+          <onclick>RunAddon($INFO[Window(Home).Property(orchard.addons.slot12.id)])</onclick>
+        </item>
+      </content>
+      <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.hasnext),0)">8203</ondown>
+      <ondown condition="Integer.IsGreater(Window(Home).Property(orchard.addons.page),0)">8202</ondown>
+      <ondown>8201</ondown>
+    </control>
+    <control type="label">
+      <left>84</left>
+      <top>330</top>
+      <width>1600</width>
+      <height>60</height>
+      <label>$LOCALIZE[31740]</label>
+      <font>OrchardBody</font>
+      <textcolor>FFC3C3C3</textcolor>
+      <visible>Integer.IsEqual(Window(Home).Property(orchard.addons.count),0)</visible>
+    </control>
+    <control type="button" id="8201">
+      <left>1560</left>
+      <top>196</top>
+      <width>220</width>
+      <height>54</height>
+      <label>$LOCALIZE[31782]</label>
+      <font>OrchardSmall</font>
+      <align>center</align>
+      <aligny>center</aligny>
+      <textcolor>FFE5E5E5</textcolor>
+      <focusedcolor>FF151515</focusedcolor>
+      <onup>9004</onup>
+      <ondown>50</ondown>
+      <onleft>9004</onleft>
+      <onright>9004</onright>
+      <onback>9004</onback>
+      <onclick>RunScript(special://skin/resources/widget_setup.py,addons_refresh)</onclick>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+    </control>
+    <control type="button" id="8202">
+      <left>1300</left>
+      <top>982</top>
+      <width>220</width>
+      <height>54</height>
+      <label>$LOCALIZE[31768]</label>
+      <font>OrchardSmall</font>
+      <align>center</align>
+      <aligny>center</aligny>
+      <textcolor>FFE5E5E5</textcolor>
+      <focusedcolor>FF151515</focusedcolor>
+      <onup>50</onup>
+      <ondown>50</ondown>
+      <onleft>9004</onleft>
+      <onback>9004</onback>
+      <onclick>RunScript(special://skin/resources/widget_setup.py,addons_page,-1)</onclick>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <visible>Integer.IsGreater(Window(Home).Property(orchard.addons.page),0)</visible>
+      <onright condition="Integer.IsGreater(Window(Home).Property(orchard.addons.hasnext),0)">8203</onright>
+      <onright>9004</onright>
+    </control>
+    <control type="button" id="8203">
+      <left>1560</left>
+      <top>982</top>
+      <width>220</width>
+      <height>54</height>
+      <label>$LOCALIZE[31738]</label>
+      <font>OrchardSmall</font>
+      <align>center</align>
+      <aligny>center</aligny>
+      <textcolor>FFE5E5E5</textcolor>
+      <focusedcolor>FF151515</focusedcolor>
+      <onup>50</onup>
+      <ondown>50</ondown>
+      <onright>9004</onright>
+      <onback>9004</onback>
+      <onclick>RunScript(special://skin/resources/widget_setup.py,addons_page,1)</onclick>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="16" colordiffuse="FFFFFFFF">applify/clean101/row.png</texturenofocus>
+      <visible>Integer.IsGreater(Window(Home).Property(orchard.addons.hasnext),0)</visible>
+      <onleft condition="Integer.IsGreater(Window(Home).Property(orchard.addons.page),0)">8202</onleft>
+      <onleft>9004</onleft>
+    </control>
+    <control type="label">
+      <left>84</left>
+      <top>942</top>
+      <width>1000</width>
+      <height>36</height>
+      <label>$LOCALIZE[31923] $INFO[Window(Home).Property(orchard.addons.page_label)]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFB4B4B4</textcolor>
+      <visible>Integer.IsGreater(Window(Home).Property(orchard.addons.pages),1)</visible>
+    </control>
+  </controls>
+  <onload condition="Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)">SetFocus(50)</onload>
+</window>

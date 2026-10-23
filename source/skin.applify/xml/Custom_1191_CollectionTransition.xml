@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window id="1191">
+  <backgroundcolor>FF101010</backgroundcolor>
+  <controls>
+    <control type="label">
+      <left>80</left>
+      <top>490</top>
+      <width>1760</width>
+      <height>80</height>
+      <label>$LOCALIZE[31724]</label>
+      <font>OrchardSection</font>
+      <textcolor>FFCCCCCC</textcolor>
+    </control>
+  </controls>
+</window>

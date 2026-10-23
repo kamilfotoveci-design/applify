@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window type="dialog" id="1105">
+  <defaultcontrol always="true">5000</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <controls>
+    <control type="group">
+      <centerleft>50%</centerleft>
+      <width>600</width>
+      <centertop>50%</centertop>
+      <height>700</height>
+      <include content="DialogBackgroundCommons">
+        <param name="width" value="600" />
+        <param name="height" value="80" />
+        <param name="header_label" value="$LOCALIZE[5]" />
+        <param name="header_id" value="" />
+      </include>
+      <control type="group">
+        <left>0</left>
+        <top>80</top>
+        <control type="grouplist" id="5000">
+          <width>600</width>
+          <height>700</height>
+          <itemgap>0</itemgap>
+          <onup>5000</onup>
+          <ondown>5000</ondown>
+          <orientation>vertical</orientation>
+          <control type="radiobutton" id="5001">
+            <height>62</height>
+            <width>600</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31163]</label>
+            <onclick>Skin.ToggleSetting(hide_background_fanart)</onclick>
+            <selected>!Skin.HasSetting(hide_background_fanart)</selected>
+            <radiowidth>64</radiowidth>
+            <radioheight>36</radioheight>
+            <radioposy>13</radioposy>
+            <textureradioonfocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on-focus.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off-focus.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off.png</textureradiooffnofocus>
+            <textureradioondisabled colordiffuse="66FFFFFF">orchard/controls143/switch-on.png</textureradioondisabled>
+            <textureradiooffdisabled colordiffuse="66FFFFFF">orchard/controls143/switch-off.png</textureradiooffdisabled>
+            <radioposx>512</radioposx>
+            <textwidth>464</textwidth>
+          </control>
+          <control type="radiobutton" id="5002">
+            <height>62</height>
+            <label>$LOCALIZE[31167]</label>
+            <include>DialogSettingButton</include>
+            <onclick>Skin.ToggleSetting(animate_background_fanart)</onclick>
+            <selected>Skin.HasSetting(animate_background_fanart)</selected>
+            <radiowidth>80</radiowidth>
+            <radioheight>44</radioheight>
+            <radioposy>0</radioposy>
+            <textureradioonfocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on-focus.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off-focus.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off.png</textureradiooffnofocus>
+            <textureradioondisabled colordiffuse="66FFFFFF">orchard/controls143/switch-on.png</textureradioondisabled>
+            <textureradiooffdisabled colordiffuse="66FFFFFF">orchard/controls143/switch-off.png</textureradiooffdisabled>
+            <radioposx>0</radioposx>
+          </control>
+          <control type="button" id="5004">
+            <height>62</height>
+            <width>600</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[250]</label>
+            <label2>[B]$INFO[Visualisation.Name][/B]</label2>
+            <onclick>Dialog.Close(all)</onclick>
+            <onclick>SendClick(500)</onclick>
+          </control>
+          <control type="button" id="5005">
+            <height>62</height>
+            <width>600</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31084]</label>
+            <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+          </control>
+          <control type="button" id="5006">
+            <height>62</height>
+            <width>600</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31068]</label>
+            <onclick>ActivateWindow(visualisationpresetlist)</onclick>
+            <visible>Visualisation.HasPresets</visible>
+          </control>
+          <control type="button" id="5007">
+            <height>62</height>
+            <width>600</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31082]</label>
+            <label2>[B]$INFO[Skin.String(LyricScript_Path)][/B]</label2>
+            <onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+          </control>
+          <control type="button" id="5008">
+            <height>62</height>
+            <width>600</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31083]</label>
+            <onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
+            <visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
+          </control>
+          <itemgap>8</itemgap>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

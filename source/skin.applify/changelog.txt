@@ -1,0 +1,10 @@
+1.1.2
+- Corrected ranked card numbers in custom hubs.
+- Browsable source code.
+- English-only skin language catalog.
+
+1.0.0
+- Initial Applify release based on Orchard TV 1.4.5.
+- Dedicated skin.applify identity and branding.
+- Bundled SF Pro Display and fallback fonts.
+- Configurable widgets, search and playback controls.

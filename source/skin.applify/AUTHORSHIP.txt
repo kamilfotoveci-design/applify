@@ -1,0 +1,12 @@
+Pyrus Skin by kamilwhoo
+
+Official project: https://github.com/kamilfotoveci-design/applify
+Official Kodi source: https://kamilfotoveci-design.github.io/applify/
+
+Pyrus builds on work by the Estuary contributors. Original copyright notices
+and licenses remain in this package. Fonts and other third-party components
+retain their own terms. This attribution does not override those licenses.
+
+Package and repository SHA-256 hashes detect unexpected file changes when
+compared with a trusted copy. They are not a digital signature or copy protection.
+Kodi skins contain readable XML and Python files and can be extracted.

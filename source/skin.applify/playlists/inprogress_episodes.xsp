@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><smartplaylist type="episodes"><name>In-progress Episodes</name><match>all</match><rule field="inprogress" operator="true"/><order direction="descending">lastplayed</order></smartplaylist>

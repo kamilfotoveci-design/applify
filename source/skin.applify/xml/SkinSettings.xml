@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol always="true">101</defaultcontrol>
+  <backgroundcolor>FF111215</backgroundcolor>
+  <controls>
+    <control type="image">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>applify/clean101/background.png</texture>
+    </control>
+    <control type="label">
+      <left>100</left>
+      <top>62</top>
+      <width>1700</width>
+      <height>90</height>
+      <label>$LOCALIZE[31824]</label>
+      <font>ApplifyTitle</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control type="label">
+      <left>104</left>
+      <top>162</top>
+      <width>1700</width>
+      <height>42</height>
+      <label>$LOCALIZE[31877]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFBCBCBC</textcolor>
+    </control>
+    <control type="button" id="101">
+      <left>104</left>
+      <top>210</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31872]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,openeditor,home)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>113</onup>
+      <ondown>102</ondown>
+      <onleft>101</onleft>
+      <onright>101</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="102">
+      <left>104</left>
+      <top>270</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31736]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,openeditor,movies)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>101</onup>
+      <ondown>103</ondown>
+      <onleft>102</onleft>
+      <onright>102</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="103">
+      <left>104</left>
+      <top>330</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31841]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,openeditor,tv)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>102</onup>
+      <ondown>104</ondown>
+      <onleft>103</onleft>
+      <onright>103</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="104">
+      <left>104</left>
+      <top>390</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31625]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,settings,appearance)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>103</onup>
+      <ondown>105</ondown>
+      <onleft>104</onleft>
+      <onright>104</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="105">
+      <left>104</left>
+      <top>450</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31763]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,settings,playback)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>104</onup>
+      <ondown>106</ondown>
+      <onleft>105</onleft>
+      <onright>105</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="106">
+      <left>104</left>
+      <top>510</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31644]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,settings,maintenance)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>105</onup>
+      <ondown>107</ondown>
+      <onleft>106</onleft>
+      <onright>106</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="107">
+      <left>104</left>
+      <top>570</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31716]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>ActivateWindow(PlayerSettings)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>106</onup>
+      <ondown>108</ondown>
+      <onleft>107</onleft>
+      <onright>107</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="108">
+      <left>104</left>
+      <top>630</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31759]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,settings,performance)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>107</onup>
+      <ondown>109</ondown>
+      <onleft>108</onleft>
+      <onright>108</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="109">
+      <left>104</left>
+      <top>690</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31812]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,settings,search)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>108</onup>
+      <ondown>110</ondown>
+      <onleft>109</onleft>
+      <onright>109</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="textbox" id="7900">
+      <left>860</left>
+      <top>270</top>
+      <width>900</width>
+      <height>160</height>
+      <label>$VAR[OrchardSkinSection]</label>
+      <font>ApplifyTitle</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control type="textbox">
+      <left>864</left>
+      <top>460</top>
+      <width>850</width>
+      <height>100</height>
+      <label>$LOCALIZE[31653]</label>
+      <font>OrchardBody</font>
+      <textcolor>FFAAAAAA</textcolor>
+    </control>
+    <control type="button" id="110">
+      <left>104</left>
+      <top>750</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31629]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/widget_setup.py,settings,artwork)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>109</onup>
+      <ondown>111</ondown>
+      <onleft>110</onleft>
+      <onright>110</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="111">
+      <left>104</left>
+      <top>810</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31854]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/home_hubs.py,configure)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>110</onup>
+      <ondown>112</ondown>
+      <onleft>111</onleft>
+      <onright>111</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="112">
+      <left>104</left>
+      <top>870</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31723]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>RunScript(special://skin/resources/home_hubs.py,pvr)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>111</onup>
+      <ondown>113</ondown>
+      <onleft>112</onleft>
+      <onright>112</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="button" id="113">
+      <left>104</left>
+      <top>930</top>
+      <width>620</width>
+      <height>56</height>
+      <label>$LOCALIZE[31797]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <focusedcolor>FF111111</focusedcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <texturefocus border="16" colordiffuse="FFFFFFFF">applify/clean101/button-focus.png</texturefocus>
+      <texturenofocus border="24" />
+      <onclick>ActivateWindow(Home)</onclick>
+      <textoffsetx>24</textoffsetx>
+      <onup>112</onup>
+      <ondown>101</ondown>
+      <onleft>113</onleft>
+      <onright>113</onright>
+      <shadowcolor>00000000</shadowcolor>
+    </control>
+    <control type="label">
+      <left>840</left>
+      <top>930</top>
+      <width>940</width>
+      <height>54</height>
+      <label>$LOCALIZE[31771]</label>
+      <font>ApplifyBody</font>
+      <textcolor>FFBCBCBC</textcolor>
+    </control>
+  </controls>
+  <include>OrchardMotionPage</include>
+</window>

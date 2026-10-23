@@ -1,0 +1,1349 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+  <include name="OrchardLandscapeHeight">
+    <height>276</height>
+  </include>
+  <include name="OrchardPosterHeight">
+    <height>560</height>
+  </include>
+  <variable name="OrchardHeroArt">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Art(fanart)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Art(fanart)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Art(fanart)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Art(fanart)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Art(fanart)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Art(fanart)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Art(fanart)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Art(fanart)]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Art(fanart)]</value>
+    <value />
+  </variable>
+  <variable name="OrchardHeroTitle">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0) + String.IsEmpty(Container(5101).ListItem.Title)">$INFO[Container(5101).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0) + String.IsEmpty(Container(5102).ListItem.Title)">$INFO[Container(5102).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0) + String.IsEmpty(Container(5103).ListItem.Title)">$INFO[Container(5103).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0) + String.IsEmpty(Container(5104).ListItem.Title)">$INFO[Container(5104).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0) + String.IsEmpty(Container(5105).ListItem.Title)">$INFO[Container(5105).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0) + String.IsEmpty(Container(5106).ListItem.Title)">$INFO[Container(5106).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0) + String.IsEmpty(Container(5107).ListItem.Title)">$INFO[Container(5107).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0) + String.IsEmpty(Container(5108).ListItem.Title)">$INFO[Container(5108).ListItem.Label]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0) + String.IsEmpty(Container(5101).ListItem.Title)">$INFO[Container(5101).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0) + String.IsEmpty(Container(5102).ListItem.Title)">$INFO[Container(5102).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0) + String.IsEmpty(Container(5103).ListItem.Title)">$INFO[Container(5103).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0) + String.IsEmpty(Container(5104).ListItem.Title)">$INFO[Container(5104).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0) + String.IsEmpty(Container(5105).ListItem.Title)">$INFO[Container(5105).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0) + String.IsEmpty(Container(5106).ListItem.Title)">$INFO[Container(5106).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0) + String.IsEmpty(Container(5107).ListItem.Title)">$INFO[Container(5107).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Title]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0) + String.IsEmpty(Container(5108).ListItem.Title)">$INFO[Container(5108).ListItem.Label]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Title]</value>
+    <value />
+  </variable>
+  <variable name="OrchardHeroPlot">
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)] + !String.IsEmpty(Container(5101).ListItem.PlotOutline)">$INFO[Container(5101).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Plot]</value>
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)] + !String.IsEmpty(Container(5102).ListItem.PlotOutline)">$INFO[Container(5102).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Plot]</value>
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)] + !String.IsEmpty(Container(5103).ListItem.PlotOutline)">$INFO[Container(5103).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Plot]</value>
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)] + !String.IsEmpty(Container(5104).ListItem.PlotOutline)">$INFO[Container(5104).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Plot]</value>
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)] + !String.IsEmpty(Container(5105).ListItem.PlotOutline)">$INFO[Container(5105).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Plot]</value>
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)] + !String.IsEmpty(Container(5106).ListItem.PlotOutline)">$INFO[Container(5106).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Plot]</value>
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)] + !String.IsEmpty(Container(5107).ListItem.PlotOutline)">$INFO[Container(5107).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Plot]</value>
+    <value condition="[String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)] + !String.IsEmpty(Container(5108).ListItem.PlotOutline)">$INFO[Container(5108).ListItem.PlotOutline]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5101).NumItems,0)] + !String.IsEmpty(Container(5101).ListItem.PlotOutline)">$INFO[Container(5101).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5102).NumItems,0)] + !String.IsEmpty(Container(5102).ListItem.PlotOutline)">$INFO[Container(5102).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5103).NumItems,0)] + !String.IsEmpty(Container(5103).ListItem.PlotOutline)">$INFO[Container(5103).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5104).NumItems,0)] + !String.IsEmpty(Container(5104).ListItem.PlotOutline)">$INFO[Container(5104).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5105).NumItems,0)] + !String.IsEmpty(Container(5105).ListItem.PlotOutline)">$INFO[Container(5105).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5106).NumItems,0)] + !String.IsEmpty(Container(5106).ListItem.PlotOutline)">$INFO[Container(5106).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5107).NumItems,0)] + !String.IsEmpty(Container(5107).ListItem.PlotOutline)">$INFO[Container(5107).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Plot]</value>
+    <value condition="[Integer.IsGreater(Container(5108).NumItems,0)] + !String.IsEmpty(Container(5108).ListItem.PlotOutline)">$INFO[Container(5108).ListItem.PlotOutline]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Plot]</value>
+    <value />
+  </variable>
+  <variable name="OrchardHeroYear">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Year]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Year]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Year]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Year]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Year]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Year]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Year]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Year]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Year]</value>
+    <value />
+  </variable>
+  <variable name="OrchardHeroLogo">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Art(clearlogo)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Art(clearlogo)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Art(clearlogo)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Art(clearlogo)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Art(clearlogo)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Art(clearlogo)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Art(clearlogo)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Art(clearlogo)]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Art(clearlogo)]</value>
+    <value />
+  </variable>
+  <variable name="OrchardHeroGenre">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Genre]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Genre]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Genre]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Genre]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Genre]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Genre]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Genre]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Genre]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Genre]</value>
+    <value />
+  </variable>
+  <variable name="OrchardHeroRating">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Rating]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Rating]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Rating]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Rating]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Rating]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Rating]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Rating]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Rating]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Rating]</value>
+    <value />
+  </variable>
+  <variable name="OrchardHeroContainer">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">5101</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">5102</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">5103</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">5104</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">5105</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">5106</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">5107</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">5108</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">5101</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">5102</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">5103</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">5104</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">5105</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">5106</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">5107</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">5108</value>
+    <value>5101</value>
+  </variable>
+  <variable name="OrchardHeroAction">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0) + Container(5101).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0) + Integer.IsGreater(Container(5101).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5101).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0) + Container(5102).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0) + Integer.IsGreater(Container(5102).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5102).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0) + Container(5103).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0) + Integer.IsGreater(Container(5103).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5103).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0) + Container(5104).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0) + Integer.IsGreater(Container(5104).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5104).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0) + Container(5105).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0) + Integer.IsGreater(Container(5105).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5105).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0) + Container(5106).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0) + Integer.IsGreater(Container(5106).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5106).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0) + Container(5107).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0) + Integer.IsGreater(Container(5107).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5107).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0) + Container(5108).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0) + Integer.IsGreater(Container(5108).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5108).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0) + Container(5101).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0) + Integer.IsGreater(Container(5101).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5101).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5101).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0) + Container(5102).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0) + Integer.IsGreater(Container(5102).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5102).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5102).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0) + Container(5103).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0) + Integer.IsGreater(Container(5103).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5103).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5103).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0) + Container(5104).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0) + Integer.IsGreater(Container(5104).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5104).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5104).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0) + Container(5105).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0) + Integer.IsGreater(Container(5105).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5105).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5105).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0) + Container(5106).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0) + Integer.IsGreater(Container(5106).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5106).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5106).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0) + Container(5107).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0) + Integer.IsGreater(Container(5107).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5107).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5107).NumItems,0)">$LOCALIZE[31760]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0) + Container(5108).ListItem.IsFolder">$LOCALIZE[31750]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0) + Integer.IsGreater(Container(5108).ListItem.PercentPlayed,0) + Integer.IsLess(Container(5108).ListItem.PercentPlayed,100)">$LOCALIZE[31796]</value>
+    <value condition="Integer.IsGreater(Container(5108).NumItems,0)">$LOCALIZE[31760]</value>
+    <value>$LOCALIZE[31760]</value>
+  </variable>
+  <variable name="OrchardOSDPlayLabel">
+    <value condition="Player.Paused">$LOCALIZE[31760]</value>
+    <value>Pause</value>
+  </variable>
+  <include name="OrchardFadeTime">
+    <fadetime>220</fadetime>
+  </include>
+  <include name="OrchardFadeTimeReduced">
+    <fadetime>0</fadetime>
+  </include>
+  <include name="OrchardLandscapeListHeight">
+    <height>200</height>
+  </include>
+  <include name="OrchardPosterListHeight">
+    <height>378</height>
+  </include>
+  <variable name="OrchardPageTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + !String.IsEmpty(Skin.String(pyrus.hub.home.label))">$INFO[Skin.String(pyrus.hub.home.label)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),home)">$LOCALIZE[31871]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(pyrus.hub.movies.label))">$INFO[Skin.String(pyrus.hub.movies.label)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31735]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(pyrus.hub.tv.label))">$INFO[Skin.String(pyrus.hub.tv.label)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31840]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(pyrus.hub.custom1.label))">$INFO[Skin.String(pyrus.hub.custom1.label)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31667]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(pyrus.hub.custom2.label))">$INFO[Skin.String(pyrus.hub.custom2.label)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31668]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(pyrus.hub.custom3.label))">$INFO[Skin.String(pyrus.hub.custom3.label)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31669]</value>
+    <value>$LOCALIZE[31871]</value>
+  </variable>
+  <variable name="OrchardRow1Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row1.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row1.path))">$INFO[Skin.String(orchard.movies.row1.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">videodb://movies/titles/</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row1.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row1.path))">$INFO[Skin.String(orchard.tv.row1.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">videodb://tvshows/titles/</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row1.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row1.path))">$INFO[Skin.String(orchard.row1.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">special://skin/playlists/inprogress_movies.xsp</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row1.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row1.path))">$INFO[Skin.String(orchard.custom1.row1.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row1.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row1.path))">$INFO[Skin.String(orchard.custom2.row1.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row1.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row1.path))">$INFO[Skin.String(orchard.custom3.row1.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow1Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row1.title))">$INFO[Skin.String(orchard.movies.row1.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31735]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row1.title))">$INFO[Skin.String(orchard.tv.row1.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31840]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row1.title))">$INFO[Skin.String(orchard.row1.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31861]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row1.title))">$INFO[Skin.String(orchard.custom1.row1.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31799]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row1.title))">$INFO[Skin.String(orchard.custom2.row1.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31799]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row1.title))">$INFO[Skin.String(orchard.custom3.row1.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31799]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow1Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row1.layout))">$INFO[Skin.String(orchard.movies.row1.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row1.layout))">$INFO[Skin.String(orchard.tv.row1.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row1.layout))">$INFO[Skin.String(orchard.row1.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row1.layout))">$INFO[Skin.String(orchard.custom1.row1.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row1.layout))">$INFO[Skin.String(orchard.custom2.row1.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row1.layout))">$INFO[Skin.String(orchard.custom3.row1.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow1Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row1.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row1.limit))">$INFO[Skin.String(orchard.movies.row1.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row1.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row1.limit))">$INFO[Skin.String(orchard.tv.row1.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row1.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row1.limit))">$INFO[Skin.String(orchard.row1.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row1.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row1.limit))">$INFO[Skin.String(orchard.custom1.row1.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row1.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row1.limit))">$INFO[Skin.String(orchard.custom2.row1.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row1.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row1.limit))">$INFO[Skin.String(orchard.custom3.row1.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow2Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row2.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row2.path))">$INFO[Skin.String(orchard.movies.row2.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">videodb://recentlyaddedmovies/</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row2.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row2.path))">$INFO[Skin.String(orchard.tv.row2.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">videodb://recentlyaddedepisodes/</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row2.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row2.path))">$INFO[Skin.String(orchard.row2.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">videodb://recentlyaddedmovies/</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row2.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row2.path))">$INFO[Skin.String(orchard.custom1.row2.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row2.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row2.path))">$INFO[Skin.String(orchard.custom2.row2.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row2.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row2.path))">$INFO[Skin.String(orchard.custom3.row2.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow2Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row2.title))">$INFO[Skin.String(orchard.movies.row2.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31778]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row2.title))">$INFO[Skin.String(orchard.tv.row2.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31777]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row2.title))">$INFO[Skin.String(orchard.row2.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31735]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row2.title))">$INFO[Skin.String(orchard.custom1.row2.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31800]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row2.title))">$INFO[Skin.String(orchard.custom2.row2.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31800]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row2.title))">$INFO[Skin.String(orchard.custom3.row2.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31800]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow2Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row2.layout))">$INFO[Skin.String(orchard.movies.row2.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row2.layout))">$INFO[Skin.String(orchard.tv.row2.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row2.layout))">$INFO[Skin.String(orchard.row2.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row2.layout))">$INFO[Skin.String(orchard.custom1.row2.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row2.layout))">$INFO[Skin.String(orchard.custom2.row2.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row2.layout))">$INFO[Skin.String(orchard.custom3.row2.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow2Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row2.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row2.limit))">$INFO[Skin.String(orchard.movies.row2.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row2.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row2.limit))">$INFO[Skin.String(orchard.tv.row2.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row2.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row2.limit))">$INFO[Skin.String(orchard.row2.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row2.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row2.limit))">$INFO[Skin.String(orchard.custom1.row2.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row2.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row2.limit))">$INFO[Skin.String(orchard.custom2.row2.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row2.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row2.limit))">$INFO[Skin.String(orchard.custom3.row2.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow3Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row3.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row3.path))">$INFO[Skin.String(orchard.movies.row3.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">special://skin/playlists/inprogress_movies.xsp</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row3.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row3.path))">$INFO[Skin.String(orchard.tv.row3.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">special://skin/playlists/inprogress_episodes.xsp</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row3.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row3.path))">$INFO[Skin.String(orchard.row3.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">videodb://recentlyaddedepisodes/</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row3.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row3.path))">$INFO[Skin.String(orchard.custom1.row3.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row3.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row3.path))">$INFO[Skin.String(orchard.custom2.row3.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row3.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row3.path))">$INFO[Skin.String(orchard.custom3.row3.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow3Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row3.title))">$INFO[Skin.String(orchard.movies.row3.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31659]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row3.title))">$INFO[Skin.String(orchard.tv.row3.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31659]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row3.title))">$INFO[Skin.String(orchard.row3.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31840]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row3.title))">$INFO[Skin.String(orchard.custom1.row3.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31801]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row3.title))">$INFO[Skin.String(orchard.custom2.row3.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31801]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row3.title))">$INFO[Skin.String(orchard.custom3.row3.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31801]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow3Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row3.layout))">$INFO[Skin.String(orchard.movies.row3.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row3.layout))">$INFO[Skin.String(orchard.tv.row3.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row3.layout))">$INFO[Skin.String(orchard.row3.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row3.layout))">$INFO[Skin.String(orchard.custom1.row3.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row3.layout))">$INFO[Skin.String(orchard.custom2.row3.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row3.layout))">$INFO[Skin.String(orchard.custom3.row3.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow3Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row3.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row3.limit))">$INFO[Skin.String(orchard.movies.row3.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row3.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row3.limit))">$INFO[Skin.String(orchard.tv.row3.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row3.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row3.limit))">$INFO[Skin.String(orchard.row3.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row3.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row3.limit))">$INFO[Skin.String(orchard.custom1.row3.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row3.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row3.limit))">$INFO[Skin.String(orchard.custom2.row3.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row3.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row3.limit))">$INFO[Skin.String(orchard.custom3.row3.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow4Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row4.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row4.path))">$INFO[Skin.String(orchard.movies.row4.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row4.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row4.path))">$INFO[Skin.String(orchard.tv.row4.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row4.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row4.path))">$INFO[Skin.String(orchard.row4.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">special://skin/playlists/inprogress_episodes.xsp</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row4.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row4.path))">$INFO[Skin.String(orchard.custom1.row4.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row4.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row4.path))">$INFO[Skin.String(orchard.custom2.row4.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row4.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row4.path))">$INFO[Skin.String(orchard.custom3.row4.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow4Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row4.title))">$INFO[Skin.String(orchard.movies.row4.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31802]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row4.title))">$INFO[Skin.String(orchard.tv.row4.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31802]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row4.title))">$INFO[Skin.String(orchard.row4.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31659]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row4.title))">$INFO[Skin.String(orchard.custom1.row4.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31802]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row4.title))">$INFO[Skin.String(orchard.custom2.row4.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31802]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row4.title))">$INFO[Skin.String(orchard.custom3.row4.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31802]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow4Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row4.layout))">$INFO[Skin.String(orchard.movies.row4.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row4.layout))">$INFO[Skin.String(orchard.tv.row4.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row4.layout))">$INFO[Skin.String(orchard.row4.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row4.layout))">$INFO[Skin.String(orchard.custom1.row4.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row4.layout))">$INFO[Skin.String(orchard.custom2.row4.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row4.layout))">$INFO[Skin.String(orchard.custom3.row4.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow4Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row4.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row4.limit))">$INFO[Skin.String(orchard.movies.row4.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row4.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row4.limit))">$INFO[Skin.String(orchard.tv.row4.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row4.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row4.limit))">$INFO[Skin.String(orchard.row4.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row4.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row4.limit))">$INFO[Skin.String(orchard.custom1.row4.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row4.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row4.limit))">$INFO[Skin.String(orchard.custom2.row4.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row4.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row4.limit))">$INFO[Skin.String(orchard.custom3.row4.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow5Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row5.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row5.path))">$INFO[Skin.String(orchard.movies.row5.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row5.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row5.path))">$INFO[Skin.String(orchard.tv.row5.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row5.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row5.path))">$INFO[Skin.String(orchard.row5.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row5.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row5.path))">$INFO[Skin.String(orchard.custom1.row5.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row5.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row5.path))">$INFO[Skin.String(orchard.custom2.row5.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row5.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row5.path))">$INFO[Skin.String(orchard.custom3.row5.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow5Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row5.title))">$INFO[Skin.String(orchard.movies.row5.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31803]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row5.title))">$INFO[Skin.String(orchard.tv.row5.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31803]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row5.title))">$INFO[Skin.String(orchard.row5.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31803]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row5.title))">$INFO[Skin.String(orchard.custom1.row5.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31803]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row5.title))">$INFO[Skin.String(orchard.custom2.row5.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31803]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row5.title))">$INFO[Skin.String(orchard.custom3.row5.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31803]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow5Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row5.layout))">$INFO[Skin.String(orchard.movies.row5.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row5.layout))">$INFO[Skin.String(orchard.tv.row5.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row5.layout))">$INFO[Skin.String(orchard.row5.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row5.layout))">$INFO[Skin.String(orchard.custom1.row5.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row5.layout))">$INFO[Skin.String(orchard.custom2.row5.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row5.layout))">$INFO[Skin.String(orchard.custom3.row5.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow5Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row5.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row5.limit))">$INFO[Skin.String(orchard.movies.row5.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row5.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row5.limit))">$INFO[Skin.String(orchard.tv.row5.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row5.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row5.limit))">$INFO[Skin.String(orchard.row5.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row5.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row5.limit))">$INFO[Skin.String(orchard.custom1.row5.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row5.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row5.limit))">$INFO[Skin.String(orchard.custom2.row5.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row5.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row5.limit))">$INFO[Skin.String(orchard.custom3.row5.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow6Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row6.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row6.path))">$INFO[Skin.String(orchard.movies.row6.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row6.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row6.path))">$INFO[Skin.String(orchard.tv.row6.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row6.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row6.path))">$INFO[Skin.String(orchard.row6.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row6.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row6.path))">$INFO[Skin.String(orchard.custom1.row6.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row6.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row6.path))">$INFO[Skin.String(orchard.custom2.row6.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row6.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row6.path))">$INFO[Skin.String(orchard.custom3.row6.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow6Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row6.title))">$INFO[Skin.String(orchard.movies.row6.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31804]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row6.title))">$INFO[Skin.String(orchard.tv.row6.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31804]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row6.title))">$INFO[Skin.String(orchard.row6.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31804]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row6.title))">$INFO[Skin.String(orchard.custom1.row6.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31804]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row6.title))">$INFO[Skin.String(orchard.custom2.row6.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31804]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row6.title))">$INFO[Skin.String(orchard.custom3.row6.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31804]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow6Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row6.layout))">$INFO[Skin.String(orchard.movies.row6.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row6.layout))">$INFO[Skin.String(orchard.tv.row6.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row6.layout))">$INFO[Skin.String(orchard.row6.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row6.layout))">$INFO[Skin.String(orchard.custom1.row6.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row6.layout))">$INFO[Skin.String(orchard.custom2.row6.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row6.layout))">$INFO[Skin.String(orchard.custom3.row6.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow6Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row6.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row6.limit))">$INFO[Skin.String(orchard.movies.row6.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row6.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row6.limit))">$INFO[Skin.String(orchard.tv.row6.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row6.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row6.limit))">$INFO[Skin.String(orchard.row6.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row6.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row6.limit))">$INFO[Skin.String(orchard.custom1.row6.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row6.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row6.limit))">$INFO[Skin.String(orchard.custom2.row6.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row6.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row6.limit))">$INFO[Skin.String(orchard.custom3.row6.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow7Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row7.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row7.path))">$INFO[Skin.String(orchard.movies.row7.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row7.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row7.path))">$INFO[Skin.String(orchard.tv.row7.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row7.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row7.path))">$INFO[Skin.String(orchard.row7.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row7.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row7.path))">$INFO[Skin.String(orchard.custom1.row7.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row7.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row7.path))">$INFO[Skin.String(orchard.custom2.row7.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row7.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row7.path))">$INFO[Skin.String(orchard.custom3.row7.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow7Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row7.title))">$INFO[Skin.String(orchard.movies.row7.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31805]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row7.title))">$INFO[Skin.String(orchard.tv.row7.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31805]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row7.title))">$INFO[Skin.String(orchard.row7.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31805]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row7.title))">$INFO[Skin.String(orchard.custom1.row7.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31805]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row7.title))">$INFO[Skin.String(orchard.custom2.row7.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31805]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row7.title))">$INFO[Skin.String(orchard.custom3.row7.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31805]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow7Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row7.layout))">$INFO[Skin.String(orchard.movies.row7.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row7.layout))">$INFO[Skin.String(orchard.tv.row7.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row7.layout))">$INFO[Skin.String(orchard.row7.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row7.layout))">$INFO[Skin.String(orchard.custom1.row7.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row7.layout))">$INFO[Skin.String(orchard.custom2.row7.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row7.layout))">$INFO[Skin.String(orchard.custom3.row7.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow7Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row7.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row7.limit))">$INFO[Skin.String(orchard.movies.row7.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row7.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row7.limit))">$INFO[Skin.String(orchard.tv.row7.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row7.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row7.limit))">$INFO[Skin.String(orchard.row7.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row7.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row7.limit))">$INFO[Skin.String(orchard.custom1.row7.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row7.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row7.limit))">$INFO[Skin.String(orchard.custom2.row7.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row7.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row7.limit))">$INFO[Skin.String(orchard.custom3.row7.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow8Path">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row8.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row8.path))">$INFO[Skin.String(orchard.movies.row8.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row8.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row8.path))">$INFO[Skin.String(orchard.tv.row8.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + Skin.HasSetting(orchard.row8.disabled)" />
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row8.path))">$INFO[Skin.String(orchard.row8.path)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row8.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row8.path))">$INFO[Skin.String(orchard.custom1.row8.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row8.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row8.path))">$INFO[Skin.String(orchard.custom2.row8.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row8.disabled)" />
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row8.path))">$INFO[Skin.String(orchard.custom3.row8.path)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)" />
+    <value />
+  </variable>
+  <variable name="OrchardRow8Title">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row8.title))">$INFO[Skin.String(orchard.movies.row8.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">$LOCALIZE[31806]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row8.title))">$INFO[Skin.String(orchard.tv.row8.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">$LOCALIZE[31806]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row8.title))">$INFO[Skin.String(orchard.row8.title)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">$LOCALIZE[31806]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row8.title))">$INFO[Skin.String(orchard.custom1.row8.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">$LOCALIZE[31806]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row8.title))">$INFO[Skin.String(orchard.custom2.row8.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">$LOCALIZE[31806]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row8.title))">$INFO[Skin.String(orchard.custom3.row8.title)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">$LOCALIZE[31806]</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow8Layout">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row8.layout))">$INFO[Skin.String(orchard.movies.row8.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row8.layout))">$INFO[Skin.String(orchard.tv.row8.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">landscape</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row8.layout))">$INFO[Skin.String(orchard.row8.layout)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row8.layout))">$INFO[Skin.String(orchard.custom1.row8.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row8.layout))">$INFO[Skin.String(orchard.custom2.row8.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">landscape</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row8.layout))">$INFO[Skin.String(orchard.custom3.row8.layout)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">landscape</value>
+    <value />
+  </variable>
+  <variable name="OrchardRow8Limit">
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEqual(Skin.String(orchard.movies.row8.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + !String.IsEmpty(Skin.String(orchard.movies.row8.limit))">$INFO[Skin.String(orchard.movies.row8.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEqual(Skin.String(orchard.tv.row8.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + !String.IsEmpty(Skin.String(orchard.tv.row8.limit))">$INFO[Skin.String(orchard.tv.row8.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv)">12</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + String.IsEqual(Skin.String(orchard.row8.layout),ranked)">10</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))] + !String.IsEmpty(Skin.String(orchard.row8.limit))">$INFO[Skin.String(orchard.row8.limit)]</value>
+    <value condition="[String.IsEqual(Skin.String(orchard.page),home) | String.IsEmpty(Skin.String(orchard.page))]">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEqual(Skin.String(orchard.custom1.row8.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + !String.IsEmpty(Skin.String(orchard.custom1.row8.limit))">$INFO[Skin.String(orchard.custom1.row8.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEqual(Skin.String(orchard.custom2.row8.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + !String.IsEmpty(Skin.String(orchard.custom2.row8.limit))">$INFO[Skin.String(orchard.custom2.row8.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2)">12</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEqual(Skin.String(orchard.custom3.row8.layout),ranked)">10</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + !String.IsEmpty(Skin.String(orchard.custom3.row8.limit))">$INFO[Skin.String(orchard.custom3.row8.limit)]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3)">12</value>
+    <value />
+  </variable>
+  <variable name="OrchardPPIVideoCodec">
+    <value condition="!String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEqual(VideoPlayer.VideoCodec,unknown)">$INFO[VideoPlayer.VideoCodec]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIHDR">
+    <value condition="String.IsEqual(VideoPlayer.HdrType,dolbyvision)">Dolby Vision</value>
+    <value condition="String.IsEqual(VideoPlayer.HdrType,hdr10)">HDR10</value>
+    <value condition="String.IsEqual(VideoPlayer.HdrType,hdr10plus)">HDR10+</value>
+    <value condition="String.IsEqual(VideoPlayer.HdrType,hlg)">HLG</value>
+    <value condition="!String.IsEmpty(VideoPlayer.HdrType) + !String.IsEqual(VideoPlayer.HdrType,unknown)">$INFO[VideoPlayer.HdrType]</value>
+    <value>SDR / unspecified</value>
+  </variable>
+  <variable name="OrchardPPIDVProfile">
+    <value condition="!String.IsEmpty(VideoPlayer.HdrDetail) + !String.IsEqual(VideoPlayer.HdrDetail,unknown)">$INFO[VideoPlayer.HdrDetail]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIDimensions">
+    <value condition="!String.IsEmpty(Player.Process(videowidth)) + !String.IsEqual(Player.Process(videowidth),unknown)">$INFO[Player.Process(videowidth)] x $INFO[Player.Process(videoheight)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIFPS">
+    <value condition="!String.IsEmpty(Player.Process(videofps)) + !String.IsEqual(Player.Process(videofps),unknown)">$INFO[Player.Process(videofps)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIVideoBitrate">
+    <value condition="!String.IsEmpty(VideoPlayer.VideoBitrate) + !String.IsEqual(VideoPlayer.VideoBitrate,unknown) + Integer.IsGreater(VideoPlayer.VideoBitrate,0)">$INFO[VideoPlayer.VideoBitrate,, kb/s]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIVideoLive">
+    <value condition="!String.IsEmpty(Player.Process(videolivebitrate)) + !String.IsEqual(Player.Process(videolivebitrate),unknown)">$INFO[Player.Process(videolivebitrate)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioCodec">
+    <value condition="String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)">Dolby TrueHD / Atmos</value>
+    <value condition="String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)">Dolby Digital Plus / Atmos</value>
+    <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)">DTS-HD MA / DTS:X</value>
+    <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax)">DTS:X IMAX</value>
+    <value condition="!String.IsEmpty(VideoPlayer.AudioCodec) + !String.IsEqual(VideoPlayer.AudioCodec,unknown)">$INFO[VideoPlayer.AudioCodec]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioChannels">
+    <value condition="!String.IsEmpty(VideoPlayer.AudioChannels) + !String.IsEqual(VideoPlayer.AudioChannels,unknown)">$INFO[VideoPlayer.AudioChannels]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioBitrate">
+    <value condition="!String.IsEmpty(VideoPlayer.AudioBitrate) + !String.IsEqual(VideoPlayer.AudioBitrate,unknown) + Integer.IsGreater(VideoPlayer.AudioBitrate,0)">$INFO[VideoPlayer.AudioBitrate,, kb/s]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioLive">
+    <value condition="!String.IsEmpty(Player.Process(audiolivebitrate)) + !String.IsEqual(Player.Process(audiolivebitrate),unknown)">$INFO[Player.Process(audiolivebitrate)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioRate">
+    <value condition="!String.IsEmpty(Player.Process(audiosamplerate)) + !String.IsEqual(Player.Process(audiosamplerate),unknown) + Integer.IsGreater(Player.Process(audiosamplerate),0)">$INFO[Player.Process(audiosamplerate)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioBits">
+    <value condition="!String.IsEmpty(Player.Process(audiobitspersample)) + !String.IsEqual(Player.Process(audiobitspersample),unknown) + Integer.IsGreater(Player.Process(audiobitspersample),0)">$INFO[Player.Process(audiobitspersample)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioLanguage">
+    <value condition="!String.IsEmpty(VideoPlayer.AudioLanguage) + !String.IsEqual(VideoPlayer.AudioLanguage,unknown)">$INFO[VideoPlayer.AudioLanguage]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIDisplayMode">
+    <value condition="!String.IsEmpty(Player.Process(amlogic.displaymode)) + !String.IsEqual(Player.Process(amlogic.displaymode),unknown)">$INFO[Player.Process(amlogic.displaymode)]</value>
+    <value>$LOCALIZE[31922]</value>
+  </variable>
+  <variable name="OrchardPPIEOTF">
+    <value condition="!String.IsEmpty(Player.Process(amlogic.eoft_gamut)) + !String.IsEqual(Player.Process(amlogic.eoft_gamut),unknown)">$INFO[Player.Process(amlogic.eoft_gamut)]</value>
+    <value>$LOCALIZE[31922]</value>
+  </variable>
+  <variable name="OrchardPPIOutputPixel">
+    <value condition="!String.IsEmpty(Player.Process(amlogic.pixformat)) + !String.IsEqual(Player.Process(amlogic.pixformat),unknown)">$INFO[Player.Process(amlogic.pixformat)]</value>
+    <value>$LOCALIZE[31922]</value>
+  </variable>
+  <variable name="OrchardPPIScreen">
+    <value condition="!String.IsEmpty(System.ScreenResolution) + !String.IsEqual(System.ScreenResolution,unknown)">$INFO[System.ScreenResolution]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIVideoDecoder">
+    <value condition="!String.IsEmpty(Player.Process(videodecoder)) + !String.IsEqual(Player.Process(videodecoder),unknown)">$INFO[Player.Process(videodecoder)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIPixelFormat">
+    <value condition="!String.IsEmpty(Player.Process(pixformat)) + !String.IsEqual(Player.Process(pixformat),unknown)">$INFO[Player.Process(pixformat)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIAudioDecoder">
+    <value condition="!String.IsEmpty(Player.Process(audiodecoder)) + !String.IsEqual(Player.Process(audiodecoder),unknown)">$INFO[Player.Process(audiodecoder)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPISinkChannels">
+    <value condition="!String.IsEmpty(Player.Process(audiochannelssink)) + !String.IsEqual(Player.Process(audiochannelssink),unknown)">$INFO[Player.Process(audiochannelssink)]</value>
+    <value>$LOCALIZE[31922]</value>
+  </variable>
+  <variable name="OrchardPPIDeinterlace">
+    <value condition="!String.IsEmpty(Player.Process(deintmethod)) + !String.IsEqual(Player.Process(deintmethod),unknown)">$INFO[Player.Process(deintmethod)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIDisplayHDR">
+    <value condition="!String.IsEmpty(System.SupportedHDRTypes) + !String.IsEqual(System.SupportedHDRTypes,unknown)">$INFO[System.SupportedHDRTypes]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPICache">
+    <value condition="!String.IsEmpty(Player.CacheLevel) + !String.IsEqual(Player.CacheLevel,unknown)">$INFO[Player.CacheLevel]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPISystemFPS">
+    <value condition="!String.IsEmpty(System.FPS) + !String.IsEqual(System.FPS,unknown)">$INFO[System.FPS]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPICPU">
+    <value condition="!String.IsEmpty(System.CpuUsage) + !String.IsEqual(System.CpuUsage,unknown)">$INFO[System.CpuUsage]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPIMemory">
+    <value condition="!String.IsEmpty(System.Memory(used.percent)) + !String.IsEqual(System.Memory(used.percent),unknown)">$INFO[System.Memory(used.percent)]</value>
+    <value>$LOCALIZE[31921]</value>
+  </variable>
+  <variable name="OrchardPPITransport">
+    <value condition="Player.Passthrough">Encoded passthrough</value>
+    <value>Decoded audio</value>
+  </variable>
+  <variable name="OrchardPPIHardware">
+    <value condition="Player.Process(videohwdecoder)">Hardware decoding</value>
+    <value>Software / not reported</value>
+  </variable>
+  <variable name="OrchardSettingsSection">
+    <value condition="Control.HasFocus(101)">$LOCALIZE[31824]</value>
+    <value condition="Control.HasFocus(102)">$LOCALIZE[31138]</value>
+    <value condition="Control.HasFocus(103)">$LOCALIZE[31705]</value>
+    <value condition="Control.HasFocus(104)">$LOCALIZE[31729]</value>
+    <value condition="Control.HasFocus(105)">$LOCALIZE[31611]</value>
+    <value condition="Control.HasFocus(106)">$LOCALIZE[31815]</value>
+    <value condition="Control.HasFocus(107)">$LOCALIZE[31622]</value>
+    <value condition="Control.HasFocus(108)">$LOCALIZE[31684]</value>
+    <value condition="Control.HasFocus(109)">$LOCALIZE[31836]</value>
+    <value condition="Control.HasFocus(110)">$LOCALIZE[31769]</value>
+    <value condition="Control.HasFocus(111)">$LOCALIZE[31767]</value>
+    <value condition="Control.HasFocus(112)">$LOCALIZE[31871]</value>
+    <value condition="Control.HasFocus(130)">$LOCALIZE[31664]</value>
+    <value>$LOCALIZE[31824]</value>
+  </variable>
+  <variable name="OrchardSkinSection">
+    <value condition="Control.HasFocus(101)">$LOCALIZE[31872]</value>
+    <value condition="Control.HasFocus(102)">$LOCALIZE[31736]</value>
+    <value condition="Control.HasFocus(103)">$LOCALIZE[31841]</value>
+    <value condition="Control.HasFocus(104)">$LOCALIZE[31625]</value>
+    <value condition="Control.HasFocus(105)">$LOCALIZE[31763]</value>
+    <value condition="Control.HasFocus(106)">$LOCALIZE[31644]</value>
+    <value condition="Control.HasFocus(107)">$LOCALIZE[31716]</value>
+    <value condition="Control.HasFocus(108)">$LOCALIZE[31759]</value>
+    <value condition="Control.HasFocus(109)">$LOCALIZE[31812]</value>
+    <value condition="Control.HasFocus(110)">$LOCALIZE[31629]</value>
+    <value condition="Control.HasFocus(111)">$LOCALIZE[31797]</value>
+    <value>$LOCALIZE[31872]</value>
+  </variable>
+  <variable name="OrchardRow1EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row1.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow1Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row1.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow1Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row1.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow1Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row1.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row1.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow1Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row1.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row1.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow1Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row1.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row1.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow1Title]</value>
+    <value>$VAR[OrchardRow1Title]</value>
+  </variable>
+  <variable name="OrchardRow2EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row2.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow2Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row2.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow2Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row2.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow2Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row2.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row2.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow2Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row2.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row2.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow2Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row2.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row2.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow2Title]</value>
+    <value>$VAR[OrchardRow2Title]</value>
+  </variable>
+  <variable name="OrchardRow3EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row3.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow3Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row3.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow3Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row3.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow3Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row3.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row3.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow3Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row3.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row3.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow3Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row3.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row3.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow3Title]</value>
+    <value>$VAR[OrchardRow3Title]</value>
+  </variable>
+  <variable name="OrchardRow4EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row4.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow4Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEmpty(Skin.String(orchard.movies.row4.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row4.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow4Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEmpty(Skin.String(orchard.tv.row4.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row4.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow4Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row4.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row4.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow4Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row4.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row4.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow4Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row4.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row4.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow4Title]</value>
+    <value>$VAR[OrchardRow4Title]</value>
+  </variable>
+  <variable name="OrchardRow5EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + String.IsEmpty(Skin.String(orchard.row5.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row5.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow5Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEmpty(Skin.String(orchard.movies.row5.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row5.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow5Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEmpty(Skin.String(orchard.tv.row5.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row5.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow5Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row5.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row5.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow5Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row5.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row5.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow5Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row5.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row5.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow5Title]</value>
+    <value>$VAR[OrchardRow5Title]</value>
+  </variable>
+  <variable name="OrchardRow6EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + String.IsEmpty(Skin.String(orchard.row6.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row6.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow6Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEmpty(Skin.String(orchard.movies.row6.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row6.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow6Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEmpty(Skin.String(orchard.tv.row6.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row6.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow6Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row6.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row6.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow6Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row6.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row6.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow6Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row6.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row6.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow6Title]</value>
+    <value>$VAR[OrchardRow6Title]</value>
+  </variable>
+  <variable name="OrchardRow7EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + String.IsEmpty(Skin.String(orchard.row7.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row7.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow7Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEmpty(Skin.String(orchard.movies.row7.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row7.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow7Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEmpty(Skin.String(orchard.tv.row7.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row7.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow7Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row7.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row7.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow7Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row7.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row7.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow7Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row7.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row7.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow7Title]</value>
+    <value>$VAR[OrchardRow7Title]</value>
+  </variable>
+  <variable name="OrchardRow8EditorTitle">
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + String.IsEmpty(Skin.String(orchard.row8.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),home) + Skin.HasSetting(orchard.row8.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow8Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + String.IsEmpty(Skin.String(orchard.movies.row8.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),movies) + Skin.HasSetting(orchard.movies.row8.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow8Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + String.IsEmpty(Skin.String(orchard.tv.row8.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),tv) + Skin.HasSetting(orchard.tv.row8.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow8Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + String.IsEmpty(Skin.String(orchard.custom1.row8.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom1) + Skin.HasSetting(orchard.custom1.row8.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow8Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + String.IsEmpty(Skin.String(orchard.custom2.row8.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom2) + Skin.HasSetting(orchard.custom2.row8.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow8Title]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + String.IsEmpty(Skin.String(orchard.custom3.row8.path))">$LOCALIZE[31682]</value>
+    <value condition="String.IsEqual(Skin.String(orchard.page),custom3) + Skin.HasSetting(orchard.custom3.row8.disabled)">$LOCALIZE[31900]: $VAR[OrchardRow8Title]</value>
+    <value>$VAR[OrchardRow8Title]</value>
+  </variable>
+  <variable name="OrchardCardTitle">
+    <value condition="String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.TVShowTitle) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.TVShowTitle] · $INFO[ListItem.Season,,x]$INFO[ListItem.Episode] · $INFO[ListItem.Title]</value>
+    <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+    <value>$INFO[ListItem.Label]</value>
+  </variable>
+  <include name="OrchardLandscapeSeeAllTop">
+    <top>117</top>
+  </include>
+  <include name="OrchardPosterSeeAllTop">
+    <top>206</top>
+  </include>
+  <variable name="PyrusHubTitle_home">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.home.label))">$INFO[Skin.String(pyrus.hub.home.label)]</value>
+    <value>$LOCALIZE[31871]</value>
+  </variable>
+  <variable name="PyrusHubTitle_movies">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.movies.label))">$INFO[Skin.String(pyrus.hub.movies.label)]</value>
+    <value>$LOCALIZE[31735]</value>
+  </variable>
+  <variable name="PyrusHubTitle_tv">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.tv.label))">$INFO[Skin.String(pyrus.hub.tv.label)]</value>
+    <value>$LOCALIZE[31840]</value>
+  </variable>
+  <variable name="PyrusHubTitle_addons">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.addons.label))">$INFO[Skin.String(pyrus.hub.addons.label)]</value>
+    <value>$LOCALIZE[31622]</value>
+  </variable>
+  <variable name="PyrusHubTitle_livetv">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.livetv.label))">$INFO[Skin.String(pyrus.hub.livetv.label)]</value>
+    <value>$LOCALIZE[31722]</value>
+  </variable>
+  <variable name="PyrusHubTitle_custom1">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.custom1.label))">$INFO[Skin.String(pyrus.hub.custom1.label)]</value>
+    <value>$LOCALIZE[31667]</value>
+  </variable>
+  <variable name="PyrusHubTitle_custom2">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.custom2.label))">$INFO[Skin.String(pyrus.hub.custom2.label)]</value>
+    <value>$LOCALIZE[31668]</value>
+  </variable>
+  <variable name="PyrusHubTitle_custom3">
+    <value condition="!String.IsEmpty(Skin.String(pyrus.hub.custom3.label))">$INFO[Skin.String(pyrus.hub.custom3.label)]</value>
+    <value>$LOCALIZE[31669]</value>
+  </variable>
+  <variable name="PyrusRatingTMDb">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Property(TMDb_Rating),TMDb ]</value>
+    <value />
+  </variable>
+  <variable name="PyrusRatingIMDb">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Property(IMDb_Rating),IMDb ]</value>
+    <value />
+  </variable>
+  <variable name="PyrusRatingRT">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0)">$INFO[Container(5101).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0)">$INFO[Container(5102).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0)">$INFO[Container(5103).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0)">$INFO[Container(5104).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0)">$INFO[Container(5105).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0)">$INFO[Container(5106).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0)">$INFO[Container(5107).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0)">$INFO[Container(5108).ListItem.Property(RottenTomatoes_Rating),RT ]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub1Label">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub1.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub1.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub1.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub1.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub1.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub1.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub1.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub1.label)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub1Path">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub1.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub1.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub1.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub1.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub1.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub1.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub1.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub1.path)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub2Label">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub2.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub2.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub2.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub2.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub2.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub2.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub2.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub2.label)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub2Path">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub2.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub2.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub2.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub2.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub2.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub2.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub2.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub2.path)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub3Label">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub3.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub3.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub3.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub3.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub3.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub3.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub3.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub3.label)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub3Path">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub3.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub3.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub3.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub3.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub3.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub3.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub3.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub3.path)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub4Label">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub4.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub4.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub4.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub4.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub4.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub4.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub4.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub4.label)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub4Path">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub4.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub4.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub4.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub4.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub4.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub4.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub4.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub4.path)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub5Label">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub5.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub5.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub5.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub5.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub5.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub5.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub5.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub5.label)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub5Path">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub5.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub5.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub5.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub5.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub5.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub5.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub5.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub5.path)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub6Label">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub6.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub6.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub6.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub6.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub6.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub6.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub6.label)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub6.label)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusSub6Path">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">$INFO[Skin.String(pyrus.hub.home.sub6.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">$INFO[Skin.String(pyrus.hub.movies.sub6.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">$INFO[Skin.String(pyrus.hub.tv.sub6.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">$INFO[Skin.String(pyrus.hub.addons.sub6.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">$INFO[Skin.String(pyrus.hub.custom1.sub6.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">$INFO[Skin.String(pyrus.hub.custom2.sub6.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">$INFO[Skin.String(pyrus.hub.custom3.sub6.path)]</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">$INFO[Skin.String(pyrus.hub.livetv.sub6.path)]</value>
+    <value />
+  </variable>
+  <variable name="PyrusNavControl">
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),home)">9101</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),movies)">9102</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),tv)">9103</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),addons)">9104</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom1)">9111</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom2)">9112</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),custom3)">9113</value>
+    <value condition="String.IsEqual(Window(Home).Property(pyrus.hub),livetv)">9114</value>
+    <value>9101</value>
+  </variable>
+  <variable name="PyrusRatingGeneric">
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),1) + Integer.IsGreater(Container(5101).NumItems,0) + String.IsEmpty(Container(5101).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5101).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5101).ListItem.Rating) + !String.IsEqual(Container(5101).ListItem.Rating,0) + !String.IsEqual(Container(5101).ListItem.Rating,0.0)">$INFO[Container(5101).ListItem.Rating,★ ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),2) + Integer.IsGreater(Container(5102).NumItems,0) + String.IsEmpty(Container(5102).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5102).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5102).ListItem.Rating) + !String.IsEqual(Container(5102).ListItem.Rating,0) + !String.IsEqual(Container(5102).ListItem.Rating,0.0)">$INFO[Container(5102).ListItem.Rating,★ ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),3) + Integer.IsGreater(Container(5103).NumItems,0) + String.IsEmpty(Container(5103).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5103).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5103).ListItem.Rating) + !String.IsEqual(Container(5103).ListItem.Rating,0) + !String.IsEqual(Container(5103).ListItem.Rating,0.0)">$INFO[Container(5103).ListItem.Rating,★ ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),4) + Integer.IsGreater(Container(5104).NumItems,0) + String.IsEmpty(Container(5104).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5104).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5104).ListItem.Rating) + !String.IsEqual(Container(5104).ListItem.Rating,0) + !String.IsEqual(Container(5104).ListItem.Rating,0.0)">$INFO[Container(5104).ListItem.Rating,★ ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),5) + Integer.IsGreater(Container(5105).NumItems,0) + String.IsEmpty(Container(5105).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5105).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5105).ListItem.Rating) + !String.IsEqual(Container(5105).ListItem.Rating,0) + !String.IsEqual(Container(5105).ListItem.Rating,0.0)">$INFO[Container(5105).ListItem.Rating,★ ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),6) + Integer.IsGreater(Container(5106).NumItems,0) + String.IsEmpty(Container(5106).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5106).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5106).ListItem.Rating) + !String.IsEqual(Container(5106).ListItem.Rating,0) + !String.IsEqual(Container(5106).ListItem.Rating,0.0)">$INFO[Container(5106).ListItem.Rating,★ ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),7) + Integer.IsGreater(Container(5107).NumItems,0) + String.IsEmpty(Container(5107).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5107).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5107).ListItem.Rating) + !String.IsEqual(Container(5107).ListItem.Rating,0) + !String.IsEqual(Container(5107).ListItem.Rating,0.0)">$INFO[Container(5107).ListItem.Rating,★ ]</value>
+    <value condition="String.IsEqual(Window(Home).Property(orchard.hero.row),8) + Integer.IsGreater(Container(5108).NumItems,0) + String.IsEmpty(Container(5108).ListItem.Property(TMDb_Rating)) + String.IsEmpty(Container(5108).ListItem.Property(IMDb_Rating)) + !String.IsEmpty(Container(5108).ListItem.Rating) + !String.IsEqual(Container(5108).ListItem.Rating,0) + !String.IsEqual(Container(5108).ListItem.Rating,0.0)">$INFO[Container(5108).ListItem.Rating,★ ]</value>
+    <value />
+  </variable>
+</includes>

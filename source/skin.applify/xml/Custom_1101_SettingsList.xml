@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window type="dialog" id="1101">
+  <defaultcontrol always="true">11000</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <onunload>ClearProperty(settingslist_header,Home)</onunload>
+  <onunload>ClearProperty(settingslist_content,Home)</onunload>
+  <controls>
+    <control type="group">
+      <centerleft>50%</centerleft>
+      <height>670</height>
+      <centertop>50%</centertop>
+      <width>700</width>
+      <visible>!Window.IsActive(DialogSettings.xml) + !Window.IsActive(DialogSlider.xml) + !Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GameVideoRotation)</visible>
+      <animation effect="fade" time="200" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+      <include content="DialogBackgroundCommons">
+        <param name="width" value="700" />
+        <param name="height" value="80" />
+        <param name="header_label" value="$INFO[Window(home).Property(settingslist_Header)]" />
+        <param name="header_id" value="1" />
+      </include>
+      <control type="group" id="11000">
+        <left>0</left>
+        <top>80</top>
+        <control type="grouplist" id="11100">
+          <visible>String.IsEqual(window(home).Property(settingslist_content),osd)</visible>
+          <width>700</width>
+          <height>630</height>
+          <itemgap>0</itemgap>
+          <onup>11100</onup>
+          <ondown>11100</ondown>
+          <orientation>vertical</orientation>
+          <control type="button" id="11111">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[13396]</label>
+            <onclick>ActivateWindow(osdaudiosettings)</onclick>
+          </control>
+          <control type="button" id="11106">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[24133]</label>
+            <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
+          </control>
+          <control type="button" id="11102">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[13395]</label>
+            <onclick>ActivateWindow(osdvideosettings)</onclick>
+          </control>
+          <control type="button" id="11103">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[36560]</label>
+            <onclick>ActivateWindow(osdcmssettings)</onclick>
+            <visible>System.HasCMS</visible>
+          </control>
+          <control type="button" id="11104">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31112]</label>
+            <label2>[B]$INFO[VideoPlayer.AudioLanguage][/B]</label2>
+            <onclick>AudioNextLanguage</onclick>
+            <visible>Integer.IsGreater(VideoPlayer.AudioStreamCount,1)</visible>
+          </control>
+          <control type="button" id="11108">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31115]</label>
+            <label2>$VAR[ActiveVideoPlayerSubtitleLanguage]</label2>
+            <onclick>NextSubtitle</onclick>
+            <visible>VideoPlayer.HasSubtitles</visible>
+          </control>
+          <control type="button" id="11105">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31132]</label>
+            <onclick>PlayerProgramSelect</onclick>
+            <visible>Player.HasPrograms</visible>
+          </control>
+          <control type="button" id="11107">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31133]</label>
+            <onclick>PlayerResolutionSelect</onclick>
+            <visible>Player.HasResolutions</visible>
+          </control>
+          <control type="button" id="7">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31142]</label>
+            <onclick>Dialog.Close(1101)</onclick>
+            <onclick>ActivateWindow(1110)</onclick>
+            <visible>Player.TempoEnabled</visible>
+          </control>
+          <itemgap>8</itemgap>
+        </control>
+        <control type="grouplist" id="13100">
+          <visible>String.IsEqual(window(home).Property(settingslist_content),3d)</visible>
+          <width>700</width>
+          <height>360</height>
+          <itemgap>0</itemgap>
+          <onup>13100</onup>
+          <ondown>13100</ondown>
+          <orientation>vertical</orientation>
+          <control type="radiobutton" id="13101">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <radioposx>612</radioposx>
+            <label>$LOCALIZE[24022]</label>
+            <onclick>ToggleStereoMode</onclick>
+            <selected>Integer.IsGreater(System.StereoscopicMode,0)</selected>
+            <radiowidth>64</radiowidth>
+            <radioheight>36</radioheight>
+            <radioposy>13</radioposy>
+            <textureradioonfocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on-focus.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off-focus.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off.png</textureradiooffnofocus>
+            <textureradioondisabled colordiffuse="66FFFFFF">orchard/controls143/switch-on.png</textureradioondisabled>
+            <textureradiooffdisabled colordiffuse="66FFFFFF">orchard/controls143/switch-off.png</textureradiooffdisabled>
+            <textwidth>564</textwidth>
+          </control>
+          <control type="button" id="13102">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[31004]</label>
+            <label2>[B]$INFO[VideoPlayer.StereoscopicMode][/B]</label2>
+            <onclick>StereoMode</onclick>
+          </control>
+          <control type="radiobutton" id="13103">
+            <height>62</height>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <radioposx>612</radioposx>
+            <label>$LOCALIZE[31005]</label>
+            <onclick>StereoModeToMono</onclick>
+            <selected>Integer.IsEqual(System.StereoscopicMode,9)</selected>
+            <radiowidth>64</radiowidth>
+            <radioheight>36</radioheight>
+            <radioposy>13</radioposy>
+            <textureradioonfocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on-focus.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-on.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off-focus.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="FFFFFFFF">orchard/controls143/switch-off.png</textureradiooffnofocus>
+            <textureradioondisabled colordiffuse="66FFFFFF">orchard/controls143/switch-on.png</textureradioondisabled>
+            <textureradiooffdisabled colordiffuse="66FFFFFF">orchard/controls143/switch-off.png</textureradiooffdisabled>
+            <textwidth>564</textwidth>
+          </control>
+          <itemgap>8</itemgap>
+        </control>
+        <control type="grouplist" id="14100">
+          <defaultcontrol always="true">14101</defaultcontrol>
+          <visible>String.IsEqual(window(home).Property(settingslist_content),games)</visible>
+          <width>700</width>
+          <height>500</height>
+          <itemgap>0</itemgap>
+          <onup>14100</onup>
+          <ondown>14100</ondown>
+          <orientation>vertical</orientation>
+          <control type="button" id="14101">
+            <height>62</height>
+            <description>Video filter button</description>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[35225]</label>
+            <onclick>ActivateWindow(GameVideoFilter)</onclick>
+          </control>
+          <control type="button" id="14102">
+            <height>62</height>
+            <description>Stretch mode button</description>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[35233]</label>
+            <onclick>ActivateWindow(GameStretchMode)</onclick>
+          </control>
+          <control type="button" id="14106">
+            <height>62</height>
+            <description>Video rotation button</description>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[35227]</label>
+            <onclick>ActivateWindow(GameVideoRotation)</onclick>
+          </control>
+          <control type="button" id="14104">
+            <height>62</height>
+            <description>Volume button</description>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[13376]</label>
+            <label2>[COLOR grey]$FEATURE[select,game.controller.snes] + $FEATURE[rightstick,game.controller.default][/COLOR]</label2>
+            <onclick>ActivateWindow(GameVolume)</onclick>
+          </control>
+          <control type="button" id="14103">
+            <height>62</height>
+            <description>Controller settings button</description>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[35234]</label>
+            <onclick>ActivateWindow(GameControllers)</onclick>
+          </control>
+          <control type="button" id="14107">
+            <height>62</height>
+            <description>Controller port configuration</description>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[35110]</label>
+            <onclick>ActivateWindow(GamePorts)</onclick>
+          </control>
+          <control type="button" id="14105">
+            <height>62</height>
+            <description>Advanced settings</description>
+            <width>700</width>
+            <include>DialogSettingButton</include>
+            <label>$LOCALIZE[35226]</label>
+            <onclick>ActivateWindow(GameAdvancedSettings)</onclick>
+          </control>
+          <itemgap>8</itemgap>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

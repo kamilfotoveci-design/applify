@@ -1,0 +1,26 @@
+Pyrus Skin 1.1.2 by kamilwhoo — Reddit feedback follow-up
+
+CHANGES
+- Fixed ranked card numbering in all three custom hubs. Each row now uses its own
+  layout setting instead of the Watch Now row setting.
+- Published browsable XML, Python, the English catalog, playlists and text documents
+  under source/skin.applify on GitHub. Binary artwork and fonts remain in the
+  installable ZIP; the builder checks that browsable files match that ZIP.
+- Removed older skin ZIPs that included non-English catalogs. The Pages builder
+  publishes only retained English-only skin ZIPs.
+- English is the only included skin language catalog in this version.
+  Updated the README and release information.
+
+VALIDATION
+- ZIP CRCs, XML/Python syntax, font signatures, package SHA-256 manifest and
+  source mirror checked by the repository builder.
+- GitHub Actions and published URLs checked after release.
+- No Kodi GUI or CoreELEC device test is included.
+
+OPEN DEVICE-DEPENDENT REPORTS
+- Repository connection failures: the HTTPS index and hashes can be checked
+  online, but a Kodi log from an affected device is needed for root cause.
+- TV-led Dolby Vision with zero L5 and audio-only playback: no DV pipeline
+  settings changed. Compare the same file and settings in Estuary and Pyrus.
+- PPI on p3i/T4c, PVR operation and Reboot to Android require tests on
+  their actual builds, PVR backend and devices.

@@ -1,0 +1,11 @@
+Applify 1.0.0
+Independent Apple TV inspired interface; not affiliated with Apple.
+
+Estuary XML base, Team Kodi / phil65 and contributors:
+https://github.com/xbmc/xbmc/tree/f8815ee40f49a700c047982d752be4b2a61420e2/addons/skin.estuary
+Media/fonts initially retained from the Estuary source snapshot:
+https://github.com/xbmc/xbmc/tree/0ca6ddb1073b0537902b55891ced7503a6c4b91c/addons/skin.estuary
+Original licensing and font license files are retained.
+New UI icons were drawn for this skin. No Apple logos, accounts or film artwork are bundled. User-supplied Apple SF Pro Display font assets are included; see fonts/SF-Pro-License.rtf.
+
+All XML and Python in this package are editable source. No compilation is required.

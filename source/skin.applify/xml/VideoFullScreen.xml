@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <controls>
+    <control type="group">
+      <description>ORCHARD_DIALOGFIX141: hide lower playback layer</description>
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <control type="group" id="0">
+        <control type="label" id="10">
+          <label />
+          <left>45</left>
+          <top>15</top>
+          <width>1770</width>
+          <height>100</height>
+          <font>font12</font>
+          <shadowcolor>black</shadowcolor>
+          <textcolor>FFFFFFFF</textcolor>
+        </control>
+        <control type="label" id="11">
+          <label />
+          <left>45</left>
+          <top>45</top>
+          <width>1770</width>
+          <height>100</height>
+          <font>font12</font>
+          <shadowcolor>black</shadowcolor>
+          <textcolor>FFFFFFFF</textcolor>
+        </control>
+        <control type="label" id="12">
+          <label />
+          <left>45</left>
+          <top>75</top>
+          <width>1770</width>
+          <height>100</height>
+          <font>font12</font>
+          <shadowcolor>black</shadowcolor>
+          <textcolor>FFFFFFFF</textcolor>
+        </control>
+      </control>
+      <control type="group" id="1">
+        <centerleft>50%</centerleft>
+        <centertop>50%</centertop>
+        <width>330</width>
+        <height>92</height>
+        <visible>Player.Caching + Integer.IsGreater(Player.CacheLevel,0)</visible>
+        <animation effect="fade" time="180" condition="!Skin.HasSetting(orchard.reducedanimations)">VisibleChange</animation>
+        <control type="image">
+          <width>330</width>
+          <height>92</height>
+          <texture border="24" colordiffuse="FFFFFFFF">applify/clean101/panel.png</texture>
+        </control>
+        <control type="label">
+          <width>330</width>
+          <height>92</height>
+          <align>center</align>
+          <aligny>center</aligny>
+          <label>Loading  $INFO[Player.CacheLevel]%</label>
+          <font>OrchardBody</font>
+          <textcolor>FFFFFFFF</textcolor>
+        </control>
+      </control>
+      <visible>!Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogAddonSettings.xml)</visible>
+    </control>
+  </controls>
+</window>

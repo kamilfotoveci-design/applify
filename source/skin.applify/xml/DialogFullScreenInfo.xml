@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+  <defaultcontrol always="true">999</defaultcontrol>
+  <controls>
+    <control type="button" id="999">
+      <left>0</left>
+      <top>0</top>
+      <width>100%</width>
+      <height>100%</height>
+      <texturefocus />
+      <texturenofocus />
+      <onright>StepForward</onright>
+      <onleft>StepBack</onleft>
+      <onup>ChapterOrBigStepForward</onup>
+      <ondown>ChapterOrBigStepBack</ondown>
+      <onclick>OSD</onclick>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <top>480</top>
+      <width>1920</width>
+      <height>600</height>
+      <texture>orchard/matte135/fade-bottom-bn-600.png</texture>
+    </control>
+    <control type="label">
+      <left>80</left>
+      <top>650</top>
+      <width>1760</width>
+      <height>72</height>
+      <label>$INFO[VideoPlayer.Title]</label>
+      <font>OrchardHero</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control type="label">
+      <left>84</left>
+      <top>733</top>
+      <width>1700</width>
+      <height>42</height>
+      <label>$INFO[VideoPlayer.Year]   $INFO[VideoPlayer.Genre]$INFO[VideoPlayer.Rating,   Rating: ]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control type="textbox">
+      <left>84</left>
+      <top>790</top>
+      <width>1350</width>
+      <height>126</height>
+      <label>$INFO[VideoPlayer.Plot]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFE0E0E0</textcolor>
+    </control>
+    <control type="label">
+      <left>84</left>
+      <top>950</top>
+      <width>1000</width>
+      <height>36</height>
+      <label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+      <font>OrchardSmall</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+  </controls>
+  <include>OrchardMotionDialog</include>
+</window>

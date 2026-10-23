@@ -1,0 +1,2 @@
+# Browsable skin source must match the installable ZIP byte for byte.
+source/skin.applify/** -text whitespace=cr-at-eol

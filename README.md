@@ -4,15 +4,22 @@
 
 Cinematic artwork, configurable widgets, clean playback controls and detailed Player Info.
 
-## What's new in 1.1.1
+## What's new in 1.1.2
+
+- Corrected ranked card numbers in custom hubs.
+- Removed older packages that still contained non-English skin catalogs.
+- Published browsable [skin source text](source/skin.applify/) for community review and contributions.
+- The installable skin now includes only the English language catalog.
+
+The 1.1.1 update also added:
 
 - Move left/right while focused on the top bar to switch hubs **without pressing OK**.
 - Press OK to open the full library or a destination you configure for that hub.
 - Three optional custom hubs with eight widget rows each; up to six inline submenu links per hub.
 - Native Live TV/Radio destinations: guide, channels, recordings and timers.
-- Localizable interface labels, episode titles and ratings supplied by your content add-on.
+- English interface labels, episode titles and ratings supplied by your content add-on.
 - Page geometry changes without a full skin reload; hidden tabs cannot capture restored focus.
-- Full menu/widget backups, Czech/Slovak label fixes and on-demand repository diagnostics.
+- Full menu/widget backups and on-demand repository diagnostics.
 - Capability-gated Reboot to Android on CoreELEC.
 - Existing Player Process Info (PPI): **Media**, **Decoder / Output**, **System**.
 
@@ -34,22 +41,22 @@ If the repository cannot connect, restart Kodi once and use **Check for updates*
 One Fire Cube 3 user reported this resolved installation. If it still fails,
 report your device, exact Kodi build and a Kodi log captured after the failure.
 A permanent root cause for all reported connection failures has not been established.
-You can install [the skin ZIP directly](https://kamilfotoveci-design.github.io/applify/skin.applify/skin.applify-1.1.1.zip).
+You can install [the skin ZIP directly](https://kamilfotoveci-design.github.io/applify/skin.applify/skin.applify-1.1.2.zip).
 
 ## Compatibility and validation
 
-The maintainer has tested the skin on Kodi 22. The 1.1.1 changes passed offline
-regression checks; **device validation of this update is still required**.
+The maintainer has tested earlier versions of the skin on Kodi 22. The 1.1.2 package
+passed static build checks; **device validation of this update is still required**.
 Kodi 21/22 builds and hardware can expose different Player Info fields. Missing
 HDR, Dolby Vision or decoder details are not proof that a format is unsupported.
 PVR requires your own enabled PVR client and backend. The skin does not supply channels.
 Ratings depend on the values returned by the selected item's add-on; no API key is bundled.
 
-Pyrus interface catalogs include Czech and Slovak translations. German, French,
-Spanish, Italian and Polish include partial translations. Existing language catalogs are retained;
-new untranslated text falls back to English. Your custom widget titles are preserved.
+Pyrus ships only the English skin language catalog. Kodi's own interface and
+content titles follow the language and metadata settings in your Kodi installation.
+Your custom widget titles are preserved.
 
-See [1.1.1 release notes and device checklist](RELEASE-1.1.1.txt).
+See [1.1.2 release notes](RELEASE-1.1.2.txt).
 
 ## Screenshots
 
@@ -80,5 +87,6 @@ TV-led Dolby Vision/zero-L5 black video and complete p3i T4c compatibility remai
 unverified device reports. Compare the same file/settings against Estuary and include
 fresh logs. This update does not force HDR/DV options. PVR requires a configured backend.
 Full arbitrary menu ordering and unlimited tabs are not provided: the current editor
-supports three extra hubs and six child links per hub. No separate unpacked source
-folder is published; the installable Kodi ZIP necessarily contains readable code.
+supports three extra hubs and six child links per hub. The readable XML, Python,
+translations and playlists are available in [source/skin.applify](source/skin.applify/).
+Binary artwork and fonts remain in the installable ZIP.
