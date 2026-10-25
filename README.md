@@ -4,7 +4,18 @@
 
 Cinematic artwork, configurable widgets, clean playback controls and detailed Player Info.
 
-## What's new in 1.1.3
+## What's new in 1.1.5
+
+- Fixed the Add-on error when opening a widget row in Configure Widgets.
+- Corrected the Python name collision still present in the published 1.1.4 ZIP.
+- Regression tests exercise the installable ZIP across all 48 page/row menus and key editor operations.
+- The repository builder rejects this helper-shadowing error before publishing.
+- Existing widgets and settings are preserved. Device confirmation on Kodi 21/22 is still needed.
+
+The 1.1.4 navigation behavior is retained: Left/Right moves focus on the top bar;
+OK selects the tab. Pressing OK on the already active tab does not open a library.
+
+The 1.1.3 update also added:
 
 - Added a Power icon beside Settings. It opens Kodi Power Options, including Reboot when Kodi reports that the device supports it.
 - Press Right from a widget row's See All control to return to its first card. See All remains reachable from the last card.
@@ -14,13 +25,10 @@ The 1.1.2 update also added:
 
 - Corrected ranked card numbers in custom hubs.
 - Removed older packages that still contained non-English skin catalogs.
-- Published browsable [skin source text](source/skin.applify/) for community review and contributions.
 - The installable skin now includes only the English language catalog.
 
 The 1.1.1 update also added:
 
-- Move left/right while focused on the top bar to switch hubs **without pressing OK**.
-- Press OK to open the full library or a destination you configure for that hub.
 - Three optional custom hubs with eight widget rows each; up to six inline submenu links per hub.
 - Native Live TV/Radio destinations: guide, channels, recordings and timers.
 - English interface labels, episode titles and ratings supplied by your content add-on.
@@ -47,12 +55,12 @@ If the repository cannot connect, restart Kodi once and use **Check for updates*
 One Fire Cube 3 user reported this resolved installation. If it still fails,
 report your device, exact Kodi build and a Kodi log captured after the failure.
 A permanent root cause for all reported connection failures has not been established.
-You can install [the skin ZIP directly](https://kamilfotoveci-design.github.io/applify/skin.applify/skin.applify-1.1.3.zip).
+You can install [the skin ZIP directly](https://kamilfotoveci-design.github.io/applify/skin.applify/skin.applify-1.1.5.zip) after this version is deployed.
 
 ## Compatibility and validation
 
-The maintainer has tested earlier versions of the skin on Kodi 22. The 1.1.3 package
-passed static build checks; **device validation of this update is still required**.
+The maintainer has tested earlier versions of the skin on Kodi 22. The 1.1.5 package
+passed offline editor regression and static build checks; **device validation of this update is still required**.
 Kodi 21/22 builds and hardware can expose different Player Info fields. Missing
 HDR, Dolby Vision or decoder details are not proof that a format is unsupported.
 PVR requires your own enabled PVR client and backend. The skin does not supply channels.
@@ -62,7 +70,7 @@ Pyrus ships only the English skin language catalog. Kodi's own interface and
 content titles follow the language and metadata settings in your Kodi installation.
 Your custom widget titles are preserved.
 
-See [1.1.3 release notes](RELEASE-1.1.3.txt).
+See [1.1.5 release notes](RELEASE-1.1.5.txt).
 
 ## Screenshots
 
@@ -93,6 +101,5 @@ TV-led Dolby Vision/zero-L5 black video and complete p3i T4c compatibility remai
 unverified device reports. Compare the same file/settings against Estuary and include
 fresh logs. This update does not force HDR/DV options. PVR requires a configured backend.
 Full arbitrary menu ordering and unlimited tabs are not provided: the current editor
-supports three extra hubs and six child links per hub. The readable XML, Python,
-English catalog and playlists are available in [source/skin.applify](source/skin.applify/).
-Binary artwork and fonts remain in the installable ZIP.
+supports three extra hubs and six child links per hub. The skin is distributed
+as an installable Kodi ZIP.

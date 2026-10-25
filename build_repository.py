@@ -18,7 +18,6 @@ ROOT = Path(__file__).resolve().parent
 SKIN_ID = 'skin.applify'
 REPOSITORY_ID = 'repository.applify'
 REPOSITORY_VERSION = '1.0.2'
-SOURCE_SUFFIXES = {'.xml', '.py', '.po', '.json', '.xsp', '.md', '.txt', '.rtf'}
 
 
 def write_xml(path, element):
@@ -62,25 +61,23 @@ def validate_english_only(path):
         raise ValueError(f'{path.name} must contain only the en_gb skin catalog: {sorted(catalogs)}')
 
 
-def validate_source_mirror(archive):
-    """Keep GitHub's browsable text sources identical to the release ZIP."""
-    source = ROOT / 'source' / SKIN_ID
-    if not source.is_dir():
-        raise ValueError('Missing browsable skin source at source/skin.applify')
-    expected = {
-        PurePosixPath(name).relative_to(SKIN_ID).as_posix()
-        for name in archive.namelist()
-        if not name.endswith('/') and
-        (PurePosixPath(name).suffix.lower() in SOURCE_SUFFIXES or
-         PurePosixPath(name).name == 'LICENSE')
-    }
-    actual = {path.relative_to(source).as_posix()
-              for path in source.rglob('*') if path.is_file()}
-    if actual != expected:
-        raise ValueError('Browsable source files do not match the skin ZIP')
-    for name in sorted(expected):
-        if (source / name).read_bytes() != archive.read(SKIN_ID + '/' + name):
-            raise ValueError('Browsable source differs from the skin ZIP: ' + name)
+def validate_editor_helpers(archive):
+    """Reject a release ZIP that still shadows an imported editor helper."""
+    tree = ast.parse(archive.read(SKIN_ID + '/resources/widget_setup.py'))
+    imported = {alias.asname or alias.name
+                for node in tree.body if isinstance(node, ast.ImportFrom)
+                for alias in node.names}
+    main = next((node for node in tree.body
+                 if isinstance(node, ast.FunctionDef) and node.name == 'main'), None)
+    if main is None:
+        raise ValueError('Widget editor entry point is missing')
+    assigned = {node.id for node in ast.walk(main)
+                if isinstance(node, ast.Name) and isinstance(node.ctx, ast.Store)}
+    called = {node.func.id for node in ast.walk(main)
+              if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)}
+    collisions = imported & assigned & called
+    if collisions:
+        raise ValueError('Widget editor shadows imported callable: ' + ', '.join(sorted(collisions)))
 
 
 def validate_skin(path):
@@ -101,7 +98,7 @@ def validate_skin(path):
                 ET.fromstring(archive.read(entry))
             elif entry.filename.endswith('.py'):
                 ast.parse(archive.read(entry).decode('utf-8'), filename=entry.filename)
-        validate_source_mirror(archive)
+        validate_editor_helpers(archive)
         addon = ET.fromstring(archive.read(SKIN_ID + '/addon.xml'))
         version = addon.get('version')
         if (addon.get('id') != SKIN_ID or addon.get('name') != 'Pyrus Skin'

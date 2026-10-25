@@ -1,0 +1,22 @@
+Pyrus Skin 1.1.5 by kamilwhoo — widget editor crash fix
+
+The published 1.1.4 ZIP still contained a Python name collision in widget_setup.py.
+The synopsis branch assigned a local variable named text. Python therefore treated
+text as local throughout main(), including the row menu's translation call, which
+raised UnboundLocalError before the menu opened. Renamed the variable to plot.
+
+Validation is performed against the packaged ZIP, not just the working folder.
+The downloaded public 1.1.4 ZIP reproduces this crash for every page/row menu.
+The fixed package is checked for all 48 page/row menus and row operations:
+rename, source selection, artwork, limits, visibility, remove, move and synopsis.
+The repository builder rejects the old helper-shadowing error in its selected ZIP.
+
+Existing widget settings, skin ID, fonts, artwork and the English-only catalog are
+retained. No new playback or menu geometry changes are included in this hotfix.
+The separate source mirror is no longer required by the builder. Existing public
+source/ files must still be removed explicitly from the current branch if present;
+ordinary deletion does not remove earlier Git history.
+
+Offline editor tests use Kodi API doubles. Kodi 21/22 GUI/device verification is
+still required. This fixes the reproduced editor error; it does not certify all
+skin features or fix unrelated repository connectivity or Dolby Vision reports.
