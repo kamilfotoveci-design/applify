@@ -39,13 +39,14 @@ def row_key(row,page=None):
     return 'orchard.'+('' if page=='home' else page+'.')+'row'+str(row)
 def page_defaults(page=None):return PAGE_DEFAULTS[page or current_page()]
 def effective(row,suffix,page=None):
+    if flag(row_key(row,page)+'.empty'):
+        return {'path':'','title':'Empty Slot','layout':'landscape','limit':'12'}[suffix]
     value=setting(row_key(row,page)+'.'+suffix)
     fallback={'path':page_defaults(page)[row][0],'title':text(page_defaults(page)[row][1]),'layout':'landscape','limit':'12'}[suffix]
     return value or fallback
 def reload_page():
-    xbmc.executebuiltin('ActivateWindow(1191)',True)
-    xbmc.executebuiltin('ReloadSkin()',True)
     xbmc.executebuiltin('ActivateWindow(Home)',True)
+    xbmc.executebuiltin('RunScript(special://skin/resources/home_hubs.py,restore)')
 def switch_page(page,editing=False):
     if page not in PAGES:raise ValueError('Unknown page.')
     previous=current_page();changed=previous!=page
@@ -54,23 +55,29 @@ def switch_page(page,editing=False):
     needs_reload=any((effective(row,'layout',previous) in ('poster','ranked')) != (effective(row,'layout',page) in ('poster','ranked')) for row in range(1,9))
     if changed:
         set_string('orchard.page',page)
-        xbmc.executebuiltin('SetProperty(orchard.hero.row,1,Home)')
     if not editing:
         # Native activation keeps window history consistent when arriving from a library.
         if changed or not xbmc.getCondVisibility('Window.IsActive(Home)'):
             xbmc.executebuiltin('ActivateWindow(Home)')
         else:
             for row in range(1,9):
-                if xbmc.getCondVisibility('Integer.IsGreater(Container(%d).NumItems,0)'%(5100+row)):
-                    xbmc.executebuiltin('SetFocus(%d)'%(5100+row));return
+                control=PAGES.index(page)*10000+5100+row
+                if xbmc.getCondVisibility('Integer.IsGreater(Container(%d).NumItems,0)'%control):
+                    xbmc.executebuiltin('SetFocus(%d)'%control);return
             xbmc.executebuiltin('ActivateWindow(SkinSettings)');return
-    if changed and needs_reload and not editing:reload_page()
+    if not editing:
+        xbmc.executebuiltin('SetProperty(pyrus.hub,'+page+',Home)')
+        xbmc.executebuiltin('SetProperty(pyrus.visited.'+page+',true,Home)')
+        xbmc.executebuiltin('RunScript(special://skin/resources/home_hubs.py,geometry)')
 def swap_rows(a,b):
+    ae,be=flag(row_key(a)+'.empty'),flag(row_key(b)+'.empty')
     av={s:effective(a,s) for s in SUFFIXES};bv={s:effective(b,s) for s in SUFFIXES}
     ad,bd=flag(row_key(a)+'.disabled'),flag(row_key(b)+'.disabled')
     for row,values,disabled in [(a,bv,bd),(b,av,ad)]:
         for s,v in values.items():set_string(row_key(row)+'.'+s,v)
         set_flag(row_key(row)+'.disabled',disabled)
+    set_flag(row_key(a)+'.empty',be)
+    set_flag(row_key(b)+'.empty',ae)
 def available_addons():
     addons=rpc('Addons.GetAddons',{'type':'xbmc.addon.video','enabled':True,'properties':['name']}).get('addons',[])
     return sorted(addons,key=lambda a:a.get('name','').casefold())
@@ -131,6 +138,7 @@ def save_source(key):
     result=choose_source()
     if not result:return False
     path,title=result
+    set_flag(key+'.empty',False)
     set_string(key+'.path',path);set_string(key+'.title',title);set_flag(key+'.disabled',False)
     return True
 
@@ -144,7 +152,7 @@ def home_menu():
 def quick_setup():
     """Collect the complete row before changing persistent skin settings."""
     page=current_page()
-    free=[r for r in range(1,9) if flag(row_key(r,page)+'.disabled') or not effective(r,'path',page)]
+    free=[r for r in range(1,9) if not effective(r,'path',page)]
     if not free:
         if DIALOG.yesno('Page full','All eight widget slots are in use. Open the editor to replace or remove a row?'):
             xbmc.executebuiltin('ActivateWindow(1190)')
@@ -157,6 +165,7 @@ def quick_setup():
     style=DIALOG.select('Artwork style',['Landscape','Poster','Top 10 posters'])
     if style<0:return
     key=row_key(free[0],page)
+    set_flag(key+'.empty',False)
     for suffix,value in [('path',path),('title',title),('layout',('landscape','poster','ranked')[style]),('limit','12')]:
         set_string(key+'.'+suffix,value)
     set_flag(key+'.disabled',False)
@@ -299,18 +308,20 @@ APPEARANCE=[('Reduce animations','orchard.reducedanimations'),('Hide hero text',
 PLAYBACK=[('Hide passive timeline while paused','orchard.hidepausedosd'),('Show chapters in playback controls','orchard.osdchapters'),('Show clock in playback controls','orchard.osdclock')]
 def reset_page(page):
     for row in range(1,9):
-        for suffix in (*SUFFIXES,'disabled'):xbmc.executebuiltin('Skin.Reset('+row_key(row,page)+'.'+suffix+')')
+        for suffix in (*SUFFIXES,'disabled','empty'):xbmc.executebuiltin('Skin.Reset('+row_key(row,page)+'.'+suffix+')')
 BACKUP_STRINGS=('orchard.backdropdim', 'orchard.cardcaptions', 'orchard.page', 'pyrus.hub.addons.label', 'pyrus.hub.addons.path', 'pyrus.hub.addons.sub1.label', 'pyrus.hub.addons.sub1.path', 'pyrus.hub.addons.sub2.label', 'pyrus.hub.addons.sub2.path', 'pyrus.hub.addons.sub3.label', 'pyrus.hub.addons.sub3.path', 'pyrus.hub.addons.sub4.label', 'pyrus.hub.addons.sub4.path', 'pyrus.hub.addons.sub5.label', 'pyrus.hub.addons.sub5.path', 'pyrus.hub.addons.sub6.label', 'pyrus.hub.addons.sub6.path', 'pyrus.hub.custom1.label', 'pyrus.hub.custom1.path', 'pyrus.hub.custom1.sub1.label', 'pyrus.hub.custom1.sub1.path', 'pyrus.hub.custom1.sub2.label', 'pyrus.hub.custom1.sub2.path', 'pyrus.hub.custom1.sub3.label', 'pyrus.hub.custom1.sub3.path', 'pyrus.hub.custom1.sub4.label', 'pyrus.hub.custom1.sub4.path', 'pyrus.hub.custom1.sub5.label', 'pyrus.hub.custom1.sub5.path', 'pyrus.hub.custom1.sub6.label', 'pyrus.hub.custom1.sub6.path', 'pyrus.hub.custom2.label', 'pyrus.hub.custom2.path', 'pyrus.hub.custom2.sub1.label', 'pyrus.hub.custom2.sub1.path', 'pyrus.hub.custom2.sub2.label', 'pyrus.hub.custom2.sub2.path', 'pyrus.hub.custom2.sub3.label', 'pyrus.hub.custom2.sub3.path', 'pyrus.hub.custom2.sub4.label', 'pyrus.hub.custom2.sub4.path', 'pyrus.hub.custom2.sub5.label', 'pyrus.hub.custom2.sub5.path', 'pyrus.hub.custom2.sub6.label', 'pyrus.hub.custom2.sub6.path', 'pyrus.hub.custom3.label', 'pyrus.hub.custom3.path', 'pyrus.hub.custom3.sub1.label', 'pyrus.hub.custom3.sub1.path', 'pyrus.hub.custom3.sub2.label', 'pyrus.hub.custom3.sub2.path', 'pyrus.hub.custom3.sub3.label', 'pyrus.hub.custom3.sub3.path', 'pyrus.hub.custom3.sub4.label', 'pyrus.hub.custom3.sub4.path', 'pyrus.hub.custom3.sub5.label', 'pyrus.hub.custom3.sub5.path', 'pyrus.hub.custom3.sub6.label', 'pyrus.hub.custom3.sub6.path', 'pyrus.hub.home.label', 'pyrus.hub.home.path', 'pyrus.hub.home.sub1.label', 'pyrus.hub.home.sub1.path', 'pyrus.hub.home.sub2.label', 'pyrus.hub.home.sub2.path', 'pyrus.hub.home.sub3.label', 'pyrus.hub.home.sub3.path', 'pyrus.hub.home.sub4.label', 'pyrus.hub.home.sub4.path', 'pyrus.hub.home.sub5.label', 'pyrus.hub.home.sub5.path', 'pyrus.hub.home.sub6.label', 'pyrus.hub.home.sub6.path', 'pyrus.hub.livetv.label', 'pyrus.hub.livetv.path', 'pyrus.hub.livetv.sub1.label', 'pyrus.hub.livetv.sub1.path', 'pyrus.hub.livetv.sub2.label', 'pyrus.hub.livetv.sub2.path', 'pyrus.hub.livetv.sub3.label', 'pyrus.hub.livetv.sub3.path', 'pyrus.hub.livetv.sub4.label', 'pyrus.hub.livetv.sub4.path', 'pyrus.hub.livetv.sub5.label', 'pyrus.hub.livetv.sub5.path', 'pyrus.hub.livetv.sub6.label', 'pyrus.hub.livetv.sub6.path', 'pyrus.hub.movies.label', 'pyrus.hub.movies.path', 'pyrus.hub.movies.sub1.label', 'pyrus.hub.movies.sub1.path', 'pyrus.hub.movies.sub2.label', 'pyrus.hub.movies.sub2.path', 'pyrus.hub.movies.sub3.label', 'pyrus.hub.movies.sub3.path', 'pyrus.hub.movies.sub4.label', 'pyrus.hub.movies.sub4.path', 'pyrus.hub.movies.sub5.label', 'pyrus.hub.movies.sub5.path', 'pyrus.hub.movies.sub6.label', 'pyrus.hub.movies.sub6.path', 'pyrus.hub.tv.label', 'pyrus.hub.tv.path', 'pyrus.hub.tv.sub1.label', 'pyrus.hub.tv.sub1.path', 'pyrus.hub.tv.sub2.label', 'pyrus.hub.tv.sub2.path', 'pyrus.hub.tv.sub3.label', 'pyrus.hub.tv.sub3.path', 'pyrus.hub.tv.sub4.label', 'pyrus.hub.tv.sub4.path', 'pyrus.hub.tv.sub5.label', 'pyrus.hub.tv.sub5.path', 'pyrus.hub.tv.sub6.label', 'pyrus.hub.tv.sub6.path')
 BACKUP_FLAGS=('orchard.hidecardtitles', 'orchard.hidehero', 'orchard.hideherologo', 'orchard.hideherometa', 'orchard.hideheroplot', 'orchard.hidepausedosd', 'orchard.hideprogress', 'orchard.migrated', 'orchard.osdchapters', 'orchard.osdclock', 'orchard.pov.cleanlabels', 'orchard.reducedanimations', 'pyrus.hideratings', 'pyrus.hub.custom1.enabled', 'pyrus.hub.custom2.enabled', 'pyrus.hub.custom3.enabled', 'pyrus.showlivetv')
 
 def backup_preferences():
     return {'strings':{key:setting(key) for key in BACKUP_STRINGS},
-            'flags':{key:flag(key) for key in BACKUP_FLAGS}}
+            'flags':{key:flag(key) for key in (*BACKUP_FLAGS,'pyrus.hidewatchnow')}}
 
 def validate_preferences(data):
     if not isinstance(data,dict) or set(data)!={'strings','flags'}:
         raise ValueError('Invalid menu and appearance backup.')
-    for kind,allowed in (('strings',BACKUP_STRINGS),('flags',BACKUP_FLAGS)):
+    if not isinstance(data['flags'],dict):raise ValueError('Invalid backup flags.')
+    data['flags'].setdefault('pyrus.hidewatchnow',False)
+    for kind,allowed in (('strings',BACKUP_STRINGS),('flags',(*BACKUP_FLAGS,'pyrus.hidewatchnow'))):
         values=data[kind]
         if not isinstance(values,dict) or set(values)!=set(allowed):
             raise ValueError('Invalid menu and appearance backup.')
@@ -337,7 +348,7 @@ def validate_preferences(data):
 def export_widgets():
     folder='special://profile/addon_data/skin.applify/'
     xbmcvfs.mkdirs(folder)
-    data={'version':2,'preferences':backup_preferences(),'pages':{page:[{**{s:effective(row,s,page) for s in SUFFIXES},'disabled':flag(row_key(row,page)+'.disabled')} for row in range(1,9)] for page in PAGES}}
+    data={'version':2,'preferences':backup_preferences(),'pages':{page:[{**{s:effective(row,s,page) for s in SUFFIXES},'disabled':flag(row_key(row,page)+'.disabled'),'empty':flag(row_key(row,page)+'.empty')} for row in range(1,9)] for page in PAGES}}
     temporary=folder+'widget-backup.tmp.json'
     with xbmcvfs.File(temporary,'w') as f:f.write(json.dumps(data,ensure_ascii=False,indent=2))
     if not xbmcvfs.rename(temporary,folder+'widget-backup.json'):
@@ -359,6 +370,7 @@ def import_widgets():
             if not isinstance(entry,dict) or any(not isinstance(entry.get(s),str) for s in SUFFIXES):raise ValueError('Invalid row fields.')
             if entry['layout'] not in ('landscape','poster','ranked') or entry['limit'] not in ('6','10','12','20','24') or len(entry['title'])>200:raise ValueError('Invalid row style, item limit or title.')
             if not isinstance(entry.get('disabled'),bool):raise ValueError('Invalid row visibility.')
+            if not isinstance(entry.get('empty',False),bool):raise ValueError('Invalid empty slot.')
             disabled=entry['disabled'];source=entry['path']
             if source:
                 if any(c in source for c in ('\n','\r','\x00','"')):raise ValueError('Invalid source path.')
@@ -372,6 +384,7 @@ def import_widgets():
     for key,entry,disabled in pending:
         for suffix in SUFFIXES:set_string(key+'.'+suffix,entry[suffix])
         set_flag(key+'.disabled',disabled)
+        set_flag(key+'.empty',entry.get('empty',False))
     if preferences is not None:
         for key,value in preferences['strings'].items():set_string(key,value)
         for key,value in preferences['flags'].items():set_flag(key,value)
@@ -420,7 +433,12 @@ def settings_menu(section):
                 pyrus_diagnostics.run()
             if idx==5:xbmc.executebuiltin('UpdateAddonRepos()')
         else:return
-    if dirty:xbmc.executebuiltin('ReloadSkin()')
+    if dirty:
+        if section=='maintenance' and idx==0:
+            # Queue background refresh; hidden visited hubs refresh on next visit.
+            xbmcgui.Window(10000).setProperty('pyrus.refresh.request','true')
+            reload_page()
+        else:reload_page()
 
 def migrate():
     if flag('orchard.migrated'):return
@@ -440,8 +458,8 @@ def main():
     if command=='homemenu':home_menu();return
     if command=='quicksetup':quick_setup();return
     if command=='synopsis':
-        text=xbmc.getInfoLabel('ListItem.Plot')
-        DIALOG.textviewer('Synopsis',text or 'No synopsis available.')
+        plot=xbmc.getInfoLabel('ListItem.Plot')
+        DIALOG.textviewer('Synopsis',plot or 'No synopsis available.')
         return
     if command=='init':migrate();configure_pov_titles();return
     if command=='addons':launch_addons();return
@@ -470,7 +488,6 @@ def main():
         if len(sys.argv)>2 and sys.argv[2] in PAGES:
             set_string('orchard.page',sys.argv[2])
             xbmc.executebuiltin('ActivateWindow(1190)')
-            xbmc.executebuiltin('ReloadSkin()')
         return
     if command=='settings':
         if len(sys.argv)>2:settings_menu(sys.argv[2])
@@ -483,7 +500,7 @@ def main():
             for s in ('path','title'):xbmc.executebuiltin('Skin.Reset('+key+'.'+s+')')
         return
     if command=='add':
-        free=[r for r in range(1,9) if flag(row_key(r)+'.disabled') or not effective(r,'path')]
+        free=[r for r in range(1,9) if not effective(r,'path')]
         if not free:DIALOG.ok('Page Full','Eight rows per page are available. Edit, hide, or remove an existing row.');return
         save_source(row_key(free[0]));return
     if command not in {str(x) for x in range(1,9)}:return
@@ -505,9 +522,10 @@ def main():
     elif choice==6:set_flag(key+'.disabled',not flag(key+'.disabled'))
     elif choice==7:
         for s in SUFFIXES:xbmc.executebuiltin('Skin.Reset('+key+'.'+s+')')
-        set_flag(key+'.disabled',True)
+        set_flag(key+'.disabled',False)
+        set_flag(key+'.empty',True)
     elif choice==8:
-        for s in (*SUFFIXES,'disabled'):xbmc.executebuiltin('Skin.Reset('+key+'.'+s+')')
+        for s in (*SUFFIXES,'disabled','empty'):xbmc.executebuiltin('Skin.Reset('+key+'.'+s+')')
     elif choice==9:
         pages=[p for p in PAGES if p!=current_page()]
         idx=DIALOG.select('Copy from Page',[PAGE_TITLES[p] for p in pages])
@@ -516,6 +534,7 @@ def main():
         if idx<0:return
         for suffix in SUFFIXES:set_string(key+'.'+suffix,effective(idx+1,suffix,page))
         set_flag(key+'.disabled',flag(row_key(idx+1,page)+'.disabled'))
+        set_flag(key+'.empty',flag(row_key(idx+1,page)+'.empty'))
 
 if __name__=='__main__':
     try:main()

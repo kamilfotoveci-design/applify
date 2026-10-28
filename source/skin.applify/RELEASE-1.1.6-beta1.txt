@@ -1,0 +1,23 @@
+Pyrus 1.1.6 beta 1 - community feedback candidate
+
+Hub selection still requires OK. Left/right only moves focus.
+Widget page selection now runs as native Kodi actions before the Python
+geometry helper starts. This removes the Python-startup dependency from
+directory selection; it does not cache or accelerate remote POV requests.
+
+Added native seek-step and seek-target labels to the video OSD and seek bar.
+Added watched overlays to all home card layouts using ListItem.PlayCount.
+Existing PercentPlayed progress bars remain in place. Metadata must be
+provided by the content add-on.
+Watch Now can be hidden in the top-menu editor, with Movies as fallback.
+Remove Row now clears a slot instead of hiding it; Hide retains configuration.
+Empty states are preserved by row moves, copies and widget backups.
+
+Validation: XML parsing, Python syntax, confirm-only navigation assertions,
+watched badge presence, empty-state variable coverage, empty-row resolution,
+and ZIP CRC integrity. No live Kodi/CoreELEC or POV runtime test was possible.
+
+Before public release: compare cold and warm hub-switch times against 1.1.5;
+test mixed poster/landscape pages, rapid repeated OK presses, hidden Watch
+Now on startup/back, POV watched items, seeking and backup round trips.
+Do not claim the reported two-second delay is resolved until measured.

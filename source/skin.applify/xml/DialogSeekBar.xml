@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <window>
-  <visible>Window.IsActive(fullscreenvideo) + !Window.IsVisible(videoosd) + !Window.IsVisible(fullscreeninfo) + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(osdaudiosettings) + !Window.IsVisible(osdsubtitlesettings) + !Window.IsVisible(osdvideosettings) + [Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Skin.HasSetting(orchard.hidepausedosd)] | Player.Forwarding | Player.Rewinding | Player.ShowTime] + !Window.IsVisible(1193) + !Window.IsVisible(1193) + !Window.IsVisible(1193) + !Window.IsVisible(1193)</visible>
+  <visible>Window.IsActive(fullscreenvideo) + !Window.IsVisible(videoosd) + !Window.IsVisible(fullscreeninfo) + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(osdaudiosettings) + !Window.IsVisible(osdsubtitlesettings) + !Window.IsVisible(osdvideosettings) + [!String.IsEmpty(Player.SeekStepSize) | Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Skin.HasSetting(orchard.hidepausedosd)] | Player.Forwarding | Player.Rewinding | Player.ShowTime] + !Window.IsVisible(1193) + !Window.IsVisible(1193) + !Window.IsVisible(1193) + !Window.IsVisible(1193)</visible>
   <controls>
     <control type="group">
       <description>ORCHARD_DIALOGFIX141: hide lower playback layer</description>
@@ -125,6 +125,17 @@
         </control>
       </control>
       <visible>!Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(DialogSubtitles.xml) + !Window.IsVisible(DialogAddonSettings.xml)</visible>
+    </control>
+    <control type="label">
+      <left>600</left>
+      <top>875</top>
+      <width>720</width>
+      <height>36</height>
+      <align>center</align>
+      <font>OrchardPlayerMeta</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <label>$VAR[PyrusSeekFeedback]</label>
+      <visible>Player.Seeking | !String.IsEmpty(Player.SeekStepSize) | Player.HasPerformedSeek(3)</visible>
     </control>
   </controls>
 </window>

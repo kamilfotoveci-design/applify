@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addon id="skin.applify" version="1.1.4" name="Pyrus Skin" provider-name="kamilwhoo">
+<addon id="skin.applify" version="1.1.6" name="Pyrus Skin" provider-name="kamilwhoo">
   <requires>
     <import addon="xbmc.gui" version="5.17.0" />
     <import addon="xbmc.python" version="3.0.0" />
@@ -23,6 +23,16 @@
     </assets>
     <website>https://kamilfotoveci-design.github.io/applify/</website>
     <source>https://github.com/kamilfotoveci-design/applify</source>
-    <news>1.1.4: Top navigation changes tabs only after OK; Left/Right move focus without changing pages. Pressing OK again on the active tab does nothing; no libraries are opened from the top menu. 1.1.3: Added a Power button beside Settings on the home navigation bar. It opens Kodi Power Options, including Reboot when the device supports it. English-only skin catalog. Pyrus Skin by kamilwhoo.</news>
+    <news>Pyrus 1.1.6
+- Added background widget refresh after returning from add-ons, playback or dialogs.
+- Active hub widgets now refresh every 60 seconds without reloading the skin.
+- Manual widget refresh no longer requires a full skin reload.
+- Left/Right on the top bar switches hubs without pressing OK.
+- Separate widget lists and hero-row selection are retained for each hub.
+- Added watched badges when the content add-on provides watch status.
+- Added seek-step and seek-offset feedback.
+- Added the option to hide Watch Now.
+- Removing a row now creates an Empty Slot; hiding remains a separate action.
+- Simplified XML conditions and corrected hidden-hub navigation.</news>
   </extension>
 </addon>

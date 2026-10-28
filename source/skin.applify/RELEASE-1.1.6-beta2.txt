@@ -1,0 +1,22 @@
+Pyrus 1.1.6 beta 2 - persistent native hub containers
+
+Each of the six widget hubs now owns eight independent Kodi containers.
+The source expression for a visited hub does not change when another hub is
+selected. Switching remains OK-only. Navigation, hero variables, More buttons
+and layout geometry are scoped to the selected hub's control IDs.
+
+First visits load on demand. There is no eager network prefetch, no polling
+service, no additional Trakt authentication and no disk cache of private lists.
+Kodi owns provider invalidation and watched-state updates. Returning to an
+already populated hub within Home is intended to retain its directory items.
+Cold startup, skin reload, source changes and provider invalidation can still
+require network access. Artwork may need decoding again after memory release.
+
+This is an unverified runtime candidate, not a latency guarantee. Test on
+Kodi 21/22 with POV before public release. In particular measure first visit
+versus repeated Movie/TV/Watch Now transitions, memory after all hubs are
+visited, focus restoration, poster/landscape geometry, and watched-state
+changes after playback. This package has no background prefetch feature.
+
+Retains beta 1 seek labels, watched badges, Watch Now visibility and distinct
+Remove/Hide semantics. The input 1.1.5 package remains the rollback baseline.

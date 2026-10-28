@@ -232,7 +232,7 @@
       <onright>111</onright>
       <onup>104</onup>
       <ondown>114</ondown>
-      <onclick>ReloadSkin()</onclick>
+      <onclick>RunScript(special://skin/resources/widget_setup.py,reloadpage)</onclick>
       <onclick>ActivateWindow(Home)</onclick>
       <shadowcolor>00000000</shadowcolor>
     </control>

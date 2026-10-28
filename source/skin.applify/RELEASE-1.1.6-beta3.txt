@@ -1,0 +1,20 @@
+Pyrus 1.1.6 beta 3 - audit fixes
+
+- No Python geometry scripts on widget-tab confirmation, including repeated OK.
+- Restore/apply geometry when returning Home, not on every tab confirmation.
+- Hero row remembered separately for each widget hub; no per-click reset.
+- Apply widget changes without full skin reload; native providers observe source changes.
+- Appearance/performance/import changes return Home without ReloadSkin.
+- Explicit Refresh All Widgets retains a full reload by design. Artwork provider
+  settings can also require a reload; neither is a normal tab-switch operation.
+- Hidden custom hubs fall back to Movies when Watch Now is hidden.
+- Seek feedback shows pending step/target or the performed seek offset.
+- Folded literal boolean branches generated for persistent shelves, reducing
+  Home and variable XML by about 663 KB, without reducing available widget slots.
+- Updated add-on news and ZIP timestamp handling.
+
+Static/regression validation is not a visual or hardware performance test.
+Cold network loads remain asynchronous and cannot be guaranteed instant.
+Live Kodi 21/22, POV watched-state refresh, memory use after six visited hubs,
+rapid input and mixed poster/landscape layouts still require on-device QA.
+No public GitHub/Kodi repository deployment has been performed.

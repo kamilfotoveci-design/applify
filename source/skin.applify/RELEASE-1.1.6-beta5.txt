@@ -1,0 +1,21 @@
+Pyrus 1.1.6 beta 5 - retained widget refresh
+
+Left/Right top-bar switching remains native and does not refresh on each key.
+The active visited hub is refreshed in the background every 60 seconds and
+after returning from add-ons, playback or modal dialogs. Automatic refresh is
+throttled to 15 seconds and waits for one second of stable hub focus. This wait
+does not delay displaying existing cards. Hidden visited hubs are deferred.
+Maintenance > Refresh All Widgets queues a refresh without reloading the skin.
+
+Implementation uses native DirectoryProvider sort-order invalidation with
+sortby=none: source URLs, item limits and add-on ordering are unchanged. Kodi
+keeps the old provider items while its new directory job runs. No third-party
+cache, credentials or databases are modified. POV/Trakt cache and sync delays
+remain outside the skin's control. A successful directory request returning an
+empty list can still replace the old cards; this is Kodi provider behavior.
+
+Checked: XML and Python parsing, 48 isolated sources, navigation regressions,
+refresh scheduler unit tests and ZIP CRC. Not tested in a live Kodi/POV runtime.
+Device test: add an item to an existing Trakt list, return Home, confirm it
+appears and navigation stays responsive. If absent, open the same list in POV;
+if POV also lacks it, diagnose POV/Trakt sync rather than repeatedly reloading.

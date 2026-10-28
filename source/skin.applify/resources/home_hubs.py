@@ -17,6 +17,7 @@ def title(page):
 
 def hub_visible(page):
     if page not in NAV:return False
+    if page=='home':return not widgets.flag('pyrus.hidewatchnow')
     if page.startswith('custom'):return widgets.flag('pyrus.hub.'+page+'.enabled')
     if page=='livetv':return widgets.flag('pyrus.showlivetv') or xbmc.getCondVisibility('PVR.HasTVChannels')
     return True
@@ -26,10 +27,11 @@ def apply_geometry(page):
     # GroupList recalculates its child heights each frame. Keep one provider
     # container per row, preserving list focus and avoiding ReloadSkin.
     controls=[]
+    offset=PAGES.index(page)*10000
     for row in range(1,9):
         poster=widgets.effective(row,'layout',page) in ('poster','ranked')
-        controls.append((HOME.getControl(5000+row),HOME.getControl(5100+row),
-                         HOME.getControl(5200+row),poster))
+        controls.append((HOME.getControl(offset+5000+row),HOME.getControl(offset+5100+row),
+                         HOME.getControl(offset+5200+row),poster))
     HOME.setProperty('pyrus.nav.transition','true')
     try:
         for group,items,more,poster in controls:
@@ -45,8 +47,10 @@ def restore_focus():
     if page in PAGES:page=widgets.current_page()
     if value.isdecimal():page=next((p for p,c in NAV.items() if c==int(value)),page)
     if not hub_visible(page):
-        page='home';widgets.set_string('orchard.page',page);value=str(NAV[page])
-    if page in PAGES:apply_geometry(page)
+        page='movies' if widgets.flag('pyrus.hidewatchnow') else 'home'
+        widgets.set_string('orchard.page',page);value=str(NAV[page])
+    for widget_page in PAGES:apply_geometry(widget_page)
+    if page in PAGES:HOME.setProperty('pyrus.visited.'+page,'true')
     HOME.setProperty('pyrus.hub',page)
     HOME.setProperty('pyrus.nav.initialized','true')
     HOME.clearProperty('pyrus.nav.restore')
@@ -54,11 +58,12 @@ def restore_focus():
         xbmc.executebuiltin('SetFocus(%d)'%NAV[page])
 
 def go_back():
-    if (HOME.getProperty('pyrus.hub') or widgets.current_page())=='home':
+    first='movies' if widgets.flag('pyrus.hidewatchnow') else 'home'
+    if (HOME.getProperty('pyrus.hub') or widgets.current_page())==first:
         xbmc.executebuiltin('ActivateWindow(ShutdownMenu)');return
     HOME.clearProperty('pyrus.nav.restore')
-    preview('home',9101,require_focus=False)
-    xbmc.executebuiltin('SetFocus(9101)')
+    preview(first,NAV[first],require_focus=False)
+    xbmc.executebuiltin('SetFocus(%d)'%NAV[first])
 
 def preview(page, control, require_focus=True):
     if not hub_visible(page) or NAV[page] != control:return
@@ -83,9 +88,9 @@ def preview(page, control, require_focus=True):
     if old == page:
         HOME.setProperty('pyrus.hub',page);return
     apply_geometry(page)
+    HOME.setProperty('pyrus.visited.'+page,'true')
     HOME.setProperty('pyrus.hub',page)
     widgets.set_string('orchard.page',page)
-    HOME.setProperty('orchard.hero.row','1')
 
 def open_hub(page):
     if page not in NAV:return
@@ -174,9 +179,10 @@ def enter_content(page):
     if page=='addons':
         xbmc.executebuiltin('SetFocus(50)' if xbmc.getCondVisibility('Integer.IsGreater(Window(Home).Property(orchard.addons.visiblecount),0)') else 'SetFocus(8201)');return
     if page=='livetv':xbmc.executebuiltin('SetFocus(8301)');return
+    offset=PAGES.index(page)*10000 if page in PAGES else 0
     for row in range(1,9):
-        if xbmc.getCondVisibility('Integer.IsGreater(Container(%d).NumItems,0)'%(5100+row)):
-            xbmc.executebuiltin('SetFocus(%d)'%(5100+row));return
+        if xbmc.getCondVisibility('Integer.IsGreater(Container(%d).NumItems,0)'%(offset+5100+row)):
+            xbmc.executebuiltin('SetFocus(%d)'%(offset+5100+row));return
     xbmc.executebuiltin('SetFocus(7200)')
 
 def open_submenu(index):
@@ -217,7 +223,7 @@ def edit_hub(page):
     while True:
         options=['Rename','Set opening destination','Reset opening destination','Edit submenu']
         if page in PAGES:options+=['Edit widget rows','Continue Watching first']
-        if page.startswith('custom'):options+=['Show / Hide Hub']
+        if page.startswith('custom') or page=='home':options+=['Show / Hide Hub']
         idx=DIALOG.select(title(page),options)
         if idx<0:return
         key='pyrus.hub.'+page
@@ -244,11 +250,17 @@ def edit_hub(page):
             # Stable move: all intervening rows retain their relative order.
             for row in range(selected+1,1,-1):widgets.swap_rows(row,row-1)
             widgets.reload_page();return
+        elif page=='home':
+            widgets.set_flag('pyrus.hidewatchnow',not widgets.flag('pyrus.hidewatchnow'))
+            if not hub_visible('home'):
+                HOME.setProperty('pyrus.hub','movies');widgets.set_string('orchard.page','movies')
+                HOME.setProperty('pyrus.nav.restore','9102')
         elif page.startswith('custom'):
             widgets.set_flag(key+'.enabled',not widgets.flag(key+'.enabled'))
             if not hub_visible(page) and (HOME.getProperty('pyrus.hub')==page or widgets.current_page()==page):
-                HOME.setProperty('pyrus.hub','home');widgets.set_string('orchard.page','home')
-                HOME.setProperty('pyrus.nav.restore','9101')
+                first='movies' if widgets.flag('pyrus.hidewatchnow') else 'home'
+                HOME.setProperty('pyrus.hub',first);widgets.set_string('orchard.page',first)
+                HOME.setProperty('pyrus.nav.restore',str(NAV[first]))
 
 def configure():
     while True:
@@ -268,6 +280,7 @@ def main():
     args=sys.argv[1:]
     if not args:return
     if args[0]=='restore':restore_focus()
+    elif args[0]=='geometry':apply_geometry(widgets.current_page())
     elif args[0]=='configure':configure()
     elif args[0]=='back':go_back()
     elif args[0]=='down' and len(args)==2:move_down(args[1])
